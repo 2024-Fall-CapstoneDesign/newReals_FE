@@ -1,7 +1,7 @@
 import './App.css';
 import AppRouter from './AppRouter';
 
-const App: React.FC = () => {
+const App = () => {
   return <AppRouter />;
 };
 
