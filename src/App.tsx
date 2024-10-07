@@ -1,7 +1,8 @@
 import './App.css';
+import AppRouter from './AppRouter';
 
-function App() {
-  return <div>newReals 프론트</div>;
-}
+const App = () => {
+  return <AppRouter />;
+};
 
 export default App;
