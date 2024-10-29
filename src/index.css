@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body,html{
+  font-family: 'Pretendard';
+}
+
 :root{
   --main-0 : #FFFFFF;
   --main-5 : #F1EFFF;
@@ -29,4 +33,39 @@
   --grayscale-80: #454858;
   --graysacle-90 : #353743;
 
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-style: normal;
+  src: url(../public/font/Pretendard-Light.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-style: normal;
+  src: url(../public/fonts/Pretendard-Regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-style: normal;
+  src: url(../public/font/Pretendard-Medium.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-style: normal;
+  src: url(../public/font/Pretendard-SemiBold.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-style: normal;
+  src: url(../public/fonts/Pretendard-Bold.ttf) format('ttf');
 }
