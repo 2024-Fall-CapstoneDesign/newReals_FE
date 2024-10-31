@@ -9,6 +9,7 @@ export const Button = styled.button<{ $type?: 'quiz' | 'page' }>`
   color: ${(props) => (props.$type === 'quiz' ? 'var(--main-40)' : 'var(--main-0)')};
   font-size: 1rem;
   font-weight: 500;
+  line-height: 150%;
 
   &:hover {
     background-color: ${(props) => (props.$type === 'quiz' ? 'var(--main-10)' : 'var(--main-50)')};

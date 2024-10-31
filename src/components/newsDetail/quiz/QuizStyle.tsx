@@ -15,10 +15,12 @@ export const Container = styled.div`
 export const Quiz = styled.span`
   font-size: 1.5rem;
   font-weight: 700;
+  line-height: 150%;
 `;
 
 export const Q = styled.span`
   color: var(--main-50);
+  line-height: 150%;
 `;
 
 export const Content = styled.section`

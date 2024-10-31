@@ -10,4 +10,5 @@ export const Container = styled.div<{ $isActive: boolean }>`
   color: ${({ $isActive }) => ($isActive ? 'var(--main-50)' : 'var(--grayscale-70)')};
   font-size: 1.125rem;
   font-weight: 500;
+  line-height: 150%;
 `;

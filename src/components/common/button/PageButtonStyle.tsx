@@ -12,6 +12,7 @@ export const PageButton = styled.button<{ $type: 'left' | 'right' }>`
   color: var(--grayscale-70);
   font-size: 1rem;
   font-weight: 500;
+  line-height: 150%;
 
   &:hover {
     color: var(--main-0);

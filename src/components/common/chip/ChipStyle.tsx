@@ -8,5 +8,6 @@ export const Chip = styled.div<{ $isSelected: boolean }>`
   background-color: ${({ $isSelected }) => ($isSelected ? 'var(--main-5)' : 'var(--grayscale-5)')};
   font-size: 1.125rem;
   font-weight: 600;
+  line-height: 150%;
   color: ${({ $isSelected }) => ($isSelected ? 'var(--main-50)' : 'var(--grayscale-50)')};
 `;
