@@ -1,5 +1,7 @@
 import Chip from './chip/Chip';
 import * as S from './QuizAnswerStyle';
+import OIcon from '/public/icons/OIcon.svg?react';
+import XIcon from '/public/icons/XIcon.svg?react';
 
 interface QuizAnswerProps {
   color: 'gray' | 'purple';
@@ -10,10 +12,10 @@ interface QuizAnswerProps {
 const QuizAnswer = ({ color, answer, comment }: QuizAnswerProps) => {
   return (
     <S.QuizAnswer $color={color}>
-      <S.Container>
+      <S.AnswerContainer>
         <Chip>정답</Chip>
-        {answer ? <img src="/icons/OIcon.svg" /> : <img src="XIcon.svg" />}
-      </S.Container>
+        {answer ? <OIcon /> : <XIcon />}
+      </S.AnswerContainer>
       <S.Container>
         <Chip>해설</Chip>
         <S.Text>{comment}</S.Text>

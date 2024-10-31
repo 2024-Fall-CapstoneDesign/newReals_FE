@@ -13,6 +13,12 @@ export const QuizAnswer = styled.div<{ $color: 'gray' | 'purple' }>`
   line-height: 150%;
 `;
 
+export const AnswerContainer = styled.div`
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+`;
+
 export const Container = styled.div`
   display: flex;
   gap: 0.75rem;
