@@ -9,4 +9,5 @@ export const Tag = styled.div<{ $color: 'gray' | 'purple'; $size: 'small' | 'lar
   color: ${({ $color }) => ($color === 'gray' ? 'var(--main-0)' : 'var(--main-50)')};
   font-size: ${({ $size }) => ($size === 'small' ? '0.875rem' : '1rem')};
   font-weight: 500;
+  line-height: 150%;
 `;
