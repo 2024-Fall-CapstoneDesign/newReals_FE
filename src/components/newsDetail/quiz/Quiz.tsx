@@ -7,11 +7,13 @@ import XIcon from '/public/icons/XIcon.svg?react';
 interface Quiz {
   quiz: string;
   isSolved: boolean;
+  answer: boolean;
+  comment: string;
 }
 
 //@TODO
 // 백엔드 API 명세서 보고 quiz 정보를 여기서 가져올지 상위 컴포넌트에서 가져올지 고민해야함!
-const Quiz = ({ quiz, isSolved }: Quiz) => {
+const Quiz = ({ quiz, isSolved, answer, comment }: Quiz) => {
   const handleClickO = () => {
     console.log('O 클릭 했을 때 백엔드 연결해야함');
   };
@@ -28,11 +30,7 @@ const Quiz = ({ quiz, isSolved }: Quiz) => {
       <S.Content>
         <S.Text>{quiz}</S.Text>
         {isSolved ? (
-          <QuizAnswer
-            color="gray"
-            answer={false}
-            comment="이것은 해설입니다. 아주아주 길고길고길고 긴 해설입니다. 해설이 3줄이 넘어가요 아니 한 줄이 넘어가면 어떻게 될지 궁금해서 만들어본 해설입니다."
-          />
+          <QuizAnswer color="gray" answer={answer} comment={comment} />
         ) : (
           <S.ButtonContainer>
             <Button onClick={handleClickO}>
