@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Tag = styled.div<{ $color: 'gray' | 'purple'; $size: 'small' | 'large' }>`
-  display: flex;
   width: fit-content;
   padding: ${({ $size }) => ($size === 'small' ? '0.25rem 0.5rem' : '0.5rem 0.75rem')};
   border-radius: ${({ $size }) => ($size === 'small' ? '0.5rem' : '0.75rem')};
