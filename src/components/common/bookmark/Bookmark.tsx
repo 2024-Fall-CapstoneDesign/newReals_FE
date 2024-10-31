@@ -1,8 +1,9 @@
+import { MouseEvent } from 'react';
 import * as S from './BookmarkStyle';
 
 interface BookmarkProps {
   isSelected: boolean;
-  onClick: () => void;
+  onClick: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
 const Bookmark = ({ isSelected, onClick }: BookmarkProps) => {
