@@ -6,7 +6,7 @@ interface TagProps {
   size?: 'small' | 'large';
 }
 
-const Tag = ({ children, color, size = 'large' }: TagProps) => {
+const Tag = ({ children, color, size = 'small' }: TagProps) => {
   return (
     <S.Tag $color={color} $size={size}>
       {children}
