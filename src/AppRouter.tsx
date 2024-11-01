@@ -7,7 +7,6 @@ import Market from './pages/Market';
 import NewsDetail from './pages/NewsDetail';
 import Profile from './pages/Profile';
 import Register from './pages/Register';
-import KeywordProvider from './components/register/context/KeywordContext';
 
 const AppRouter = () => {
   return (
@@ -20,14 +19,7 @@ const AppRouter = () => {
         <Route path="/market" element={<Market />} />
         <Route path="/newDetail/:id" element={<NewsDetail />} />
         <Route path="/profile" element={<Profile />} />
-        <Route
-          path="/register"
-          element={
-            <KeywordProvider>
-              <Register />
-            </KeywordProvider>
-          }
-        />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

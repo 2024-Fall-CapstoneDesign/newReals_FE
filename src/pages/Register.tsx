@@ -3,37 +3,33 @@ import Text from '../components/register/text/Text';
 import TabBar from '../components/common/tabBar/TabBar';
 import { useState } from 'react';
 import Subcategory from '../components/register/subcategory/Subcategory';
-import { useKeywordContext } from '../components/register/context/KeywordContext';
 import { CATEGORIES } from '../constants/Category';
+import SelectBox from '../components/register/selectBox/SelectBox';
+import KeywordProvider from '../components/register/context/KeywordContext';
 
 const Register = () => {
   const [category, setCategory] = useState('사회');
-  const { getAllSelectedKeywords } = useKeywordContext();
 
   const handleCategory = (category: string) => {
     setCategory(category);
   };
 
-  const handleGetAllKeywords = () => {
-    const allSelectedKeywords = getAllSelectedKeywords();
-    console.log('선택된 모든 키워드:', allSelectedKeywords);
-  };
-
   return (
-    <>
+    <KeywordProvider>
       <Cotnainer>
         <Content>
           <Text nickname="이서" />
           <TabBar type="CATEGORY" selectedItem={category} onClick={handleCategory} />
           <Categories>
-            {Object.entries(CATEGORIES['사회']).map(([subcategory, keywords]) => (
-              <Subcategory key={subcategory} data={{ [subcategory]: keywords }} />
-            ))}
+            {CATEGORIES[category] &&
+              Object.entries(CATEGORIES[category]).map(([subcategory, keywords]) => (
+                <Subcategory key={subcategory} data={{ [subcategory]: keywords }} />
+              ))}
           </Categories>
         </Content>
-        <button onClick={handleGetAllKeywords}>모든 선택된 키워드 가져오기</button>
+        <SelectBox />
       </Cotnainer>
-    </>
+    </KeywordProvider>
   );
 };
 

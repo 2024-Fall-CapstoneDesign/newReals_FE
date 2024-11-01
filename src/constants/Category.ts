@@ -1,4 +1,4 @@
-export const CATEGORIES = Object.freeze({
+export const CATEGORIES: Record<string, Record<string, string[]>> = Object.freeze({
   사회: {
     사건사고: ['교통사고', '범죄'],
     교육: ['입시', '교육정책', '학비'],
@@ -9,7 +9,7 @@ export const CATEGORIES = Object.freeze({
   },
   정치: {
     대통령실: ['대통령 연설', '청와대 정책', '국정 운영'],
-    '국회/정당': ['법안 발의', '정당 활동', '국화의원 선거'],
+    '국회/정당': ['법안 발의', '정당 활동', '국회의원 선거'],
     북한: ['남북 관계', '핵 문제'],
     행정: ['정부 부처', '행정 개혁', '공공 서비스'],
     '국방/외교': ['군사 훈련', '국방 예산', '외교 협상'],
