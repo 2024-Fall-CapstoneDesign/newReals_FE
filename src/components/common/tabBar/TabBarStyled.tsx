@@ -18,6 +18,7 @@ export const TabItem = styled.div<{ $isSelected: boolean }>`
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 150%;
+  cursor: pointer;
 
   &:first-child {
     border-radius: 0.75rem 0rem 0rem 0.75rem;
