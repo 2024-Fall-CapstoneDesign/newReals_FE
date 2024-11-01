@@ -14,7 +14,6 @@ export const Footer = styled.footer`
 `;
 
 export const Logo = styled.span`
-  color: var(--grayscale-90);
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 150%;
@@ -27,7 +26,6 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.span`
-  color: var(--grayscale-90);
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 150%;
@@ -59,10 +57,6 @@ export const Member = styled.div`
 export const NameContainer = styled.div`
   display: flex;
   gap: 1.5rem;
-`;
-
-export const Name = styled.p`
-  color: var(--grayscale-90);
 `;
 
 export const Divider = styled.div`

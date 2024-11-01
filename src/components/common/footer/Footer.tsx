@@ -27,10 +27,10 @@ const Footer = () => {
           <S.Title>Member</S.Title>
           <S.NameContainer>
             {MEMBER_DATA.map((member, index) => (
-              <>
-                <S.Name key={index}>{member}</S.Name>
+              <S.NameContainer key={index}>
+                <p>{member}</p>
                 {index < MEMBER_DATA.length - 1 && <S.Divider />}
-              </>
+              </S.NameContainer>
             ))}
           </S.NameContainer>
         </S.Member>
