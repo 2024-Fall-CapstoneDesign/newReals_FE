@@ -7,7 +7,7 @@ export const InputPart = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 0.75rem;
-  border: 0.0625rem solid var(--grayscale-10);
+  border: 1px solid var(--grayscale-10);
   background: var(--main-0);
 `;
 
@@ -20,7 +20,6 @@ export const Input = styled.input`
   margin-right: 0.5rem;
   &::placeholder {
     color: var(--grayscale-30);
-    font-style: normal;
     font-weight: 500;
     line-height: 150%;
   }

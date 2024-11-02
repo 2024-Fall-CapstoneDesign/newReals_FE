@@ -23,9 +23,8 @@ export const Category = styled.div`
 `;
 
 export const CategoryItem = styled.div`
-  color: var(--Grayscale-90);
+  color: var(--grayscale-90);
   font-size: 1rem;
-  font-style: normal;
   font-weight: 600;
   line-height: 150%;
   cursor: pointer;
@@ -47,7 +46,6 @@ export const Login = styled.div`
   color: var(--grayscale-90);
   text-align: center;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 600;
   line-height: 150%;
 `;
@@ -68,7 +66,6 @@ export const Etc = styled.div`
 export const Info = styled.div`
   color: var(--grayscale-90);
   font-size: 1rem;
-  font-style: normal;
   font-weight: 600;
   line-height: 150%;
   cursor: pointer;

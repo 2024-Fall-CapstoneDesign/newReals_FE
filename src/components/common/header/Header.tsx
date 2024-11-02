@@ -5,14 +5,15 @@ import MarketIcon from '/icons/MarketIcon.svg';
 import { useLocation, useNavigate } from 'react-router-dom';
 import SearchBar from './SearchBar';
 
+const CATEGORIES = [
+  { path: '/category/politics', label: '정치' },
+  { path: '/category/economy', label: '경제' },
+  { path: '/category/society', label: '사회' },
+];
+
 const Header = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const CATEGORIES = [
-    { path: '/category/politics', label: '정치' },
-    { path: '/category/economy', label: '경제' },
-    { path: '/category/society', label: '사회' },
-  ];
 
   return (
     <S.Head>
