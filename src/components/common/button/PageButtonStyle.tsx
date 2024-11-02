@@ -3,14 +3,14 @@ import styled from 'styled-components';
 export const PageButton = styled.button<{ $type: 'left' | 'right' }>`
   width: 100%;
   max-width: 12.5rem;
-  height: 3rem;
-  padding: 0.75rem;
+  height: 2.5rem;
+  padding: 0.5rem 0.75rem;
   display: flex;
   background-color: var(--grayscale-5);
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   border: none;
   color: var(--grayscale-70);
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 150%;
 

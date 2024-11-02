@@ -12,10 +12,10 @@ interface QuizAnswerProps {
 const QuizAnswer = ({ color, answer, comment }: QuizAnswerProps) => {
   return (
     <S.QuizAnswer $color={color}>
-      <S.AnswerContainer>
+      <S.Container>
         <Chip>정답</Chip>
         {answer ? <OIcon /> : <XIcon />}
-      </S.AnswerContainer>
+      </S.Container>
       <S.Container>
         <Chip>해설</Chip>
         <S.Text>{comment}</S.Text>
