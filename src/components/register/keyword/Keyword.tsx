@@ -11,11 +11,13 @@ const Keyword = ({ children }: KeywordProps) => {
   const isActive = isActives.includes(children);
 
   const handleClick = () => {
-    setIsActives((prevIsActives) =>
-      prevIsActives.includes(children)
+    setIsActives((prevIsActives) => {
+      const newIsActives = prevIsActives.includes(children)
         ? prevIsActives.filter((keyword) => keyword !== children)
-        : [...prevIsActives, children],
-    );
+        : [...prevIsActives, children];
+
+      return newIsActives;
+    });
   };
 
   return (
