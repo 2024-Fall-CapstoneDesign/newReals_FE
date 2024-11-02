@@ -6,7 +6,7 @@ import Market from './pages/market/Market';
 import NewsDetail from './pages/newsDetail/NewsDetail';
 import Profile from './pages/profile/Profile';
 import Header from './components/common/header/Header';
-import Register from './pages/Register';
+import Register from './pages/register/Register';
 
 const AppRouter = () => {
   return (
