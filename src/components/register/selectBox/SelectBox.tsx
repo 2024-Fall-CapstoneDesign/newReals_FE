@@ -41,7 +41,7 @@ const SelectBox = () => {
             {isActives.map((keyword) => (
               <S.Keyword key={keyword}>
                 {keyword}
-                <img
+                <S.Icon
                   src="/icons/XIcon.svg"
                   alt="deleteIcon"
                   onClick={() => handleRemoveKeyword(keyword)}
