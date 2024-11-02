@@ -1,20 +1,9 @@
 import { useKeywordContext } from '../context/KeywordContext';
 import ErrorMessage from '../errorMessage/ErrorMessage';
+import SelectItem from '../selectItem/SelectItem';
 import * as S from './SelectBoxStyle';
 import RightIcon from '/public/icons/RightArrowIcon.svg?react';
 import { useEffect, useState } from 'react';
-
-const KeywordItem = ({ keyword, onRemove }: { keyword: string; onRemove: () => void }) => (
-  <S.Keyword>
-    {keyword}
-    <S.Icon
-      src="/icons/XIcon.svg"
-      alt="deleteIcon"
-      onClick={onRemove}
-      style={{ cursor: 'pointer' }}
-    />
-  </S.Keyword>
-);
 
 const SelectBox = () => {
   const [isError, setIsError] = useState(false);
@@ -48,7 +37,7 @@ const SelectBox = () => {
         {count > 0 ? (
           <S.KeywordContainer>
             {isActives.map((keyword) => (
-              <KeywordItem
+              <SelectItem
                 key={keyword}
                 keyword={keyword}
                 onRemove={() => handleRemoveKeyword(keyword)}
