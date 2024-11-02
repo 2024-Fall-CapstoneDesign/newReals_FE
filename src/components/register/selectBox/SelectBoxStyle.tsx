@@ -13,7 +13,7 @@ export const SelectBox = styled.div`
 
 export const Message = styled.div`
   display: flex;
-  gap: 1.25rem;
+  gap: 0.75rem;
 `;
 
 export const Title = styled.span`
@@ -25,13 +25,6 @@ export const Title = styled.span`
 
 export const Count = styled.span`
   color: var(--main-50);
-`;
-
-export const ErrorMessage = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  color: var(--red);
 `;
 
 export const KeywordBox = styled.div`

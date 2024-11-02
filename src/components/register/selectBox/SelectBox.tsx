@@ -1,8 +1,20 @@
 import { useKeywordContext } from '../context/KeywordContext';
+import ErrorMessage from '../errorMessage/ErrorMessage';
 import * as S from './SelectBoxStyle';
 import RightIcon from '/public/icons/RightArrowIcon.svg?react';
-import InfoIcon from '/public/icons/InfoIcon.svg?react';
 import { useEffect, useState } from 'react';
+
+const KeywordItem = ({ keyword, onRemove }: { keyword: string; onRemove: () => void }) => (
+  <S.Keyword>
+    {keyword}
+    <S.Icon
+      src="/icons/XIcon.svg"
+      alt="deleteIcon"
+      onClick={onRemove}
+      style={{ cursor: 'pointer' }}
+    />
+  </S.Keyword>
+);
 
 const SelectBox = () => {
   const [isError, setIsError] = useState(false);
@@ -23,13 +35,10 @@ const SelectBox = () => {
       <S.Title>
         {count > 0 ? (
           <S.Message>
-            <S.Count>{count}개</S.Count>의 키워드를 선택했어요!
-            {isError && (
-              <S.ErrorMessage>
-                <InfoIcon />
-                <S.Text $isError={isError}>키워드는 최대 5개까지만 선택할 수 있어요.</S.Text>
-              </S.ErrorMessage>
-            )}
+            <span>
+              <S.Count>{count}개</S.Count>의 키워드를 선택했어요!
+            </span>
+            {isError && <ErrorMessage message="키워드는 최대 5개까지만 선택할 수 있어요." />}
           </S.Message>
         ) : (
           '키워드를 선택해주세요'
@@ -39,24 +48,15 @@ const SelectBox = () => {
         {count > 0 ? (
           <S.KeywordContainer>
             {isActives.map((keyword) => (
-              <S.Keyword key={keyword}>
-                {keyword}
-                <S.Icon
-                  src="/icons/XIcon.svg"
-                  alt="deleteIcon"
-                  onClick={() => handleRemoveKeyword(keyword)}
-                  style={{ cursor: 'pointer' }}
-                />
-              </S.Keyword>
+              <KeywordItem
+                key={keyword}
+                keyword={keyword}
+                onRemove={() => handleRemoveKeyword(keyword)}
+              />
             ))}
           </S.KeywordContainer>
         ) : isError ? (
-          <S.ErrorMessage>
-            <InfoIcon />
-            <S.Text $isError={isError}>
-              관심 있는 키워드를 한 개 이상 골라야 맞춤 기사를 추천받을 수 있어요!
-            </S.Text>
-          </S.ErrorMessage>
+          <ErrorMessage message="관심 있는 키워드를 한 개 이상 골라야 맞춤 기사를 추천받을 수 있어요!" />
         ) : (
           <S.Text $isError={false}>원하는 키워드를 한 개 이상 골라주세요!</S.Text>
         )}
