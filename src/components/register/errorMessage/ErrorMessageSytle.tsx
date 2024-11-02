@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ErrorMessage = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: 0.375rem;
   align-items: center;
   color: var(--red);
 `;
@@ -14,7 +14,7 @@ export const Icon = styled.img`
 
 export const Text = styled.p<{ $isError: boolean }>`
   color: ${({ $isError }) => ($isError ? 'var(--red)' : 'var(--grayscale-50)')};
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 150%;
 `;

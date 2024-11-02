@@ -19,7 +19,7 @@ const Header = () => {
     <S.Head>
       <S.ServiceImg
         onClick={() =>
-          pathname === '/' || pathname === '/interest' ? navigate('/') : navigate('/home')
+          pathname === '/' || pathname === '/register' ? navigate('/') : navigate('/home')
         }
         src={Logo}
         alt="Logo"
@@ -29,7 +29,7 @@ const Header = () => {
           <S.LoginImg src={PeopleIcon} alt="LoginIcon" />
           <S.Login>로그인 / 회원가입</S.Login>
         </S.LoginPart>
-      ) : pathname === '/interest' ? null : (
+      ) : pathname === '/register' ? null : (
         <>
           <S.Category>
             {CATEGORIES.map((category) => (

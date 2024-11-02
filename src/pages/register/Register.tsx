@@ -16,19 +16,17 @@ const Register = () => {
 
   return (
     <KeywordProvider>
-      <S.Cotnainer>
-        <S.Content>
-          <Text nickname="이서" /> {/* 닉네임 받아오는 것으로 바꿔야함 */}
-          <TabBar type="CATEGORY" selectedItem={category} onClick={handleCategory} />
-          <S.Categories>
-            {CATEGORIES[category] &&
-              Object.entries(CATEGORIES[category]).map(([subcategory, keywords]) => (
-                <Subcategory key={subcategory} data={{ [subcategory]: keywords }} />
-              ))}
-          </S.Categories>
-        </S.Content>
+      <S.Content>
+        <Text nickname="이서" /> {/* 닉네임 받아오는 것으로 바꿔야함 */}
+        <TabBar type="CATEGORY" selectedItem={category} onClick={handleCategory} />
+        <S.Categories>
+          {CATEGORIES[category] &&
+            Object.entries(CATEGORIES[category]).map(([subcategory, keywords]) => (
+              <Subcategory key={subcategory} data={{ [subcategory]: keywords }} />
+            ))}
+        </S.Categories>
         <SelectBox />
-      </S.Cotnainer>
+      </S.Content>
     </KeywordProvider>
   );
 };

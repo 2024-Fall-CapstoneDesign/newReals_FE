@@ -4,7 +4,7 @@ export const Keyword = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 9rem;
+  width: 7.125rem;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   background-color: var(--grayscale-5);
