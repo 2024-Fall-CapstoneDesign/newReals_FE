@@ -16,7 +16,7 @@ const Subcategory = ({ data }: SubcategoryProps) => {
     const allSelected = keyList.every((keyword) => isActives.includes(keyword));
     const newActives = allSelected
       ? isActives.filter((keyword) => !keyList.includes(keyword))
-      : [...isActives, ...keyList];
+      : Array.from(new Set([...isActives, ...keyList]));
     setIsActives(newActives);
   };
 

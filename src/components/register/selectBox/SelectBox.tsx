@@ -14,18 +14,8 @@ const SelectBox = () => {
     setIsActives(isActives.filter((item) => item !== keyword));
   };
 
-  const handleError = () => {
-    if (count > 5 || count == 0) {
-      setIsError(true);
-    } else {
-      setIsError(false);
-    }
-  };
-
   useEffect(() => {
-    if (count > 5) {
-      setIsError(true);
-    }
+    setIsError(count > 5 || count === 0);
   }, [count]);
 
   return (
@@ -63,14 +53,20 @@ const SelectBox = () => {
         ) : isError ? (
           <S.ErrorMessage>
             <InfoIcon />
-            <S.Text $isError={isError}>키워드는 최대 5개까지만 선택할 수 있어요.</S.Text>
+            <S.Text $isError={isError}>
+              관심 있는 키워드를 한 개 이상 골라야 맞춤 기사를 추천받을 수 있어요!
+            </S.Text>
           </S.ErrorMessage>
         ) : (
           <S.Text $isError={false}>원하는 키워드를 한 개 이상 골라주세요!</S.Text>
         )}
         <S.ButtonContainer>
           <S.Divider />
-          <S.Button onClick={handleError}>
+          <S.Button
+            onClick={() => {
+              console.log(isActives);
+            }}
+          >
             내 맞춤 기사 보러가기
             <RightIcon />
           </S.Button>
