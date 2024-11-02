@@ -6,11 +6,13 @@ import Interest from './pages/Interest';
 import Market from './pages/Market';
 import NewsDetail from './pages/NewsDetail';
 import Profile from './pages/Profile';
+import Header from './components/common/header/Header';
 import Register from './pages/Register';
 
 const AppRouter = () => {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Intro />} />
         <Route path="/home" element={<Home />} />

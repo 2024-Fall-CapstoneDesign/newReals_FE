@@ -8,6 +8,6 @@ export const Chip = styled.div`
   border-radius: 0.5rem;
   background-color: var(--main-10);
   color: var(--main-50);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 500;
 `;
