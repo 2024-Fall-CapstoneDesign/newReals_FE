@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Intro from './pages/Intro';
-import Home from './pages/Home';
-import Category from './pages/Category';
-import Interest from './pages/Interest';
-import Market from './pages/Market';
-import NewsDetail from './pages/NewsDetail';
-import Profile from './pages/Profile';
+import Intro from './pages/intro/Intro';
+import Home from './pages/home/Home';
+import Category from './pages/category/Category';
+import Market from './pages/market/Market';
+import NewsDetail from './pages/newsDetail/NewsDetail';
+import Profile from './pages/profile/Profile';
 import Header from './components/common/header/Header';
 
 const AppRouter = () => {
@@ -16,7 +15,6 @@ const AppRouter = () => {
         <Route path="/" element={<Intro />} />
         <Route path="/home" element={<Home />} />
         <Route path="/category/:id" element={<Category />} />
-        <Route path="/interest" element={<Interest />} />
         <Route path="/market" element={<Market />} />
         <Route path="/newDetail/:id" element={<NewsDetail />} />
         <Route path="/profile" element={<Profile />} />
