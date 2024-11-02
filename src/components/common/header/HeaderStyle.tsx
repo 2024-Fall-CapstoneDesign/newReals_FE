@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
 export const Head = styled.div`
-  padding: 1.25rem 8.5rem 1.25rem 8.5rem;
+  padding: 0.75rem 6.25rem 0.75rem 6.25rem;
   display: flex;
   align-items: center;
-  height: 5.625rem;
+  height: 4.625rem;
+  width: 100%;
   justify-content: space-between;
 `;
 
 export const ServiceImg = styled.img`
+  width: 7.8125rem;
+  height: 2rem;
   cursor: pointer;
 `;
 
@@ -21,7 +24,7 @@ export const Category = styled.div`
 
 export const CategoryItem = styled.div`
   color: var(--Grayscale-90);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
@@ -43,7 +46,7 @@ export const Login = styled.div`
   margin-left: 0.75rem;
   color: var(--grayscale-90);
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
@@ -64,7 +67,7 @@ export const Etc = styled.div`
 
 export const Info = styled.div`
   color: var(--grayscale-90);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;

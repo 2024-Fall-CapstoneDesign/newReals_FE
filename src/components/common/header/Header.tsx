@@ -8,6 +8,11 @@ import SearchBar from './SearchBar';
 const Header = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const CATEGORIES = [
+    { path: '/category/politics', label: '정치' },
+    { path: '/category/economy', label: '경제' },
+    { path: '/category/society', label: '사회' },
+  ];
 
   return (
     <S.Head>
@@ -26,27 +31,16 @@ const Header = () => {
       ) : pathname === '/interest' ? null : (
         <>
           <S.Category>
-            <S.CategoryItem
-              onClick={() => {
-                navigate('/category/:politics');
-              }}
-            >
-              정치
-            </S.CategoryItem>
-            <S.CategoryItem
-              onClick={() => {
-                navigate('/category/:economy');
-              }}
-            >
-              경제
-            </S.CategoryItem>
-            <S.CategoryItem
-              onClick={() => {
-                navigate('/category/:society');
-              }}
-            >
-              사회
-            </S.CategoryItem>
+            {CATEGORIES.map((category) => (
+              <S.CategoryItem
+                key={category.path}
+                onClick={() => {
+                  navigate(category.path);
+                }}
+              >
+                {category.label}
+              </S.CategoryItem>
+            ))}
           </S.Category>
           <S.SidePart>
             {pathname !== '/market' && pathname !== '/profile' && <SearchBar />}
