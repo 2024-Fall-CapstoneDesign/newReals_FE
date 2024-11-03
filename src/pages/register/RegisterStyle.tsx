@@ -4,7 +4,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 6.25rem 5rem;
+  padding: 2rem 6.25rem 6.25rem;
 `;
 
 export const Categories = styled.div`
