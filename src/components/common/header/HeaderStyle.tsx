@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-export const Head = styled.div`
+export const Head = styled.header`
   padding: 0.75rem 6.25rem 0.75rem 6.25rem;
   display: flex;
   align-items: center;
   height: 4.625rem;
   width: 100%;
   justify-content: space-between;
+  border-bottom: 1px solid var(--grayscale-10);
 `;
 
 export const ServiceImg = styled.img`
@@ -53,7 +54,7 @@ export const Login = styled.div`
 export const SidePart = styled.div`
   display: flex;
   gap: 3rem;
-  align-item: center;
+  align-items: center;
   justify-content: center;
 `;
 
