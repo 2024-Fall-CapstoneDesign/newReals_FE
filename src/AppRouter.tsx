@@ -6,6 +6,7 @@ import Market from './pages/market/Market';
 import NewsDetail from './pages/newsDetail/NewsDetail';
 import Profile from './pages/profile/Profile';
 import Header from './components/common/header/Header';
+import Register from './pages/register/Register';
 
 const AppRouter = () => {
   return (
@@ -18,6 +19,7 @@ const AppRouter = () => {
         <Route path="/market" element={<Market />} />
         <Route path="/newDetail/:id" element={<NewsDetail />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );
