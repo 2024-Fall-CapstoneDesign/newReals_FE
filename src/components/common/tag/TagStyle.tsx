@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Tag = styled.div<{ $color: 'gray' | 'purple'; $size: 'small' | 'large' }>`
+  display: flex;
+  align-items: center;
   width: fit-content;
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
