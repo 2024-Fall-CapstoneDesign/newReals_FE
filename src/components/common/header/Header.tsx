@@ -1,7 +1,7 @@
 import * as S from './HeaderStyle';
-import Logo from '/images/Logo.svg';
-import PeopleIcon from '/icons/PeopleIcon.svg';
-import MarketIcon from '/icons/MarketIcon.svg';
+import Logo from '../../../assets/images/Logo.svg';
+import PeopleIcon from '../../../assets/icons/PeopleIcon.svg';
+import MarketIcon from '../../../assets/icons/MarketIcon.svg';
 import { useLocation, useNavigate } from 'react-router-dom';
 import SearchBar from './SearchBar';
 

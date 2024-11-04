@@ -1,4 +1,5 @@
 import * as S from './EmojiCountStyle';
+import EmojiesIcon from '../../../assets/icons/EmojiesIcon.svg';
 
 interface EmojiCountProps {
   count: number;
@@ -7,7 +8,7 @@ interface EmojiCountProps {
 const EmojiCount = ({ count, isActive }: EmojiCountProps) => {
   return (
     <S.Container $isActive={isActive}>
-      <img src="/icons/EmojiesIcon.svg" alt="이모지들" />
+      <img src={EmojiesIcon} alt="이모지들" />
       {count}
     </S.Container>
   );

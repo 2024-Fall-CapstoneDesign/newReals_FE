@@ -1,9 +1,12 @@
 import * as S from './FooterStyle';
+import NotionIcon from '../../../assets/icons/NotionIcon.svg';
+import InstagramIcon from '../../../assets/icons/InstagramIcon.svg';
+import MailIcon from '../../../assets/icons/MailIcon.svg';
 
 const ICON_ITEM = [
-  { name: 'notion', icon: '/icons/NotionIcon.svg', url: 'https://www.naver.com' },
-  { name: 'instagram', icon: '/icons/InstagramIcon.svg', url: 'https://www.naver.com' },
-  { name: 'mail', icon: '/icons/MailIcon.svg', url: 'https://www.naver.com' },
+  { name: 'notion', icon: NotionIcon, url: 'https://www.naver.com' },
+  { name: 'instagram', icon: InstagramIcon, url: 'https://www.naver.com' },
+  { name: 'mail', icon: MailIcon, url: 'https://www.naver.com' },
 ]; // 추후 링크들 수정 필요!
 
 const MEMBER_DATA = ['김진아', '나현진', '안연아', '윤예은', '이서현'];
