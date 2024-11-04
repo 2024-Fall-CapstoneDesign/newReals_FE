@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import XIcon from '../../../assets/icons/XIcon.svg?react';
 
 export const Keyword = styled.div`
   display: flex;
@@ -14,7 +15,8 @@ export const Keyword = styled.div`
   line-height: 150%;
 `;
 
-export const Icon = styled.img`
+export const Icon = styled(XIcon)`
   width: 1rem;
   height: 1rem;
+  cursor: pointer;
 `;

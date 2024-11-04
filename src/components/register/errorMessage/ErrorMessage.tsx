@@ -1,5 +1,5 @@
 import * as S from './ErrorMessageSytle';
-import InfoIcon from '/public/icons/InfoIcon.svg?react';
+import InfoIcon from '../../../assets/icons/InfoIcon.svg?react';
 
 const ErrorMessage = ({ message }: { message: string }) => {
   return (

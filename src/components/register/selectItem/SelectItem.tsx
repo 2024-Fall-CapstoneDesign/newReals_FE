@@ -9,12 +9,7 @@ const SelectItem = ({ keyword, onRemove }: SelectItemProps) => {
   return (
     <S.Keyword>
       {keyword}
-      <S.Icon
-        src="/icons/XIcon.svg"
-        alt="deleteIcon"
-        onClick={onRemove}
-        style={{ cursor: 'pointer' }}
-      />
+      <S.Icon onClick={onRemove} />
     </S.Keyword>
   );
 };

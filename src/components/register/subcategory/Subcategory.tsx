@@ -1,5 +1,7 @@
 import KeywordList from '../keywordList/KeywordList';
 import * as S from './SubCategoryStyle';
+import CheckActiveIcon from '../../../assets/icons/CheckActiveIcon.svg';
+import CheckIcon from '../../../assets/icons/CheckIcon.svg';
 
 interface SubcategoryProps {
   data: Record<string, string[]>;
@@ -34,9 +36,7 @@ const Subcategory = ({ data, isActives, onToggleKeyword }: SubcategoryProps) => 
         <S.Total onClick={handleClick}>
           <S.Icon
             src={
-              keyList.every((keyword) => isActives.includes(keyword))
-                ? '/icons/CheckActiveIcon.svg'
-                : '/icons/CheckIcon.svg'
+              keyList.every((keyword) => isActives.includes(keyword)) ? CheckActiveIcon : CheckIcon
             }
             alt="checkIcon"
           />

@@ -1,7 +1,7 @@
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import SelectItem from '../selectItem/SelectItem';
 import * as S from './SelectBoxStyle';
-import RightIcon from '/public/icons/RightArrowIcon.svg?react';
+import RightIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 import { useEffect, useState } from 'react';
 
 // 이 페이지 API 연동하면서 더 최적화 할 수 있는 방안 찾기
