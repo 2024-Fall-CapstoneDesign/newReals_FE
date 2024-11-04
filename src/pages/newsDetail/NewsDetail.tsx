@@ -1,11 +1,5 @@
-import AISummary from '../../components/newsDetail/aiSummary/AISummary';
-
 const NewsDetail = () => {
-  return (
-    <div>
-      <AISummary />
-    </div>
-  );
+  return <div>뉴스 디테일입니다.</div>;
 };
 
 export default NewsDetail;
