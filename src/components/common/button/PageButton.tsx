@@ -1,6 +1,6 @@
 import * as S from './PageButtonStyle';
-import LeftArrowIcon from '/public/icons/LeftArrowIcon.svg?react';
-import RightArrowIcon from '/public/icons/RightArrowIcon.svg?react';
+import LeftArrowIcon from '../../../assets/icons/LeftArrowIcon.svg?react';
+import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 
 interface PageButtonProps {
   children: React.ReactNode;
