@@ -1,8 +1,8 @@
 import Button from '../../common/button/Button';
 import QuizAnswer from '../../common/quizAnswer/QuizAnswer';
 import * as S from './QuizStyle';
-import OIcon from '/public/icons/OIcon.svg?react';
-import XIcon from '/public/icons/XIcon.svg?react';
+import OIcon from '../../../assets/icons/OIcon.svg?react';
+import XIcon from '../../../assets/icons/XIcon.svg?react';
 
 interface Quiz {
   quiz: string;

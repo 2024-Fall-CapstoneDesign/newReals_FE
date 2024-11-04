@@ -1,7 +1,7 @@
 import Chip from './chip/Chip';
 import * as S from './QuizAnswerStyle';
-import OIcon from '/public/icons/OIcon.svg?react';
-import XIcon from '/public/icons/XIcon.svg?react';
+import OIcon from '../../../assets/icons/OIcon.svg?react';
+import XIcon from '../../../assets/icons/XIcon.svg?react';
 
 interface QuizAnswerProps {
   color: 'gray' | 'purple';

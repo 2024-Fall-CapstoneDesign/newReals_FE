@@ -1,5 +1,7 @@
 import { MouseEvent } from 'react';
 import * as S from './BookmarkStyle';
+import BookmarkIcon from '../../../assets/icons/BookmarkIcon.svg';
+import BookmarkActiveIcon from '../../../assets/icons/BookmarkActiveIcon.svg';
 
 interface BookmarkProps {
   isSelected: boolean;
@@ -10,9 +12,9 @@ const Bookmark = ({ isSelected, onClick }: BookmarkProps) => {
   return (
     <S.Bookmark onClick={onClick}>
       {isSelected ? (
-        <S.Icon src="/icons/BookmarkActiveIcon.svg" alt="bookmark-active" />
+        <S.Icon src={BookmarkActiveIcon} alt="bookmark-active" />
       ) : (
-        <S.Icon src="/icons/BookmarkIcon.svg" alt="bookmark-active" />
+        <S.Icon src={BookmarkIcon} alt="bookmark-active" />
       )}
     </S.Bookmark>
   );
