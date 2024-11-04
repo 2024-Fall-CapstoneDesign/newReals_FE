@@ -1,4 +1,3 @@
-import { useKeywordContext } from '../context/KeywordContext';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import SelectItem from '../selectItem/SelectItem';
 import * as S from './SelectBoxStyle';
@@ -7,11 +6,15 @@ import { useEffect, useState } from 'react';
 
 // 이 페이지 API 연동하면서 더 최적화 할 수 있는 방안 찾기
 
-const SelectBox = () => {
-  const [isError, setIsError] = useState(false);
-  const { isActives, setIsActives, getAllSelectedKeywords } = useKeywordContext();
+interface SelectBoxProps {
+  isActives: string[];
+  setIsActives: React.Dispatch<React.SetStateAction<string[]>>;
+}
 
-  const count = getAllSelectedKeywords().length;
+const SelectBox = ({ isActives, setIsActives }: SelectBoxProps) => {
+  const [isError, setIsError] = useState(false);
+
+  const count = isActives.length;
 
   const handleRemoveKeyword = (keyword: string) => {
     setIsActives(isActives.filter((item) => item !== keyword));

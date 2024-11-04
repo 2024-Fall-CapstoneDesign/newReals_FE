@@ -1,23 +1,14 @@
 import * as S from './KeywordStyle';
-import { useKeywordContext } from '../context/KeywordContext';
 
 interface KeywordProps {
   children: string;
+  isActive: boolean;
+  onToggle: (keyword: string) => void;
 }
 
-const Keyword = ({ children }: KeywordProps) => {
-  const { isActives, setIsActives } = useKeywordContext();
-
-  const isActive = isActives.includes(children);
-
+const Keyword = ({ children, isActive, onToggle }: KeywordProps) => {
   const handleClick = () => {
-    setIsActives((prevIsActives) => {
-      const newIsActives = prevIsActives.includes(children)
-        ? prevIsActives.filter((keyword) => keyword !== children)
-        : [...prevIsActives, children];
-
-      return newIsActives;
-    });
+    onToggle(children);
   };
 
   return (

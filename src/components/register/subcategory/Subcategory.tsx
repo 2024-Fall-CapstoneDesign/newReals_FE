@@ -1,23 +1,30 @@
 import KeywordList from '../keywordList/KeywordList';
 import * as S from './SubCategoryStyle';
-import { useKeywordContext } from '../context/KeywordContext';
 
 interface SubcategoryProps {
   data: Record<string, string[]>;
+  isActives: string[];
+  onToggleKeyword: (keyword: string) => void;
 }
 
-const Subcategory = ({ data }: SubcategoryProps) => {
-  const { isActives, setIsActives } = useKeywordContext();
-
+const Subcategory = ({ data, isActives, onToggleKeyword }: SubcategoryProps) => {
   const key = Object.keys(data)[0];
   const keyList = data[key];
 
   const handleClick = () => {
     const allSelected = keyList.every((keyword) => isActives.includes(keyword));
-    const newActives = allSelected
-      ? isActives.filter((keyword) => !keyList.includes(keyword))
-      : Array.from(new Set([...isActives, ...keyList]));
-    setIsActives(newActives);
+
+    keyList.forEach((keyword) => {
+      if (allSelected) {
+        if (isActives.includes(keyword)) {
+          onToggleKeyword(keyword);
+        }
+      } else {
+        if (!isActives.includes(keyword)) {
+          onToggleKeyword(keyword);
+        }
+      }
+    });
   };
 
   return (
@@ -36,7 +43,7 @@ const Subcategory = ({ data }: SubcategoryProps) => {
           전체선택
         </S.Total>
       </S.SubCategory>
-      <KeywordList list={keyList} />
+      <KeywordList list={keyList} isActives={isActives} onToggleKeyword={onToggleKeyword} />
     </S.Container>
   );
 };
