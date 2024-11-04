@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const SelectBox = styled.div`
-  position: fixed;
+  position: sticky;
   bottom: 1.875rem;
-  left: 6.25rem;
+  left: 0;
   display: flex;
   flex-direction: column;
-  width: calc(100% - 12.5rem);
+  width: 100%;
   padding: 1.25rem;
   gap: 1.25rem;
   border-radius: 1rem;
