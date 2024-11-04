@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import LeftArrowIcon from '../../../assets/icons/LeftArrowIcon.svg?react';
 import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 import PauseIcon from '../../../assets/icons/PauseIcon.svg';
-import InfoIcon from '../../../assets/icons/InfoIcon.svg'; // 바꿔야함!
+import PlayIcon from '../../../assets/icons/PlayIcon.svg';
 
 interface HeadNewsProps {
   id: number;
@@ -68,7 +68,7 @@ const HeadNews = ({
       <S.Navigation>
         <LeftArrowIcon onClick={onPrevious} />
         {index + 1} / 5
-        <img src={isPaused ? InfoIcon : PauseIcon} alt="멈춤" onClick={onPaused} />
+        <img src={isPaused ? PlayIcon : PauseIcon} alt="멈춤" onClick={onPaused} />
         <RightArrowIcon onClick={onNext} />
       </S.Navigation>
     </S.HeadNews>
