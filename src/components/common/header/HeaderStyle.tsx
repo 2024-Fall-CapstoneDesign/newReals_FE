@@ -23,8 +23,8 @@ export const Category = styled.div`
   flex: 1;
 `;
 
-export const CategoryItem = styled.div`
-  color: var(--grayscale-90);
+export const CategoryItem = styled.div<{ $currentPage: boolean }>`
+  color: ${({ $currentPage }) => ($currentPage ? 'var(--main-60)' : 'var(--grayscale-90)')};
   font-size: 1rem;
   font-weight: 600;
   line-height: 150%;

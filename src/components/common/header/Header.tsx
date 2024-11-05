@@ -35,6 +35,7 @@ const Header = () => {
             {CATEGORIES.map((category) => (
               <S.CategoryItem
                 key={category.path}
+                $currentPage={pathname === category.path}
                 onClick={() => {
                   navigate(category.path);
                 }}
