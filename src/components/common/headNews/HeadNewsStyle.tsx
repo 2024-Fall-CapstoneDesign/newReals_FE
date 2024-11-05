@@ -2,15 +2,15 @@ import styled from 'styled-components';
 
 export const HeadNews = styled.div<{ $imageUrl: string }>`
   width: 100%;
-  height: 32.5rem;
+  height: 26.25rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) -8.68%, rgba(0, 0, 0, 0.8) 91.11%),
     ${(props) => `url(${props.$imageUrl})`};
   background-size: cover;
   background-position: center;
-  padding: 12.25rem 8.5rem 6.25rem;
+  padding: 9.125rem 8.5rem 3.125rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   color: var(--main-0);
   font-size: 1.25rem;
   font-weight: 700;
