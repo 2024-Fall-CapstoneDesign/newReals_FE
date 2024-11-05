@@ -14,11 +14,11 @@ interface HeadNewsProps {
   keyword: string;
   title: string;
   quiz: string;
-  index: number;
-  onPrevious: () => void;
-  onNext: () => void;
-  onPaused: () => void;
-  isPaused: boolean;
+  index?: number;
+  onPrevious?: () => void;
+  onNext?: () => void;
+  onPaused?: () => void;
+  isPaused?: boolean;
 }
 
 const HeadNews = ({
@@ -65,12 +65,14 @@ const HeadNews = ({
           Q. {quiz}
         </S.Quiz>
       </S.Container>
-      <S.Navigation>
-        <LeftArrowIcon onClick={onPrevious} />
-        {index + 1} / 5
-        <img src={isPaused ? PlayIcon : PauseIcon} alt="멈춤" onClick={onPaused} />
-        <RightArrowIcon onClick={onNext} />
-      </S.Navigation>
+      {index !== undefined && (
+        <S.Navigation>
+          <LeftArrowIcon onClick={onPrevious} />
+          {index + 1} / 5
+          <img src={isPaused ? PlayIcon : PauseIcon} alt="멈춤" onClick={onPaused} />
+          <RightArrowIcon onClick={onNext} />
+        </S.Navigation>
+      )}
     </S.HeadNews>
   );
 };
