@@ -24,9 +24,9 @@ interface HeadNewsProps {
 /**
  *
  * @param id - 뉴스 항목의 고유 ID
- * @param category - 뉴스의 주요 카테고리
- * @param subcategory - 뉴스의 세부 카테고리
- * @param keyword - 뉴스와 관련된 키워드
+ * @param category - 뉴스 카테고리
+ * @param subcategory - 뉴스 세부 카테고리
+ * @param keyword - 뉴스 키워드
  * @param title - 뉴스 제목
  * @param quiz - 퀴즈 내용
  * @param index - 뉴스 항목의 인덱스

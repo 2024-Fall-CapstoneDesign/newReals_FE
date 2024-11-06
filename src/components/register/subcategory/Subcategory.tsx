@@ -10,11 +10,11 @@ interface SubcategoryProps {
 }
 
 /**
- * 
- @param data - 서브카테고리 이름을 키로 하고 키워드 배열을 값으로 가진 객체
+ *
+ * @param data - 서브카테고리 이름을 키로 하고 키워드 배열을 값으로 가진 객체
  * @param isActives - 선택된 키워드 배열
  * @param onToggleKeyword - 키워드 선택/해제 시 호출되는 함수
- * @returns 
+ * @returns
  */
 const Subcategory = ({ data, isActives, onToggleKeyword }: SubcategoryProps) => {
   const key = Object.keys(data)[0];
