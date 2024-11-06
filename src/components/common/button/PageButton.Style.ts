@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PageButton = styled.button<{ $type: 'left' | 'right' }>`
+export const PageButton = styled.button<{ $buttonStyle: 'left' | 'right' }>`
   width: 100%;
   max-width: 12.5rem;
   height: 2.5rem;
@@ -19,6 +19,7 @@ export const PageButton = styled.button<{ $type: 'left' | 'right' }>`
     background-color: var(--grayscale-20);
   }
 
-  justify-content: ${({ $type }) => ($type === 'right' ? 'space-between' : 'flex-start')};
-  gap: ${({ $type }) => ($type === 'left' ? '0.75rem' : '0')};
+  justify-content: ${({ $buttonStyle }) =>
+    $buttonStyle === 'right' ? 'space-between' : 'flex-start'};
+  gap: ${({ $buttonStyle }) => ($buttonStyle === 'left' ? '0.75rem' : '0')};
 `;

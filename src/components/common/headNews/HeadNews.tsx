@@ -1,4 +1,4 @@
-import * as S from './HeadNewsStyle';
+import * as S from './HeadNews.Style';
 import { getRandomImage } from './GetRandomImage';
 import Tag from '../tag/Tag';
 import { useNavigate } from 'react-router-dom';
@@ -21,6 +21,21 @@ interface HeadNewsProps {
   isPaused: boolean;
 }
 
+/**
+ *
+ * @param id - 뉴스 항목의 고유 ID
+ * @param category - 뉴스의 주요 카테고리
+ * @param subcategory - 뉴스의 세부 카테고리
+ * @param keyword - 뉴스와 관련된 키워드
+ * @param title - 뉴스 제목
+ * @param quiz - 퀴즈 내용
+ * @param index - 뉴스 항목의 인덱스
+ * @param onPrevious - 이전 뉴스로 이동하는 핸들러 함수
+ * @param onNext - 다음 뉴스로 이동하는 핸들러 함수
+ * @param onPaused - 뉴스 재생을 일시 정지하는 핸들러 함수
+ * @param isPaused - 뉴스가 일시 정지 상태인지 여부를 나타내는 플래그
+ * @returns
+ */
 const HeadNews = ({
   id,
   category,
