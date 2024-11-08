@@ -1,4 +1,4 @@
-import * as S from './AISummaryStyle';
+import * as S from './AISummary.Style';
 import DownArrowIcon from '../../../assets/icons/DownArrowIcon.svg';
 import UpArrowIcon from '../../../assets/icons/UpArrowIcon.svg';
 import { useState } from 'react';
@@ -7,6 +7,11 @@ interface AISummary {
   text: string;
 }
 
+/**
+ *
+ * @param title - AI 요약 안의 글씨
+ * @returns
+ */
 const AISummary = ({ text }: AISummary) => {
   const [isOpen, setIsOpen] = useState(false);
 

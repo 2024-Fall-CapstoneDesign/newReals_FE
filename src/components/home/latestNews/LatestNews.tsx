@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Chip from '../../common/chip/Chip';
-import * as S from './LatestNewsStyle';
+import * as S from './LatestNews.Style';
 import Card from '../../common/card/Card';
 import PageNation from '../../common/pageNation/PageNation';
 

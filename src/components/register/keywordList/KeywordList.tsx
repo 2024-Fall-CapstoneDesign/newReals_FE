@@ -1,4 +1,4 @@
-import * as S from './KeywordListStyle';
+import * as S from './KeywordList.Style';
 import Keyword from '../keyword/Keyword';
 
 interface KeywordListProps {
@@ -7,6 +7,13 @@ interface KeywordListProps {
   onToggleKeyword: (keyword: string) => void;
 }
 
+/**
+ *
+ * @param list - 키워드의 list
+ * @param isActives - 선택된 키워드 배열
+ * @onTogglekeyword - 키워드 클릭 시 수행할 함수
+ * @returns
+ */
 const KeywordList = ({ list, isActives, onToggleKeyword }: KeywordListProps) => {
   return (
     <S.KeywordList>

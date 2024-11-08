@@ -1,9 +1,14 @@
-import * as S from './CartoonStyle';
+import * as S from './Cartoon.Style';
 
 interface CartoonProps {
   imageUrl: string[];
 }
 
+/**
+ *
+ * @param imageUrl - 만화 네컷이 담긴 이미지 배열
+ * @returns
+ */
 const Cartoon = ({ imageUrl }: CartoonProps) => {
   return (
     <S.Cartoon>

@@ -1,6 +1,6 @@
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import SelectItem from '../selectItem/SelectItem';
-import * as S from './SelectBoxStyle';
+import * as S from './SelectBox.Style';
 import RightIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 import { useEffect, useState } from 'react';
 
@@ -11,6 +11,12 @@ interface SelectBoxProps {
   setIsActives: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
+/**
+ *
+ * @param isActive - 선택된 키워드 배열
+ * @param setIsActive - 선택된 키워드 배열을 업데이트하는 함수
+ * @returns
+ */
 const SelectBox = ({ isActives, setIsActives }: SelectBoxProps) => {
   const [isError, setIsError] = useState(false);
 

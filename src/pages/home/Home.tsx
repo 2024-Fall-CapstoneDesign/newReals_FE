@@ -1,4 +1,4 @@
-import * as S from './HomStyle';
+import * as S from './Home.Style';
 import Cartoon from '../../components/home/cartoon/Cartoon';
 import HeadNews from '../../components/common/headNews/HeadNews';
 import { useEffect, useState } from 'react';
