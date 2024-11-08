@@ -1,11 +1,10 @@
-import React, { ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 
 interface ModalPortalProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
-export const ModalPortal: React.FC<ModalPortalProps> = ({ children }) => {
+export const ModalPortal = ({ children }: ModalPortalProps) => {
   const el = document.getElementById('modal');
 
   if (!el) {
