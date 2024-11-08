@@ -1,5 +1,17 @@
+import { useState } from 'react';
+import AnswerModal from '../../components/newsDetail/quiz/AnswerModal';
+
 const NewsDetail = () => {
-  return <div>뉴스 디테일입니다.</div>;
+  const [isOpen, setIsOpen] = useState(false);
+  const handleModal = () => {
+    setIsOpen((prev) => !prev);
+  };
+  return (
+    <div>
+      <button onClick={handleModal}>Show Answer Modal</button>
+      {isOpen && <AnswerModal isCorrect={true} onClose={handleModal} />}
+    </div>
+  );
 };
 
 export default NewsDetail;

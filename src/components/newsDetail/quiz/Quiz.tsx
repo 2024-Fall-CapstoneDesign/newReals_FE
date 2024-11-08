@@ -39,7 +39,7 @@ const Quiz = ({ quiz, isSolved, answer, comment }: Quiz) => {
       <S.Content>
         <S.Text>{quiz}</S.Text>
         {isSolved ? (
-          <QuizAnswer color="gray" answer={answer} comment={comment} />
+          <QuizAnswer color="purple" answer={answer} comment={comment} />
         ) : (
           <S.ButtonContainer>
             <Button onClick={handleClickO}>
