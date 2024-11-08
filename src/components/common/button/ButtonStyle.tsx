@@ -11,6 +11,7 @@ export const Button = styled.button<{ $type?: 'quiz' | 'modal' }>`
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 150%;
+  cursor: pointer;
 
   &:hover {
     background-color: ${(props) => (props.$type === 'quiz' ? 'var(--main-10)' : 'var(--main-50)')};
