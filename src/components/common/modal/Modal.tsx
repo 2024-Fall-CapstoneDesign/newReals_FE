@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import * as S from './ModalStyle';
+import * as S from './Modal.Style';
 import { ModalPortal } from './Portal';
 
 interface ModalProps {

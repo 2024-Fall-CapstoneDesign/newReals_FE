@@ -1,5 +1,5 @@
 import CoinIcon from '../../../assets/icons/CoinIcon.svg';
-import * as S from './PointAlertStyle';
+import * as S from './PointAlert.Style';
 
 const PointAlert = () => {
   return (

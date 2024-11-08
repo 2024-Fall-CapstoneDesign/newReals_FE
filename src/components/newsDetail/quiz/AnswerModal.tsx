@@ -1,4 +1,4 @@
-import * as S from './AnswerModalStyle';
+import * as S from './AnswerModal.Style';
 import SadEmoji from '../../../assets/icons/SadEmoji.svg';
 import CongratulationEmoji from '../../../assets/icons/CongratulationEmoji.svg';
 import XIcon from '../../../assets/icons/XIcon.svg';
@@ -42,7 +42,7 @@ const AnswerModal = ({ isCorrect, onClose }: ModalProps) => {
       <S.AnswerPart>
         <QuizAnswer color="gray" answer={true} comment="해설" />
         <Button
-          type="modal"
+          buttonStyle="modal"
           onClick={() => {
             navigate('/profile');
           }}

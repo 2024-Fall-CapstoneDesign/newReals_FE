@@ -1,9 +1,14 @@
-import * as S from './TextStyle';
+import * as S from './Text.Style';
 
 interface TextProps {
   nickname: string;
 }
 
+/**
+ *
+ * @param nickname - 유저 이름
+ * @returns
+ */
 const Text = ({ nickname }: TextProps) => {
   return (
     <S.Container>
