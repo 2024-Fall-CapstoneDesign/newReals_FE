@@ -1,12 +1,16 @@
 import { useState } from 'react';
-import * as S from './PageNationStyle';
+import * as S from './PageNation.Style';
 import LeftArrowIcon from '../../../assets/icons/LeftArrowIcon.svg';
 import RigthArrowIcon from '../../../assets/icons/RightArrowIcon.svg';
 
 interface PageNationProps {
   totalPages: number;
 }
-
+/**
+ *
+ * @param totalPages - 전체 페이지의 수
+ * @returns
+ */
 const PageNation = ({ totalPages }: PageNationProps) => {
   const [pageIndex, setPageIndex] = useState(1);
   const maxVisiblePages = 12;

@@ -1,4 +1,4 @@
-import * as S from './FooterStyle';
+import * as S from './Footer.Style';
 import NotionIcon from '../../../assets/icons/NotionIcon.svg';
 import InstagramIcon from '../../../assets/icons/InstagramIcon.svg';
 import MailIcon from '../../../assets/icons/MailIcon.svg';

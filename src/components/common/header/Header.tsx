@@ -1,4 +1,4 @@
-import * as S from './HeaderStyle';
+import * as S from './Header.Style';
 import Logo from '../../../assets/images/Logo.svg';
 import PeopleIcon from '../../../assets/icons/PeopleIcon.svg';
 import MarketIcon from '../../../assets/icons/MarketIcon.svg';

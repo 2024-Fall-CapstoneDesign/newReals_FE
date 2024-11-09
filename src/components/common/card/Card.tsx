@@ -1,7 +1,7 @@
 import { MouseEvent } from 'react';
 import Bookmark from '../bookmark/Bookmark';
 import Tag from '../tag/Tag';
-import * as S from './CardStyle';
+import * as S from './Card.Style';
 
 interface CardProps {
   isSelected: boolean;
@@ -15,6 +15,19 @@ interface CardProps {
   onClickCard: () => void;
 }
 
+/**
+ *
+ * @param isSelected - 북마크 유무를 알리는 state
+ * @param imageUrl - (optional) 이미지가 있는 경우에만 전달
+ * @param category - 뉴스 카테고리
+ * @param keyword - 뉴스 키워드
+ * @param title - 뉴스 제목
+ * @param description - 뉴스 본문
+ * @param date - 날짜
+ * @param onClickBookmark - 북마크 버튼에 수행할 함수
+ * @param onClickCard - 카드를 클릭하면 이동할 함수
+ * @returns
+ */
 const Card = ({
   isSelected,
   imageUrl,

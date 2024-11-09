@@ -1,4 +1,4 @@
-import * as S from './RegisterStyle';
+import * as S from './Register.Style';
 import Text from '../../components/register/text/Text';
 import TabBar from '../../components/common/tabBar/TabBar';
 import { useState } from 'react';
