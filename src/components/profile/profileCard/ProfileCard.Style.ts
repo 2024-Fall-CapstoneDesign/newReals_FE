@@ -21,12 +21,6 @@ export const Profile = styled.div`
   color: ${Colors.Grayscale90};
 `;
 
-export const Image = styled.img`
-  width: 5.25rem;
-  height: 5.25rem;
-  border-radius: 12.5rem;
-`;
-
 export const IconContainer = styled.div`
   position: absolute;
   top: 0;

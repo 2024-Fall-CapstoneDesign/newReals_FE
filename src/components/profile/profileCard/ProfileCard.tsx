@@ -4,6 +4,7 @@ import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 import CoinIcon from '../../../assets/icons/CoinIcon.svg';
 import InfoIcon from '../../../assets/icons/InfoIcon.svg';
 import Tag from '../../common/tag/Tag';
+import ProfileImage from '../profileImage/ProfileImage';
 
 interface ProfileCardProps {
   image: string;
@@ -23,7 +24,7 @@ const ProfileCard = ({
   return (
     <S.container>
       <S.Profile>
-        <S.Image src={image} alt="프로필 사진" />
+        <ProfileImage image={image} />
         <S.IconContainer>
           <S.Icon src={EditIcon} alt="프로필 편집" onClick={onClickEditProfile} />
         </S.IconContainer>
