@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Colors, FontStyles } from '../../styles';
 
 export const Container = styled.div`
   display: flex;
@@ -13,17 +14,14 @@ export const TextContainer = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 0.375rem;
-  line-height: 150%;
 `;
 
 export const Title = styled.span`
-  color: var(--grayscale-90);
-  font-size: 24px;
-  font-weight: 700;
+  color: ${Colors.Grayscale90};
+  ${FontStyles.XL_Bold};
 `;
 
 export const Description = styled.p`
-  color: var(--grayscale-50);
-  font-size: 16px;
-  font-weight: 500;
+  color: ${Colors.Grayscale50};
+  ${FontStyles.MD2_Medium};
 `;

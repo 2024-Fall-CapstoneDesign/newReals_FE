@@ -1,22 +1,20 @@
 import styled from 'styled-components';
+import { Colors, FontStyles } from '../../../styles';
 
 export const Footer = styled.footer`
+  ${FontStyles.SM_Medium}
   width: 100%;
   height: 16.4375rem;
   padding: 2.5rem 8.5rem;
-  background-color: var(--grayscale-5);
+  background-color: ${Colors.Grayscale5};
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  color: var(--grayscale-90);
-  font-size: 0.875rem;
-  font-weight: 500;
+  color: ${Colors.Grayscale90};
 `;
 
 export const Logo = styled.span`
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 150%;
+  ${FontStyles.LG_Bold}
 `;
 
 export const Content = styled.div`
@@ -26,9 +24,7 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.span`
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 150%;
+  ${FontStyles.MD2_Bold}
 `;
 
 export const About = styled.div`
@@ -62,9 +58,9 @@ export const NameContainer = styled.div`
 export const Divider = styled.div`
   width: 0.0625rem;
   height: 1rem;
-  background-color: #353743;
+  background-color: ${Colors.Grayscale90};
 `;
 
 export const Copyright = styled.p`
-  color: var(--grayscale-70);
+  color: ${Colors.Grayscale70};
 `;

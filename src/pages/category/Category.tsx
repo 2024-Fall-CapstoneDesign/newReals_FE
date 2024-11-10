@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import HeadNews from '../../components/common/headNews/HeadNews';
 import TabBar from '../../components/common/tabBar/TabBar';
-import * as S from './CategoryStyle';
 import { useLocation } from 'react-router-dom';
 import CardList from '../../components/common/cardList/CardList';
 import PageNation from '../../components/common/pageNation/PageNation';
+import * as S from './Category.Style';
 
 const MOCKDATA = [
   {

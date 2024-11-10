@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Colors } from '../../../styles';
 
 export const Bookmark = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ export const Bookmark = styled.div`
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 200px;
-  background-color: var(--grayscale-5);
+  background-color: ${Colors.Grayscale5};
   cursor: pointer;
 `;
 

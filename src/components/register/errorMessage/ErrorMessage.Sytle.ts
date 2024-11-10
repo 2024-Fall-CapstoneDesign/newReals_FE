@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { Colors, FontStyles } from '../../../styles';
 
 export const ErrorMessage = styled.div`
   display: flex;
   gap: 0.375rem;
   align-items: center;
-  color: var(--red);
+  color: ${Colors.Red};
 `;
 
 export const Icon = styled.img`
@@ -13,8 +14,6 @@ export const Icon = styled.img`
 `;
 
 export const Text = styled.p<{ $isError: boolean }>`
-  color: ${({ $isError }) => ($isError ? 'var(--red)' : 'var(--grayscale-50)')};
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 150%;
+  ${FontStyles.SM_Medium};
+  color: ${({ $isError }) => ($isError ? Colors.Red : Colors.Grayscale50)};
 `;
