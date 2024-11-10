@@ -3,7 +3,7 @@ import { Colors, FontStyles } from '../../../styles';
 
 export const ArticleHead = styled.div`
   display: flex;
-  width: 44.5625rem;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
 `;
@@ -26,12 +26,12 @@ export const TitlePart = styled.div`
   margin-bottom: 1.25rem;
 `;
 
-export const Title = styled.div`
+export const Title = styled.p`
   color: ${Colors.Grayscale90};
   ${FontStyles.XL_Bold};
 `;
 
-export const Date = styled.div`
+export const Date = styled.p`
   color: ${Colors.Black};
   ${FontStyles.SM_Medium};
 `;
