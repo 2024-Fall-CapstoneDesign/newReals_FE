@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Colors from '../../../styles/Colors';
-import FontStyles from '../../../styles/FontStyle';
+import FontStyles from '../../../styles/FontStyles';
 
 export const AddPoint = styled.div<{ $type?: 'header' | 'quiz' }>`
   ${({ $type }) => ($type === 'header' ? FontStyles.SM_Medium : FontStyles.XS_Medium)}

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FontStyles from '../../../styles/FontStyle';
+import FontStyles from '../../../styles/FontStyles';
 import Colors from '../../../styles/Colors';
 
 export const PageNation = styled.div`

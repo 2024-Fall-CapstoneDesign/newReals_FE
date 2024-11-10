@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Colors from '../../../styles/Colors';
-import FontStyles from '../../../styles/FontStyle';
+import FontStyles from '../../../styles/FontStyles';
 
 export const HeadNews = styled.div<{ $imageUrl: string }>`
   ${FontStyles.LG_Bold}

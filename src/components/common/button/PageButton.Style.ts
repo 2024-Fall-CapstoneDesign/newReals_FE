@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Colors from '../../../styles/Colors';
-import FontStyles from '../../../styles/FontStyle';
+import FontStyles from '../../../styles/FontStyles';
 
 export const PageButton = styled.button<{ $buttonStyle: 'left' | 'right' }>`
   ${FontStyles.SM_Medium}
