@@ -26,9 +26,9 @@ export const Category = styled.div`
   flex: 1;
 `;
 
-export const CategoryItem = styled.div`
-  ${FontStyles.MD2_SemiBold}
-  color: ${colors.Grayscale90};
+export const CategoryItem = styled.div<{ $currentPage: boolean }>`
+  ${FontStyles.MD2_SemiBold};
+  color: ${({ $currentPage }) => ($currentPage ? colors.Main50 : colors.Grayscale90)};
   cursor: pointer;
 `;
 
