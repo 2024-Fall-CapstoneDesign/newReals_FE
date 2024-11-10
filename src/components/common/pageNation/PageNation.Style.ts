@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import FontStyles from '../../../styles/FontStyles';
-import Colors from '../../../styles/Colors';
+import { Colors, FontStyles } from '../../../styles';
 
 export const PageNation = styled.div`
   ${FontStyles.SM_SemiBold}

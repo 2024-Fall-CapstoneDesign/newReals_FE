@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import MarketIcon from '../../../assets/icons/MarketIcon.svg?react';
-import Colors from '../../../styles/Colors';
-import FontStyles from '../../../styles/FontStyles';
+import { Colors, FontStyles } from '../../../styles';
 
 export const Head = styled.header`
   padding: 0.75rem 6.25rem 0.75rem 6.25rem;

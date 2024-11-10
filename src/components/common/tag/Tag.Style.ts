@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import FontStyles from '../../../styles/FontStyles';
-import Colors from '../../../styles/Colors';
+import { Colors, FontStyles } from '../../../styles';
 
 export const Tag = styled.div<{ $color: 'gray' | 'purple'; $size: 'small' | 'large' }>`
   display: flex;

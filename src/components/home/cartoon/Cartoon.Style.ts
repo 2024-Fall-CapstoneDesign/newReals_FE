@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
-import Colors from '../../../styles/Colors';
-import FontStyles from '../../../styles/FontStyles';
+import { Colors, FontStyles } from '../../../styles';
 
 export const Cartoon = styled.div`
   display: flex;
