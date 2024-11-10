@@ -19,11 +19,7 @@ interface BookmarkProps {
 const Bookmark = ({ type = 'else', isSelected, onClick }: BookmarkProps) => {
   return (
     <S.Bookmark $type={type} onClick={onClick}>
-      {isSelected ? (
-        <S.Icon $type={type} src={BookmarkActiveIcon} alt="bookmark-active" />
-      ) : (
-        <S.Icon $type={type} src={BookmarkIcon} alt="bookmark-active" />
-      )}
+      <S.Icon $type={type} src={isSelected ? BookmarkActiveIcon : BookmarkIcon} alt="bookmark" />
     </S.Bookmark>
   );
 };

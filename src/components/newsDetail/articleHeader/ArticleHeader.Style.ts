@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Colors, FontStyles } from '../../../styles';
 
 export const ArticleHead = styled.div`
   display: flex;
@@ -12,10 +13,8 @@ export const CategoryPart = styled.div`
   align-self: stretch;
   align-items: center;
   gap: 0.75rem;
-  color: var(--main-50);
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 150%;
+  color: ${Colors.Main50};
+  ${FontStyles.SM_SemiBold};
   margin-bottom: 0.75rem;
 `;
 
@@ -28,17 +27,13 @@ export const TitlePart = styled.div`
 `;
 
 export const Title = styled.div`
-  color: var(--grayscale-90);
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 150%;
+  color: ${Colors.Grayscale90};
+  ${FontStyles.XL_Bold};
 `;
 
 export const Date = styled.div`
-  color: var(--black);
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 150%;
+  color: ${Colors.Black};
+  ${FontStyles.SM_Medium};
 `;
 
 export const MyPart = styled.div`
