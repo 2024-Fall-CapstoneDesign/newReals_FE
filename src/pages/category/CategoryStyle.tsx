@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 3.75rem 6.25rem;
   gap: 2rem;
 `;
@@ -10,6 +11,7 @@ export const Container = styled.div`
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 0.375rem;
   line-height: 150%;
 `;
