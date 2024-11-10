@@ -52,6 +52,7 @@ const Header = () => {
             )}
             <S.Etc>
               <S.Info
+                $color={pathname === '/profile'}
                 onClick={() => {
                   navigate('/profile');
                 }}

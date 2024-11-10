@@ -62,9 +62,9 @@ export const Etc = styled.div`
   align-items: center;
 `;
 
-export const Info = styled.div`
+export const Info = styled.div<{ $color: boolean }>`
   ${FontStyles.MD2_SemiBold}
-  color: ${Colors.Grayscale90};
+  color: ${({ $color }) => ($color ? Colors.Main50 : Colors.Grayscale90)};
   cursor: pointer;
 `;
 
