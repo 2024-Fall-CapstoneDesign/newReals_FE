@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Colors } from '../../../styles';
 
 export const Bookmark = styled.div<{ $type: 'article' | 'else' }>`
   display: flex;
@@ -8,7 +9,7 @@ export const Bookmark = styled.div<{ $type: 'article' | 'else' }>`
   height: ${({ $type }) => ($type === 'article' ? 'none' : '1.75rem')};
   padding: 0.375rem;
   border-radius: 200px;
-  background-color: var(--grayscale-5);
+  background-color: ${Colors.Grayscale5};
   cursor: pointer;
 `;
 

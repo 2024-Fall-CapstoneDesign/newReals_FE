@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Colors, FontStyles } from '../../../styles';
 
 export const ModalPart = styled.div`
   display: flex;
@@ -6,7 +7,7 @@ export const ModalPart = styled.div`
   align-items: flex-start;
   width: 26.25rem;
   border-radius: 1rem;
-  background: var(--main-0);
+  background: ${Colors.Main0};
 `;
 
 export const ModalHead = styled.div`
@@ -24,15 +25,13 @@ export const Close = styled.img`
 `;
 
 export const EmojiPart = styled.div`
+  ${FontStyles.MD1_Bold}
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: stretch;
   gap: 0.5rem;
-  color: var(--main-50);
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 150%;
+  color: ${Colors.Main50};
   cursor: default;
 `;
 

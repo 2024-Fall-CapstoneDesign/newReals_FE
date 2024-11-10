@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
+import { Colors, FontStyles } from '../../../styles';
 
 export const Cartoon = styled.div`
   display: flex;
@@ -14,13 +15,11 @@ export const TextContainer = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 0.375rem;
-  line-height: 150%;
 `;
 
 export const Title = styled.span`
-  color: var(--grayscale-90);
-  font-size: 24px;
-  font-weight: 700;
+  color: ${Colors.Grayscale90};
+  ${FontStyles.XL_Bold}
 `;
 
 export const DescrtionContainer = styled.div`
@@ -29,9 +28,8 @@ export const DescrtionContainer = styled.div`
 `;
 
 export const Description = styled.p`
-  color: var(--grayscale-50);
-  font-size: 16px;
-  font-weight: 500;
+  ${FontStyles.MD2_Medium}
+  color: ${Colors.Grayscale50};
 `;
 
 export const GoNews = styled.div`
@@ -43,7 +41,7 @@ export const GoNews = styled.div`
 export const Icon = styled(RightArrowIcon)`
   width: 1.5rem;
   height: 1.5rem;
-  color: var(--grayscale-70);
+  color: ${Colors.Grayscale70};
 `;
 
 export const ImageContainer = styled.div`
