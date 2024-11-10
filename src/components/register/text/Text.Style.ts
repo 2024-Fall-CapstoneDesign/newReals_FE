@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import colors from '../../../styles/Colors';
+import FontStyles from '../../../styles/Fonts';
 
 export const Container = styled.div`
   display: flex;
@@ -7,25 +9,19 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.div`
+  ${FontStyles.XL_Bold}
   display: flex;
   gap: 1rem;
   align-items: center;
-  color: var(--grayscale-90);
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 150%;
+  color: ${colors.Grayscale90};
 `;
 
 export const HelperText = styled.p`
-  color: var(--main-50);
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 150%;
+  ${FontStyles.MD2_SemiBold};
+  color: ${colors.Main50};
 `;
 
 export const Description = styled.p`
-  color: var(--grayscale-50);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 150%;
+  ${FontStyles.MD2_Medium};
+  color: ${colors.Grayscale50};
 `;

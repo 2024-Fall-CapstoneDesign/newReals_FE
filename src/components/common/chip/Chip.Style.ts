@@ -1,13 +1,13 @@
 import styled from 'styled-components';
+import colors from '../../../styles/Colors';
+import FontStyles from '../../../styles/Fonts';
 
 export const Chip = styled.div<{ $isSelected: boolean }>`
+  ${FontStyles.SM_Regular}
   width: fit-content;
   padding: 0.5rem 1rem;
   border-radius: 25rem;
-  border: 1px solid ${({ $isSelected }) => ($isSelected ? 'var(--main-50)' : 'none')};
-  background-color: ${({ $isSelected }) => ($isSelected ? 'var(--main-5)' : 'var(--grayscale-5)')};
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 150%;
-  color: ${({ $isSelected }) => ($isSelected ? 'var(--main-50)' : 'var(--grayscale-50)')};
+  border: 1px solid ${({ $isSelected }) => ($isSelected ? colors.Main50 : 'none')};
+  background-color: ${({ $isSelected }) => ($isSelected ? colors.Main5 : colors.Grayscale5)};
+  color: ${({ $isSelected }) => ($isSelected ? colors.Main50 : colors.Grayscale50)};
 `;

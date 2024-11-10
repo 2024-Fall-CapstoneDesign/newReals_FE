@@ -1,17 +1,17 @@
 import styled from 'styled-components';
+import colors from '../../../styles/Colors';
+import FontStyles from '../../../styles/Fonts';
 
 export const AddPoint = styled.div<{ $type?: 'header' | 'quiz' }>`
+  ${({ $type }) => ($type === 'header' ? FontStyles.SM_Medium : FontStyles.XS_Medium)}
   display: inline-flex; //내부 글씨에 맞춤
   padding: 0.375rem 0.75rem;
   padding: ${({ $type }) => ($type === 'header' ? '.5rem 1rem' : '.375rem .75rem')};
   align-items: center;
   gap: 0.25rem;
   border-radius: 25rem;
-  background: var(--main-5);
-  color: var(--grayscale-90);
-  font-size: ${({ $type }) => ($type === 'header' ? '.875rem' : '.75rem')};
-  font-weight: 500;
-  line-height: 150%;
+  background-color: ${colors.Main5};
+  color: ${colors.Grayscale90};
 `;
 
 export const CoinImg = styled.img`
@@ -20,5 +20,5 @@ export const CoinImg = styled.img`
 `;
 
 export const Text = styled.p<{ $type?: 'header' | 'quiz' }>`
-  color: ${({ $type }) => ($type === 'header' ? 'var(--main-50)' : 'var(--grayscale-90)')};
+  color: ${({ $type }) => ($type === 'header' ? colors.Main50 : colors.Grayscale90)};
 `;

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import FontStyles from '../../../styles/Fonts';
+import colors from '../../../styles/Colors';
 
 export const TabBar = styled.div`
   display: flex;
@@ -6,18 +8,16 @@ export const TabBar = styled.div`
 `;
 
 export const TabItem = styled.div<{ $isSelected: boolean }>`
+  ${FontStyles.SM_SemiBold}
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.75rem auto;
   width: 100%;
   height: 2.8125rem;
-  border-right: 1px solid var(--grayscale-10);
-  background-color: ${({ $isSelected }) => ($isSelected ? 'var(--main-40)' : 'var(--grayscale-5)')};
-  color: ${({ $isSelected }) => ($isSelected ? 'var(--main-0)' : 'var(--grayscale-50)')};
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 150%;
+  border-right: 1px solid ${colors.Grayscale10};
+  background-color: ${({ $isSelected }) => ($isSelected ? colors.Main40 : colors.Grayscale5)};
+  color: ${({ $isSelected }) => ($isSelected ? colors.Main0 : colors.Grayscale50)};
   cursor: pointer;
 
   &:first-child {

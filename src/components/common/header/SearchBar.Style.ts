@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import colors from '../../../styles/Colors';
+import FontStyles from '../../../styles/Fonts';
 
 export const InputPart = styled.div`
   display: flex;
@@ -7,21 +9,18 @@ export const InputPart = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 0.75rem;
-  border: 1px solid var(--grayscale-10);
-  background: var(--main-0);
+  border: 1px solid ${colors.Grayscale10};
+  background-color: ${colors.Main0};
 `;
 
 export const Input = styled.input`
-  outline: none;
-  border: none;
-  font-size: 0.875rem;
+  ${FontStyles.SM_Regular}
   flex: 1;
   align-items: center;
   margin-right: 0.5rem;
   &::placeholder {
-    color: var(--grayscale-30);
-    font-weight: 500;
-    line-height: 150%;
+    color: ${colors.Grayscale30};
+    ${FontStyles.SM_Medium}
   }
 `;
 

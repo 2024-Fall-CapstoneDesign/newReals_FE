@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import colors from '../../../styles/Colors';
+import FontStyles from '../../../styles/Fonts';
 
 export const Keyword = styled.div<{ $isActive: boolean }>`
+  ${FontStyles.SM_SemiBold};
   width: 100%;
   padding: 0.5rem 0.75rem;
   display: flex;
@@ -9,15 +12,12 @@ export const Keyword = styled.div<{ $isActive: boolean }>`
   border-radius: 0.5rem;
   outline: none;
   border: none;
-  background-color: ${({ $isActive }) => ($isActive ? 'var(--main-40)' : 'var(--grayscale-5)')};
-  color: ${({ $isActive }) => ($isActive ? 'var(--main-0)' : 'var(--grayscale-50)')};
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 150%;
+  background-color: ${({ $isActive }) => ($isActive ? colors.Main40 : colors.Grayscale5)};
+  color: ${({ $isActive }) => ($isActive ? colors.Main0 : colors.Grayscale50)};
   cursor: pointer;
 
   &:hover {
-    background: var(--main-50);
-    color: var(--main-0);
+    background: ${colors.Main50};
+    color: ${colors.Main0};
   }
 `;

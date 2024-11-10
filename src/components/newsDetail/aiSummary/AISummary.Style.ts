@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import colors from '../../../styles/Colors';
+import FontStyles from '../../../styles/Fonts';
 
 export const AIPart = styled.div`
   width: 44.5625rem;
   padding: 1rem 1.25rem;
   align-items: center;
   border-radius: 0.75rem;
-  background: var(--grayscale-5);
+  background: ${colors.Grayscale5};
 `;
 
 export const FixedPart = styled.div`
@@ -15,10 +17,8 @@ export const FixedPart = styled.div`
 `;
 
 export const PartName = styled.div`
-  color: var(--grayscale-90);
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 150%;
+  ${FontStyles.MD2_Bold}
+  color: ${colors.Grayscale90};
 `;
 
 export const ToggleImg = styled.img`
@@ -28,15 +28,13 @@ export const ToggleImg = styled.img`
 `;
 
 export const Content = styled.div`
+  ${FontStyles.SM_Medium}
   margin-top: 0.75rem;
   padding: 1rem 1rem;
   display: flex;
   align-items: center;
   align-self: stretch;
   border-radius: 0.5rem;
-  background: var(--main-0);
-  color: var(--grayscale-70);
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 150%;
+  background: ${colors.Main0};
+  color: ${colors.Grayscale70};
 `;

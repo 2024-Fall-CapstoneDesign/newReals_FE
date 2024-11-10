@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import colors from '../../../styles/Colors';
+import FontStyles from '../../../styles/Fonts';
 
 export const Container = styled.div`
   display: flex;
@@ -15,9 +17,8 @@ export const TextContainer = styled.div`
 `;
 
 export const Title = styled.span`
-  color: var(--grayscale-90);
-  font-size: 24px;
-  font-weight: 700;
+  ${FontStyles.XL_Bold};
+  color: ${colors.Grayscale90};
 `;
 
 export const DescrtionContainer = styled.div`
@@ -26,9 +27,8 @@ export const DescrtionContainer = styled.div`
 `;
 
 export const Description = styled.p`
-  color: var(--grayscale-50);
-  font-size: 16px;
-  font-weight: 500;
+  ${FontStyles.MD2_Medium}
+  color: ${colors.Grayscale50};
 `;
 
 export const Keywords = styled.div`
