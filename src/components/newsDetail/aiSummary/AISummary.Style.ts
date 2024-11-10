@@ -35,6 +35,6 @@ export const Content = styled.div`
   align-items: center;
   align-self: stretch;
   border-radius: 0.5rem;
-  background: ${colors.Main0};
+  background-color: ${colors.Main0};
   color: ${colors.Grayscale70};
 `;
