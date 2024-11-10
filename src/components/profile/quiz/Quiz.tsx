@@ -27,6 +27,7 @@ const Quiz = () => {
           {quizs.map((item) =>
             item.state === 'unanswered' ? (
               <S.Unanswered
+                key={item.id}
                 onClick={() => {
                   navigate(`/newsDetail/${item.id}`);
                 }}
@@ -34,7 +35,11 @@ const Quiz = () => {
                 Q<S.Number>{item.id}</S.Number>
               </S.Unanswered>
             ) : (
-              <S.Icon src={item.state === 'correct' ? OStampIcon : XStampIcon} alt="스탬프" />
+              <S.Icon
+                key={item.id}
+                src={item.state === 'correct' ? OStampIcon : XStampIcon}
+                alt="스탬프"
+              />
             ),
           )}
         </S.ItemContainer>
