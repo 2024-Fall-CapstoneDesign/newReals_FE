@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import MarketIcon from '../../../assets/icons/MarketIcon.svg?react';
 
 export const Head = styled.header`
   padding: 0.75rem 6.25rem 0.75rem 6.25rem;
@@ -72,7 +73,8 @@ export const Info = styled.div`
   cursor: pointer;
 `;
 
-export const MarketIcon = styled.img`
+export const StyledMarketIcon = styled(MarketIcon)<{ $isActive: boolean }>`
+  color: ${({ $isActive }) => ($isActive ? 'var(--main-50)' : '--grayscale-90')};
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
