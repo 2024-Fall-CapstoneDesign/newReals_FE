@@ -72,6 +72,7 @@ export const Keywords = styled.div`
 `;
 
 export const Coin = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
