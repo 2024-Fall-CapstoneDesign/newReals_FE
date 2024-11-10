@@ -18,6 +18,8 @@ export const Input = styled.input`
   flex: 1;
   align-items: center;
   margin-right: 0.5rem;
+  outline: none;
+  border: none;
   &::placeholder {
     color: ${colors.Grayscale30};
     ${FontStyles.SM_Medium}
