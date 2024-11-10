@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
-export const Bookmark = styled.div`
+export const Bookmark = styled.div<{ $type: 'article' | 'else' }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: ${({ $type }) => ($type === 'article' ? 'none' : '1.75rem')};
+  height: ${({ $type }) => ($type === 'article' ? 'none' : '1.75rem')};
+  padding: 0.375rem;
   border-radius: 200px;
   background-color: var(--grayscale-5);
   cursor: pointer;
 `;
 
-export const Icon = styled.img`
-  width: 1.25rem;
-  height: 1.25rem;
+export const Icon = styled.img<{ $type: 'article' | 'else' }>`
+  width: ${({ $type }) => ($type === 'article' ? '1.5rem' : '1.25rem')};
+  height: ${({ $type }) => ($type === 'article' ? '1.5rem' : '1.25rem')};
 `;
