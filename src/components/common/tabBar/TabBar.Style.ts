@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import FontStyles from '../../../styles/Fonts';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 
 export const TabBar = styled.div`
   display: flex;
@@ -15,9 +15,9 @@ export const TabItem = styled.div<{ $isSelected: boolean }>`
   padding: 0.75rem auto;
   width: 100%;
   height: 2.8125rem;
-  border-right: 1px solid ${colors.Grayscale10};
-  background-color: ${({ $isSelected }) => ($isSelected ? colors.Main40 : colors.Grayscale5)};
-  color: ${({ $isSelected }) => ($isSelected ? colors.Main0 : colors.Grayscale50)};
+  border-right: 1px solid ${Colors.Grayscale10};
+  background-color: ${({ $isSelected }) => ($isSelected ? Colors.Main40 : Colors.Grayscale5)};
+  color: ${({ $isSelected }) => ($isSelected ? Colors.Main0 : Colors.Grayscale50)};
   cursor: pointer;
 
   &:first-child {

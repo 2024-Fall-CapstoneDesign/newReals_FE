@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const Container = styled.div`
@@ -8,9 +8,9 @@ export const Container = styled.div`
   width: 100%;
   max-width: 21.6875rem;
   padding: 1.25rem;
-  background-color: ${colors.Grayscale5};
+  background-color: ${Colors.Grayscale5};
   border-radius: 0.75rem;
-  color: ${colors.Black};
+  color: ${Colors.Black};
   gap: 0.75rem;
 `;
 
@@ -19,14 +19,14 @@ export const Quiz = styled.span`
 `;
 
 export const Q = styled.span`
-  color: ${colors.Main50};
+  color: ${Colors.Main50};
 `;
 
 export const Content = styled.section`
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background-color: ${colors.Main5};
+  background-color: ${Colors.Main5};
   border-radius: 0.5rem;
   gap: 0.75rem;
 `;

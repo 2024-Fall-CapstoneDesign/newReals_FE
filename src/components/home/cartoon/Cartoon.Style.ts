@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const Cartoon = styled.div`
@@ -19,7 +19,7 @@ export const TextContainer = styled.div`
 `;
 
 export const Title = styled.span`
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
   ${FontStyles.XL_Bold}
 `;
 
@@ -30,7 +30,7 @@ export const DescrtionContainer = styled.div`
 
 export const Description = styled.p`
   ${FontStyles.MD2_Medium}
-  color: ${colors.Grayscale50};
+  color: ${Colors.Grayscale50};
 `;
 
 export const GoNews = styled.div`
@@ -42,7 +42,7 @@ export const GoNews = styled.div`
 export const Icon = styled(RightArrowIcon)`
   width: 1.5rem;
   height: 1.5rem;
-  color: ${colors.Grayscale70};
+  color: ${Colors.Grayscale70};
 `;
 
 export const ImageContainer = styled.div`

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import XIcon from '../../../assets/icons/XIcon.svg?react';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const Keyword = styled.div`
@@ -11,8 +11,8 @@ export const Keyword = styled.div`
   width: 7.125rem;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
-  background-color: ${colors.Grayscale5};
-  color: ${colors.Grayscale70};
+  background-color: ${Colors.Grayscale5};
+  color: ${Colors.Grayscale70};
 `;
 
 export const Icon = styled(XIcon)`

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import MarketIcon from '../../../assets/icons/MarketIcon.svg?react';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const Head = styled.header`
@@ -10,7 +10,7 @@ export const Head = styled.header`
   height: 4.625rem;
   width: 100%;
   justify-content: space-between;
-  border-bottom: 1px solid ${colors.Grayscale10};
+  border-bottom: 1px solid ${Colors.Grayscale10};
 `;
 
 export const ServiceImg = styled.img`
@@ -28,7 +28,7 @@ export const Category = styled.div`
 
 export const CategoryItem = styled.div<{ $currentPage: boolean }>`
   ${FontStyles.MD2_SemiBold};
-  color: ${({ $currentPage }) => ($currentPage ? colors.Main50 : colors.Grayscale90)};
+  color: ${({ $currentPage }) => ($currentPage ? Colors.Main50 : Colors.Grayscale90)};
   cursor: pointer;
 `;
 
@@ -45,7 +45,7 @@ export const LoginImg = styled.img`
 
 export const Login = styled.div`
   ${FontStyles.MD2_SemiBold}
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
   margin-left: 0.75rem;
   text-align: center;
 `;
@@ -65,12 +65,12 @@ export const Etc = styled.div`
 
 export const Info = styled.div`
   ${FontStyles.MD2_SemiBold}
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
   cursor: pointer;
 `;
 
 export const StyledMarketIcon = styled(MarketIcon)<{ $isActive: boolean }>`
-  color: ${({ $isActive }) => ($isActive ? colors.Main50 : colors.Grayscale90)};
+  color: ${({ $isActive }) => ($isActive ? Colors.Main50 : Colors.Grayscale90)};
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;

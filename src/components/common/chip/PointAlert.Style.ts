@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const AddPoint = styled.div<{ $type?: 'header' | 'quiz' }>`
@@ -10,8 +10,8 @@ export const AddPoint = styled.div<{ $type?: 'header' | 'quiz' }>`
   align-items: center;
   gap: 0.25rem;
   border-radius: 25rem;
-  background-color: ${colors.Main5};
-  color: ${colors.Grayscale90};
+  background-color: ${Colors.Main5};
+  color: ${Colors.Grayscale90};
 `;
 
 export const CoinImg = styled.img`
@@ -20,5 +20,5 @@ export const CoinImg = styled.img`
 `;
 
 export const Text = styled.p<{ $type?: 'header' | 'quiz' }>`
-  color: ${({ $type }) => ($type === 'header' ? colors.Main50 : colors.Grayscale90)};
+  color: ${({ $type }) => ($type === 'header' ? Colors.Main50 : Colors.Grayscale90)};
 `;

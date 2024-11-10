@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const Container = styled.div`
@@ -13,15 +13,15 @@ export const Title = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
 `;
 
 export const HelperText = styled.p`
   ${FontStyles.MD2_SemiBold};
-  color: ${colors.Main50};
+  color: ${Colors.Main50};
 `;
 
 export const Description = styled.p`
   ${FontStyles.MD2_Medium};
-  color: ${colors.Grayscale50};
+  color: ${Colors.Grayscale50};
 `;

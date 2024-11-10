@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const Container = styled.div`
@@ -12,7 +12,7 @@ export const SubCategory = styled.div`
   ${FontStyles.MD2_Bold};
   display: flex;
   justify-content: space-between;
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
 `;
 
 export const Total = styled.div`
@@ -20,7 +20,7 @@ export const Total = styled.div`
   display: flex;
   gap: 0.375rem;
   align-items: center;
-  color: ${colors.Grayscale50};
+  color: ${Colors.Grayscale50};
   cursor: pointer;
 `;
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const PageButton = styled.button<{ $buttonStyle: 'left' | 'right' }>`
@@ -9,14 +9,14 @@ export const PageButton = styled.button<{ $buttonStyle: 'left' | 'right' }>`
   height: 2.5rem;
   padding: 0.5rem 0.75rem;
   display: flex;
-  background-color: ${colors.Grayscale5};
+  background-color: ${Colors.Grayscale5};
   border-radius: 0.5rem;
   border: none;
-  color: ${colors.Grayscale70};
+  color: ${Colors.Grayscale70};
 
   &:hover {
-    color: ${colors.Main0};
-    background-color: ${colors.Grayscale20};
+    color: ${Colors.Main0};
+    background-color: ${Colors.Grayscale20};
   }
 
   justify-content: ${({ $buttonStyle }) =>

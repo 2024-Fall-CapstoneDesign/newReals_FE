@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import FontStyles from '../../../../styles/Fonts';
-import colors from '../../../../styles/Colors';
+import Colors from '../../../../styles/Colors';
 
 export const Chip = styled.div`
   ${FontStyles.XS_Medium}
@@ -9,6 +9,6 @@ export const Chip = styled.div`
   height: fit-content;
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
-  background-color: ${colors.Main10};
-  color: ${colors.Main50};
+  background-color: ${Colors.Main10};
+  color: ${Colors.Main50};
 `;

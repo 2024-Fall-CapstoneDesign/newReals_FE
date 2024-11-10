@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const ImageCard = styled.div`
@@ -32,9 +32,9 @@ export const Card = styled.div`
   max-width: 21.6875rem;
   height: 17.375rem;
   justify-content: space-between;
-  background-color: ${colors.Main0};
+  background-color: ${Colors.Main0};
   border-radius: 1rem;
-  border: 1px solid ${colors.Grayscale10};
+  border: 1px solid ${Colors.Grayscale10};
 `;
 
 export const Category = styled.div`
@@ -57,22 +57,22 @@ export const CardHeader = styled.div`
 
 export const Keyword = styled.p`
   ${FontStyles.XS_SemiBold}
-  color: ${colors.Main50};
+  color: ${Colors.Main50};
 `;
 
 export const Title = styled.span`
   ${FontStyles.MD2_SemiBold}
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
   margin-top: 0.375rem;
   margin-bottom: 0.5rem;
 `;
 
 export const Description = styled.p`
   ${FontStyles.XS_Regular}
-  color: ${colors.Black};
+  color: ${Colors.Black};
 `;
 
 export const Date = styled.p`
   ${FontStyles.XS_Medium}
-  color: ${colors.Grayscale60};
+  color: ${Colors.Grayscale60};
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../styles/Colors';
+import Colors from '../../styles/Colors';
 import FontStyles from '../../styles/Fonts';
 
 export const Container = styled.div`
@@ -18,11 +18,11 @@ export const TextContainer = styled.div`
 `;
 
 export const Title = styled.span`
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
   ${FontStyles.XL_Bold};
 `;
 
 export const Description = styled.p`
-  color: ${colors.Grayscale50};
+  color: ${Colors.Grayscale50};
   ${FontStyles.MD2_Medium};
 `;

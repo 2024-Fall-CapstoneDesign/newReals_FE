@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const Keyword = styled.div<{ $isActive: boolean }>`
@@ -12,12 +12,12 @@ export const Keyword = styled.div<{ $isActive: boolean }>`
   border-radius: 0.5rem;
   outline: none;
   border: none;
-  background-color: ${({ $isActive }) => ($isActive ? colors.Main40 : colors.Grayscale5)};
-  color: ${({ $isActive }) => ($isActive ? colors.Main0 : colors.Grayscale50)};
+  background-color: ${({ $isActive }) => ($isActive ? Colors.Main40 : Colors.Grayscale5)};
+  color: ${({ $isActive }) => ($isActive ? Colors.Main0 : Colors.Grayscale50)};
   cursor: pointer;
 
   &:hover {
-    background: ${colors.Main50};
-    color: ${colors.Main0};
+    background: ${Colors.Main50};
+    color: ${Colors.Main0};
   }
 `;

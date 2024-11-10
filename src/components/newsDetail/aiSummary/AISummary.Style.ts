@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const AIPart = styled.div`
@@ -7,7 +7,7 @@ export const AIPart = styled.div`
   padding: 1rem 1.25rem;
   align-items: center;
   border-radius: 0.75rem;
-  background: ${colors.Grayscale5};
+  background: ${Colors.Grayscale5};
 `;
 
 export const FixedPart = styled.div`
@@ -18,7 +18,7 @@ export const FixedPart = styled.div`
 
 export const PartName = styled.div`
   ${FontStyles.MD2_Bold}
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
 `;
 
 export const ToggleImg = styled.img`
@@ -35,6 +35,6 @@ export const Content = styled.div`
   align-items: center;
   align-self: stretch;
   border-radius: 0.5rem;
-  background-color: ${colors.Main0};
-  color: ${colors.Grayscale70};
+  background-color: ${Colors.Main0};
+  color: ${Colors.Grayscale70};
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const Footer = styled.footer`
@@ -7,11 +7,11 @@ export const Footer = styled.footer`
   width: 100%;
   height: 16.4375rem;
   padding: 2.5rem 8.5rem;
-  background-color: ${colors.Grayscale5};
+  background-color: ${Colors.Grayscale5};
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
 `;
 
 export const Logo = styled.span`
@@ -59,9 +59,9 @@ export const NameContainer = styled.div`
 export const Divider = styled.div`
   width: 0.0625rem;
   height: 1rem;
-  background-color: ${colors.Grayscale90};
+  background-color: ${Colors.Grayscale90};
 `;
 
 export const Copyright = styled.p`
-  color: ${colors.Grayscale70};
+  color: ${Colors.Grayscale70};
 `;

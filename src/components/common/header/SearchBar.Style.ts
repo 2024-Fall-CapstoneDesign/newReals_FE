@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const InputPart = styled.div`
@@ -9,8 +9,8 @@ export const InputPart = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 0.75rem;
-  border: 1px solid ${colors.Grayscale10};
-  background-color: ${colors.Main0};
+  border: 1px solid ${Colors.Grayscale10};
+  background-color: ${Colors.Main0};
 `;
 
 export const Input = styled.input`
@@ -21,7 +21,7 @@ export const Input = styled.input`
   outline: none;
   border: none;
   &::placeholder {
-    color: ${colors.Grayscale30};
+    color: ${Colors.Grayscale30};
     ${FontStyles.SM_Medium}
   }
 `;

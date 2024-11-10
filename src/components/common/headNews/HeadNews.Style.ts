@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const HeadNews = styled.div<{ $imageUrl: string }>`
@@ -14,7 +14,7 @@ export const HeadNews = styled.div<{ $imageUrl: string }>`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  color: ${colors.Main0};
+  color: ${Colors.Main0};
   ${FontStyles.LG_Medium}
 `;
 

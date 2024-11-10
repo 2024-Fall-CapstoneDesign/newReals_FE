@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../styles/Colors';
+import Colors from '../../../styles/Colors';
 import FontStyles from '../../../styles/Fonts';
 
 export const Container = styled.div`
@@ -18,7 +18,7 @@ export const TextContainer = styled.div`
 
 export const Title = styled.span`
   ${FontStyles.XL_Bold};
-  color: ${colors.Grayscale90};
+  color: ${Colors.Grayscale90};
 `;
 
 export const DescrtionContainer = styled.div`
@@ -28,7 +28,7 @@ export const DescrtionContainer = styled.div`
 
 export const Description = styled.p`
   ${FontStyles.MD2_Medium}
-  color: ${colors.Grayscale50};
+  color: ${Colors.Grayscale50};
 `;
 
 export const Keywords = styled.div`
