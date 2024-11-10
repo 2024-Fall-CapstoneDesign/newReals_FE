@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const SelectBox = styled.div`
-  position: sticky;
-  bottom: 1.875rem;
-  left: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
