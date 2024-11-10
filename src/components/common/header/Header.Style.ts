@@ -74,7 +74,7 @@ export const Info = styled.div`
 `;
 
 export const StyledMarketIcon = styled(MarketIcon)<{ $isActive: boolean }>`
-  color: ${({ $isActive }) => ($isActive ? '#6F60FF' : '#353743')};
+  color: ${({ $isActive }) => ($isActive ? 'var(--main-50)' : '--grayscale-90')};
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
