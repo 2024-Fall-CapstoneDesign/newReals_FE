@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { Colors, FontStyles } from '../../../styles';
 
 export const container = styled.section`
-  width: 100%;
+  width: 21.6875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
   padding: 1.25rem;
+  border-radius: 1rem;
   background-color: ${Colors.Grayscale5};
 `;
 

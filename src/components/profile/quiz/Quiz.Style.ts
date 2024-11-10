@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Colors, FontStyles } from '../../../styles';
 
 export const Container = styled.div`
-  width: 100%;
+  width: 15.9375rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -24,6 +24,7 @@ export const SubText = styled.p`
 `;
 
 export const Quiz = styled.div`
+  ${FontStyles.XS_Regular}
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Colors, FontStyles } from '../../../styles';
 
 export const Container = styled.section`
-  width: 100%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
