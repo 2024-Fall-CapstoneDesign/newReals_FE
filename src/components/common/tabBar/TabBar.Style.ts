@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FontStyles from '../../../styles/Fonts';
+import FontStyles from '../../../styles/FontStyle';
 import Colors from '../../../styles/Colors';
 
 export const TabBar = styled.div`

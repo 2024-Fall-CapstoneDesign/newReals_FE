@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Colors from '../../../styles/Colors';
-import FontStyles from '../../../styles/Fonts';
+import FontStyles from '../../../styles/FontStyle';
 
 export const Button = styled.button<{ $buttonStyle?: 'quiz' | 'modal' }>`
   ${FontStyles.SM_Medium}
