@@ -48,7 +48,9 @@ const Header = () => {
             {pathname === '/market' ? (
               <PointAlert type="header" leftcontent="내가 보유한 포인트" rightcontent="30,000" />
             ) : (
-              pathname !== '/profile' && <SearchBar />
+              pathname !== '/profile' && (
+                <SearchBar placeholder="뉴스 검색" onClick={() => navigate('/search')} />
+              )
             )}
             <S.Etc>
               <S.Info
