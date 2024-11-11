@@ -1,5 +1,14 @@
 import * as S from './Chart.Style';
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+  LabelList,
+} from 'recharts';
 
 const COLORS = ['#6F60FF', '#9F94FF', '#BDB6FF'];
 
@@ -15,16 +24,20 @@ interface ChartProps {
 const Chart = ({ category, values }: ChartProps) => {
   return (
     <S.ChartContainer>
+      <S.CenterText>{category}</S.CenterText>
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart>
-          <Pie data={values} innerRadius={35} outerRadius={76} dataKey="value">
+        <BarChart data={values}>
+          <XAxis dataKey="name" tick={false} />
+          <YAxis hide />
+          <Tooltip />
+          <Bar dataKey="value" radius={[10, 10, 0, 0]}>
             {values.map((_, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
-          </Pie>
-        </PieChart>
+            <LabelList dataKey="subCategory" position="bottom" offset={20} />
+          </Bar>
+        </BarChart>
       </ResponsiveContainer>
-      <S.CenterText>{category}</S.CenterText>
     </S.ChartContainer>
   );
 };
