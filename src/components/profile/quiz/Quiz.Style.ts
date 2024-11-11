@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Colors, FontStyles } from '../../../styles';
 
 export const Container = styled.div`
-  width: 15.9375rem;
+  width: 100%;
+  max-width: 15.9375rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
