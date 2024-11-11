@@ -43,6 +43,7 @@ const AnalysisCard = ({ nickname }: AnalysisCardProps) => {
 
   const values = (categoryData[category as keyof typeof categoryData] || []).map((item) => ({
     value: item.value,
+    subCategory: item.subCategory,
   }));
 
   return (

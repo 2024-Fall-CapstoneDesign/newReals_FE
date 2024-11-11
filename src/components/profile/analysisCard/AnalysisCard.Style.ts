@@ -3,6 +3,7 @@ import { Colors, FontStyles } from '../../../styles';
 
 export const Container = styled.section`
   flex-grow: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -34,6 +35,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  flex-shrink: 0;
 `;
 
 export const Categories = styled.div`
