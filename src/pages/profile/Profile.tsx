@@ -6,7 +6,7 @@ import SearchBar from '../../components/common/header/SearchBar';
 import PageNation from '../../components/common/pageNation/PageNation';
 import Card from '../../components/common/card/Card';
 import { useNavigate } from 'react-router-dom';
-import AttendCalendar from '../../components/profile/calendar/AttendCalendar';
+import Calendar from '../../components/profile/calendar/Calendar';
 
 const MOCK_CARDS = [
   {
@@ -139,7 +139,7 @@ const Profile = () => {
             keywords={['장애인 권리', '대기업 동향', '세계 경제 전망', '키워드', ' 키워드']}
             coin={157}
           />
-          <AttendCalendar />
+          <Calendar />
         </S.LeftContent>
         <S.RightContent>
           <S.RightHead>
