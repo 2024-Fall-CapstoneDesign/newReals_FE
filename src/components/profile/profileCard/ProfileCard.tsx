@@ -1,6 +1,5 @@
 import * as S from './ProfileCard.Style';
 import EditIcon from '../../../assets/icons/EditIcon.svg';
-import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 import CoinIcon from '../../../assets/icons/CoinIcon.svg';
 import InfoIcon from '../../../assets/icons/InfoIcon.svg';
 import Tag from '../../common/tag/Tag';
@@ -43,7 +42,7 @@ const ProfileCard = ({
           나의 관심 키워드
           <S.Edit onClick={onClickEditKeyWord}>
             키워드 편집
-            <S.Icon as={RightArrowIcon} alt="오른쪽 화살표" />
+            <S.ArrowIcon />
           </S.Edit>
         </S.KeywordHeader>
         <S.Keywords>

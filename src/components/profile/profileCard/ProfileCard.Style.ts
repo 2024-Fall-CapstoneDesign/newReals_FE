@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Colors, FontStyles } from '../../../styles';
+import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 
 export const container = styled.section`
   width: 21.6875rem;
@@ -37,6 +38,11 @@ export const IconContainer = styled.div`
 `;
 
 export const Icon = styled.img`
+  width: 1rem;
+  height: 1rem;
+`;
+
+export const ArrowIcon = styled(RightArrowIcon)`
   width: 1rem;
   height: 1rem;
 `;
