@@ -6,7 +6,7 @@ import InfoIcon from '../../../assets/icons/InfoIcon.svg';
 import Tag from '../../common/tag/Tag';
 import ProfileImage from '../profileImage/ProfileImage';
 import { useState } from 'react';
-import CoinExplain from '../coinExplain/CoinExplain';
+import CoinExplain from './coinExplain/CoinExplain';
 
 interface ProfileCardProps {
   image: string;

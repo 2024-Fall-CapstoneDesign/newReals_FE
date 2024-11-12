@@ -1,5 +1,5 @@
 import * as S from './CoinExplain.Style';
-import DotIcon from '../../../assets/icons/DotIcon.svg';
+import DotIcon from '../../../../assets/icons/DotIcon.svg';
 
 const Text = [
   '매일 출석 시 코인이 지급돼요.',
