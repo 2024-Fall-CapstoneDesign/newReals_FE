@@ -53,6 +53,7 @@ const FontStyles = {
   MD2_Regular: getFont('MD2', 'Regular'),
 
   // SM '0.875rem', // 14px
+  SM_Bold: getFont('SM', 'Bold'),
   SM_SemiBold: getFont('SM', 'SemiBold'),
   SM_Medium: getFont('SM', 'Medium'),
   SM_Regular: getFont('SM', 'Regular'),
