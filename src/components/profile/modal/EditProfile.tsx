@@ -3,6 +3,7 @@ import * as S from './EditProfile.Style';
 import XIcon from '../../../assets/icons/XIcon.svg';
 import { useState } from 'react';
 import Button from '../../common/button/Button';
+import ProfileImage from '../profileImage/ProfileImage';
 
 interface EditProfileProps {
   onClose: () => void;
@@ -14,9 +15,10 @@ interface EditProfileProps {
 // 3. 적용 버튼 클릭 시 바뀌는 부분
 // 4. 인풋 자세히
 // 5. 이미지 변경 클릭 시 file 선택하게 하는 것 해야함 !
+// 6. 인풋 자동완성 안되게도 하자!
 
 const EditProfile = ({ onClose }: EditProfileProps) => {
-  const [user, setUser] = useState({ nickname: '', Image: '' });
+  const [user, setUser] = useState({ nickname: '', image: '' });
   const [error, setError] = useState({ isError: false, errorMessage: '' });
 
   return (
@@ -41,7 +43,7 @@ const EditProfile = ({ onClose }: EditProfileProps) => {
             프로필 이미지
             <S.Profile>
               <S.Image>
-                <S.ImageD />
+                <ProfileImage image={user.image} />
                 <S.Text>현재 이미지</S.Text>
               </S.Image>
               <S.EditImage>

@@ -4,8 +4,16 @@ import ProfileCard from '../../components/profile/profileCard/ProfileCard';
 import Quiz from '../../components/profile/quiz/Quiz';
 import Calendar from '../../components/profile/calendar/Calendar';
 import Scrap from '../../components/profile/scrap/Scrap';
+import { useState } from 'react';
+import EditProfile from '../../components/profile/modal/EditProfile';
 
 const Profile = () => {
+  const [openEditModal, setOpenEditModal] = useState(false);
+
+  const handleEditModal = () => {
+    setOpenEditModal((prev) => !prev);
+  };
+
   return (
     <S.Container>
       <S.Title>마이페이지</S.Title>
@@ -13,9 +21,7 @@ const Profile = () => {
         <S.LeftContent>
           <ProfileCard
             image="https://github.com/user-attachments/assets/73482885-d02e-4ed4-a371-d78a527b6355"
-            onClickEditProfile={() => {
-              console.log('구현해야함');
-            }}
+            onClickEditProfile={handleEditModal}
             onClickEditKeyWord={() => {
               console.log('구현해야함');
             }}
@@ -33,6 +39,7 @@ const Profile = () => {
           <Scrap />
         </S.RightContent>
       </S.Content>
+      {openEditModal && <EditProfile onClose={handleEditModal} />}
     </S.Container>
   );
 };
