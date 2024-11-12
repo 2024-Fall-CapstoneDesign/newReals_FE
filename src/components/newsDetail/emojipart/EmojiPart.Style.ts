@@ -1,22 +1,20 @@
 import styled from 'styled-components';
-import { Colors } from '../../../styles';
+import { Colors, FontStyles } from '../../../styles';
 
 export const EmojiClickPart = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 2rem;
   color: ${Colors.Grayscale90};
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 150%;
+  ${FontStyles.MD1_SemiBold};
+  align-self: stretch;
 `;
 
 export const MainPart = styled.div``;
 
 export const ClickPart = styled.div`
+  justify-content: center;
   display: flex;
-`;
-
-export const IconPart = styled.img`
-  display: flex;
+  gap: 8.875rem;
 `;
