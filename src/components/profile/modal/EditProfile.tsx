@@ -25,7 +25,7 @@ const EditProfile = ({ onClose }: EditProfileProps) => {
         <S.Content>
           <S.Header>
             프로필 편집
-            <img src={XIcon} alt="닫기" />
+            <img src={XIcon} alt="닫기" onClick={onClose} />
           </S.Header>
           <S.Container>
             <label htmlFor="nickname">이름</label>
