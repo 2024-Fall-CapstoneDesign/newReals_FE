@@ -4,7 +4,6 @@ import CoinIcon from '../../../assets/icons/CoinIcon.svg';
 import InfoIcon from '../../../assets/icons/InfoIcon.svg';
 import Tag from '../../common/tag/Tag';
 import ProfileImage from '../profileImage/ProfileImage';
-import { useState } from 'react';
 import CoinExplain from './coinExplain/CoinExplain';
 
 interface ProfileCardProps {
@@ -22,12 +21,6 @@ const ProfileCard = ({
   keywords,
   coin,
 }: ProfileCardProps) => {
-  const [openInfo, setOpenInfo] = useState(false);
-
-  const handleClickInfo = () => {
-    setOpenInfo((prev) => !prev);
-  };
-
   return (
     <S.container>
       <S.Profile>
@@ -59,8 +52,10 @@ const ProfileCard = ({
           <p>내 코인 </p>
           <S.CoinNumber>{coin}코인</S.CoinNumber>
         </S.CoinText>
-        <S.Info src={InfoIcon} alt="코인 정보" onClick={handleClickInfo} />
-        {openInfo && <CoinExplain />}
+        <S.InfoContainer>
+          <S.Info src={InfoIcon} alt="코인 정보" />
+          <CoinExplain />
+        </S.InfoContainer>
       </S.Coin>
     </S.container>
   );

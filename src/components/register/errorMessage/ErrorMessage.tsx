@@ -1,10 +1,10 @@
 import * as S from './ErrorMessage.Sytle';
-import InfoIcon from '../../../assets/icons/InfoIcon.svg?react';
+import ErrorIcon from '../../../assets/icons/ErrorIcon.svg?react';
 
 const ErrorMessage = ({ message }: { message: string }) => {
   return (
     <S.ErrorMessage>
-      <InfoIcon />
+      <ErrorIcon />
       <S.Text $isError={true}>{message}</S.Text>
     </S.ErrorMessage>
   );
