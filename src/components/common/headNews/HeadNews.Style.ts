@@ -14,7 +14,6 @@ export const HeadNews = styled.div<{ $imageUrl: string }>`
   flex-direction: column;
   gap: 2rem;
   color: ${Colors.Main0};
-  ${FontStyles.LG_Medium}
 `;
 
 export const Container = styled.div`
@@ -40,13 +39,14 @@ export const Tags = styled.div`
 `;
 
 export const Title = styled.span`
-  ${FontStyles.XXL_Regular}
+  ${FontStyles.XXL_Bold}
 `;
 
 export const Quiz = styled.div`
   ${FontStyles.MD2_SemiBold}
   display: flex;
   width: fit-content;
+  align-items: center;
   gap: 0.625rem;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
