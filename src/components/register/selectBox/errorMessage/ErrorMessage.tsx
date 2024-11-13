@@ -1,5 +1,5 @@
 import * as S from './ErrorMessage.Sytle';
-import ErrorIcon from '../../../assets/icons/ErrorIcon.svg?react';
+import ErrorIcon from '../../../../assets/icons/ErrorIcon.svg?react';
 
 const ErrorMessage = ({ message }: { message: string }) => {
   return (

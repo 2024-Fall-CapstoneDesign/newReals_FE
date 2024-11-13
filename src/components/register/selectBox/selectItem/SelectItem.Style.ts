@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import XIcon from '../../../assets/icons/XIcon.svg?react';
-import { Colors, FontStyles } from '../../../styles';
+import XIcon from '../../../../assets/icons/XIcon.svg?react';
+import { Colors, FontStyles } from '../../../../styles';
 
 export const Keyword = styled.div`
   ${FontStyles.XS_Medium}

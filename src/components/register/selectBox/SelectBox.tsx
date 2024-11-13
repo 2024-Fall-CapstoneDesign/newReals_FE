@@ -1,5 +1,5 @@
-import ErrorMessage from '../errorMessage/ErrorMessage';
-import SelectItem from '../selectItem/SelectItem';
+import ErrorMessage from './errorMessage/ErrorMessage';
+import SelectItem from './selectItem/SelectItem';
 import * as S from './SelectBox.Style';
 import RightIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 import { useEffect, useState } from 'react';
