@@ -3,6 +3,7 @@ import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 import { Colors, FontStyles } from '../../../styles';
 
 export const Cartoon = styled.div`
+  max-width: 91rem;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,19 +1,36 @@
 import styled from 'styled-components';
 import { Colors, FontStyles } from '../../../styles';
 
-export const Button = styled.button<{ $buttonStyle?: 'quiz' | 'modal' }>`
+const backgroundColors = {
+  quiz: Colors.Main5,
+  modal: Colors.Main40,
+  profile: Colors.Grayscale10,
+};
+
+const textColors = {
+  quiz: Colors.Main40,
+  modal: Colors.Main0,
+  profile: Colors.Grayscale70,
+};
+
+const hoverBackgroundColors = {
+  quiz: Colors.Main10,
+  modal: Colors.Main50,
+  profile: Colors.Grayscale20,
+};
+
+export const Button = styled.button<{ $buttonStyle?: 'quiz' | 'modal' | 'profile' }>`
   ${FontStyles.SM_Medium}
   width: 100%;
-  height: ${({ $buttonStyle }) => ($buttonStyle === 'modal' ? '2.75rem' : '2.25rem')};
-  padding: ${({ $buttonStyle }) => ($buttonStyle === 'modal' ? '0.75rem' : '0.5rem 0.625rem')};
-  background-color: ${({ $buttonStyle }) =>
-    $buttonStyle === 'quiz' ? Colors.Main5 : Colors.Main40};
+  height: ${({ $buttonStyle }) => ($buttonStyle === 'quiz' ? '2.25rem' : '2.75rem')};
+  padding: ${({ $buttonStyle }) => ($buttonStyle === 'quiz' ? '0.5rem 0.625rem' : '0.75rem')};
+  background-color: ${({ $buttonStyle }) => backgroundColors[$buttonStyle || 'modal']};
+  color: ${({ $buttonStyle }) => textColors[$buttonStyle || 'modal']};
   border-radius: 0.5rem;
   border: none;
-  color: ${({ $buttonStyle }) => ($buttonStyle === 'quiz' ? Colors.Main40 : Colors.Main0)};
   line-height: 150%;
 
   &:hover {
-    background-color: ${(props) => (props.$buttonStyle === 'quiz' ? Colors.Main10 : Colors.Main50)};
+    background-color: ${({ $buttonStyle }) => hoverBackgroundColors[$buttonStyle || 'modal']};
   }
 `;
