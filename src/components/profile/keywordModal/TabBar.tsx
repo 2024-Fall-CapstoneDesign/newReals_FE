@@ -5,7 +5,7 @@ const CATEGORY = Object.keys(CATEGORIES);
 
 interface TabBarProps {
   category: string;
-  onClick: (categroy: string) => void;
+  onClick: (category: string) => void;
 }
 
 /**
