@@ -167,7 +167,7 @@ const Category = () => {
     | 'ECONOMY';
 
   const handleCategory = (category: string) => {
-    setSelectCategory(category);
+    setSelectCategory(selectCategory === category ? '' : category);
   };
 
   return (
