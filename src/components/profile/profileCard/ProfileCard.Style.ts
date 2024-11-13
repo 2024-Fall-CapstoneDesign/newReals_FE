@@ -99,6 +99,15 @@ export const CoinNumber = styled.span`
   ${FontStyles.SM_SemiBold}
   color: ${Colors.Main50};
 `;
+export const InfoContainer = styled.div`
+  position: relative;
+  display: inline-block;
+
+  &:hover > div {
+    opacity: 1;
+    visibility: visible;
+  }
+`;
 
 export const Info = styled.img`
   width: 1.25rem;
