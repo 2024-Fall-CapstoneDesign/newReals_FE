@@ -57,7 +57,7 @@ const KeywordModal = ({ onClose }: KeywordModalProps) => {
             ))}
         </S.Categories>
         <S.ButtonContainer>
-          <Button buttonStyle="modal" onClick={onClose}>
+          <Button buttonStyle="profile" onClick={onClose}>
             취소
           </Button>
           <Button
