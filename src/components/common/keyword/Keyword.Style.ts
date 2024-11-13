@@ -5,9 +5,7 @@ export const Keyword = styled.div<{ $isActive: boolean }>`
   ${FontStyles.SM_SemiBold};
   width: 100%;
   padding: 0.5rem 0.75rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   border-radius: 0.5rem;
   outline: none;
   border: none;

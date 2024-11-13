@@ -2,7 +2,7 @@ import * as S from './Register.Style';
 import Text from '../../components/register/text/Text';
 import TabBar from '../../components/common/tabBar/TabBar';
 import { useState } from 'react';
-import Subcategory from '../../components/register/subcategory/Subcategory';
+import Subcategory from '../../components/common/subcategory/Subcategory';
 import { CATEGORIES } from '../../constants/Category';
 import SelectBox from '../../components/register/selectBox/SelectBox';
 

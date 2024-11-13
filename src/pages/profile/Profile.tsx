@@ -5,13 +5,19 @@ import Quiz from '../../components/profile/quiz/Quiz';
 import Calendar from '../../components/profile/calendar/Calendar';
 import Scrap from '../../components/profile/scrap/Scrap';
 import { useState } from 'react';
-import EditProfile from '../../components/profile/modal/EditProfile';
+import EditProfile from '../../components/profile/editProfile/EditProfile';
+import KeywordModal from '../../components/profile/keywordModal/KeywordModal';
 
 const Profile = () => {
   const [openEditModal, setOpenEditModal] = useState(false);
+  const [openKeywordModal, setOpenKeywordModal] = useState(false);
 
   const handleEditModal = () => {
     setOpenEditModal((prev) => !prev);
+  };
+
+  const handleKeywordModal = () => {
+    setOpenKeywordModal((prev) => !prev);
   };
 
   return (
@@ -22,9 +28,7 @@ const Profile = () => {
           <ProfileCard
             image="https://github.com/user-attachments/assets/73482885-d02e-4ed4-a371-d78a527b6355"
             onClickEditProfile={handleEditModal}
-            onClickEditKeyWord={() => {
-              console.log('구현해야함');
-            }}
+            onClickEditKeyWord={handleKeywordModal}
             keywords={['장애인 권리', '대기업 동향', '세계 경제 전망', '키워드', ' 키워드']}
             coin={157}
           />
@@ -40,6 +44,7 @@ const Profile = () => {
         </S.RightContent>
       </S.Content>
       {openEditModal && <EditProfile onClose={handleEditModal} />}
+      {openKeywordModal && <KeywordModal onClose={handleKeywordModal} />}
     </S.Container>
   );
 };
