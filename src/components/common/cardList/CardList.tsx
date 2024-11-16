@@ -29,7 +29,7 @@ const CardList = ({ list }: CardListProps) => {
   };
 
   const handleCardClick = (id: number) => {
-    navigate(`/news/${id}`);
+    navigate(`/newsDetail/${id}`);
   };
 
   return (
