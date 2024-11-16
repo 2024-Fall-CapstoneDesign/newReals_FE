@@ -18,6 +18,7 @@ const GlobalStyles = styled.createGlobalStyle`
   body,
   html {
     font-family: 'Pretendard';
+    pointer: default;
   }
 
   input {

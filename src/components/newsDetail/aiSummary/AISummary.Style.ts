@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Colors, FontStyles } from '../../../styles';
 
 export const AIPart = styled.div`
-  width: 44.5625rem;
+  width: 100%;
   padding: 1rem 1.25rem;
   align-items: center;
   border-radius: 0.75rem;
