@@ -3,8 +3,7 @@ import { Colors, FontStyles } from '../../../styles';
 
 export const EmojiClickPart = styled.div`
   border-top: 1px solid ${Colors.Grayscale10};
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding: 2.5rem 0;
   display: flex;
   flex-direction: column;
   width: 100%;

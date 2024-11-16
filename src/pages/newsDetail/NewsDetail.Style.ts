@@ -33,5 +33,5 @@ export const PageNavigate = styled.div`
 `;
 
 export const QuizPart = styled.div`
-  max-width: 347px;
+  max-width: 21.6875rem;
 `;
