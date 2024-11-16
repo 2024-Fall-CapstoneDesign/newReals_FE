@@ -22,8 +22,10 @@ const hoverBackgroundColors = {
 export const Button = styled.button<{ $buttonStyle?: 'quiz' | 'modal' | 'profile' }>`
   ${FontStyles.SM_Medium}
   width: 100%;
-  height: ${({ $buttonStyle }) => ($buttonStyle === 'quiz' ? '2.25rem' : '2.75rem')};
-  padding: ${({ $buttonStyle }) => ($buttonStyle === 'quiz' ? '0.5rem 0.625rem' : '0.75rem')};
+  height: ${({ $buttonStyle }) =>
+    $buttonStyle === 'modal' || $buttonStyle === 'profile' ? '2.75rem' : '2.25rem'};
+  padding: ${({ $buttonStyle }) =>
+    $buttonStyle === 'modal' || $buttonStyle === 'profile' ? '0.75rem' : '0.5rem 0.625rem'};
   background-color: ${({ $buttonStyle }) => backgroundColors[$buttonStyle || 'modal']};
   color: ${({ $buttonStyle }) => textColors[$buttonStyle || 'modal']};
   border-radius: 0.5rem;
