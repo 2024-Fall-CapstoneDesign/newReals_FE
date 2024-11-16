@@ -44,7 +44,7 @@ const Calendar = () => {
   return (
     <S.Container>
       <div>
-        <S.Title>{currentMonth + 1} 출석 달력</S.Title>
+        <S.Title>{currentMonth + 1}월 출석 달력</S.Title>
         <S.Description>이번 달 출석 현황을 달력으로 확인해요.</S.Description>
       </div>
       <div>
