@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Colors, FontStyles } from '../../../styles';
-import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
+import { Colors, FontStyles } from '../../../../styles';
+import RightArrowIcon from '../../../../assets/icons/RightArrowIcon.svg?react';
 
 export const EasySumPart = styled.div`
   width: 100%;

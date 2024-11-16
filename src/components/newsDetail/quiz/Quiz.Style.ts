@@ -25,7 +25,7 @@ export const Content = styled.section`
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background-color: ${Colors.Main5};
+  background-color: ${Colors.Main0};
   border-radius: 0.5rem;
   gap: 0.75rem;
 `;

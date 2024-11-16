@@ -1,6 +1,6 @@
 import * as S from './AISummary.Style';
-import DownArrowIcon from '../../../assets/icons/DownArrowIcon.svg';
-import UpArrowIcon from '../../../assets/icons/UpArrowIcon.svg';
+import DownArrowIcon from '../../../../assets/icons/DownArrowIcon.svg';
+import UpArrowIcon from '../../../../assets/icons/UpArrowIcon.svg';
 import { useState } from 'react';
 
 interface AISummary {
