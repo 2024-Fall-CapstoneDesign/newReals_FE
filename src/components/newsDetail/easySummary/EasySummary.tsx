@@ -78,18 +78,9 @@ const EasySummary = ({ content, dictionary, url }: EasySumProps) => {
     <S.EasySumPart>
       <S.ContentPart>{highlightedContent}</S.ContentPart>
       {isOpen && selectedTerm && dictionary && (
-        <div
-          style={{
-            position: 'absolute', // 절대 위치로 배치
-            top: tooltipPosition.top, // 계산된 top 위치
-            left: tooltipPosition.left, // 계산된 left 위치
-            transform: 'translateX(-50%)',
-            zIndex: 10,
-            marginTop: '0px', // 용어와의 간격
-          }}
-        >
+        <S.Tooltip $tooltipPosition={tooltipPosition}>
           <InfoPart info={dictionary[selectedTerm]} />
-        </div>
+        </S.Tooltip>
       )}
       <S.Navi
         onClick={() => {

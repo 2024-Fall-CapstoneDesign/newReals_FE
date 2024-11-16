@@ -9,7 +9,7 @@ interface AISummary {
 
 /**
  *
- * @param title - AI 요약 안의 글씨
+ * @param content - AI 요약 안의 글씨
  * @returns
  */
 const AISummary = ({ content }: AISummary) => {

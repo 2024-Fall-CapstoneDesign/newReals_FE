@@ -4,7 +4,6 @@ import EmojiPart from '../../components/newsDetail/emojipart/EmojiPart';
 import ArticleHeader from '../../components/newsDetail/articleHeader/ArticleHeader';
 import AISummary from '../../components/newsDetail/aiSummary/AISummary';
 import EasySummary from '../../components/newsDetail/easySummary/EasySummary';
-import InfoPart from '../../components/newsDetail/easySummary/InfoPart';
 
 const NewsDetail = () => {
   const [isOpen, setIsOpen] = useState(false);
