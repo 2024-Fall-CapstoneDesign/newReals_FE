@@ -19,9 +19,6 @@ const GlobalStyles = styled.createGlobalStyle`
   html {
     font-family: 'Pretendard';
     cursor: default;
-    width: 100%; /* 100%로 설정하여 실제 화면 크기에 맞게 */
-    height: 100%; /* 화면 높이를 100%로 설정 */
-    overflow-x: hidden; /* 수평 스크롤 방지 */
   }
 
   input {
