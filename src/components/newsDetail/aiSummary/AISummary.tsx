@@ -4,15 +4,15 @@ import UpArrowIcon from '../../../assets/icons/UpArrowIcon.svg';
 import { useState } from 'react';
 
 interface AISummary {
-  text: string;
+  content: string;
 }
 
 /**
  *
- * @param title - AI 요약 안의 글씨
+ * @param content - AI 요약 안의 글씨
  * @returns
  */
-const AISummary = ({ text }: AISummary) => {
+const AISummary = ({ content }: AISummary) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -29,7 +29,7 @@ const AISummary = ({ text }: AISummary) => {
           alt="토글 버튼"
         />
       </S.FixedPart>
-      {isOpen && <S.Content>{text}아아에이엥</S.Content>}
+      {isOpen && <S.Content>{content}</S.Content>}
     </S.AIPart>
   );
 };
