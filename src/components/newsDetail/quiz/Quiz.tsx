@@ -3,6 +3,7 @@ import QuizAnswer from '../../common/quizAnswer/QuizAnswer';
 import * as S from './Quiz.Style';
 import OIcon from '../../../assets/icons/OIcon.svg?react';
 import XIcon from '../../../assets/icons/XIcon.svg?react';
+import { useEffect, useState } from 'react';
 
 interface Quiz {
   quiz: string;
@@ -23,6 +24,38 @@ interface Quiz {
  * @returns
  */
 const Quiz = ({ quiz, isSolved, answer, comment }: Quiz) => {
+  const [timeLeft, setTimeLeft] = useState('');
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const next6AM = new Date(now);
+      next6AM.setHours(6, 0, 0, 0); // 오늘 새벽 6시 설정
+
+      if (now.getHours() >= 6) {
+        // 만약 현재 시간이 6시 이후라면 내일 새벽 6시로 설정
+        next6AM.setDate(now.getDate() + 1);
+      }
+
+      const diff = next6AM.getTime() - now.getTime(); // 남은 시간 계산 (ms 단위)
+
+      // 밀리초를 시간, 분, 초로 변환
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      setTimeLeft(`${hours}:${minutes}:${seconds}초`);
+    };
+
+    calculateTimeLeft(); // 처음 실행 시 남은 시간 계산
+
+    const interval = setInterval(() => {
+      calculateTimeLeft(); // 1초마다 업데이트
+    }, 1000);
+
+    return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 해제
+  }, []);
+
   const handleClickO = () => {
     console.log('O 클릭 했을 때 백엔드 연결해야함');
   };
@@ -34,7 +67,10 @@ const Quiz = ({ quiz, isSolved, answer, comment }: Quiz) => {
   return (
     <S.Container>
       <S.Quiz>
-        <S.Q>Q.</S.Q> 오늘의 퀴즈
+        <S.Q>Q.&nbsp;</S.Q> 오늘의 퀴즈
+        <S.Timer>
+          이 퀴즈는 <S.Time>{timeLeft}</S.Time> 후에 사라져요!
+        </S.Timer>
       </S.Quiz>
       <S.Content>
         <S.Text>{quiz}</S.Text>

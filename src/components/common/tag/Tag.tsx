@@ -2,7 +2,7 @@ import * as S from './Tag.Style';
 
 interface TagProps {
   children: React.ReactNode;
-  color: 'gray' | 'purple';
+  color: 'gray' | 'purple' | 'red' | 'gray_thinking';
   size?: 'small' | 'large';
 }
 
