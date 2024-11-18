@@ -34,7 +34,9 @@ const AfterThinking = ({
             <S.ContentTitle>의견을 아직 모으고 있어요! 제가 대신 답변해 드릴게요.</S.ContentTitle>
             <S.OthersPart>
               <S.OthersContent $noBorder={true}>
-                <Tag children="AI 의견" color="purple" size="small" />
+                <Tag color="purple" size="small">
+                  AI 의견
+                </Tag>
                 <S.OthersThinkingContent>{aiThinking}</S.OthersThinkingContent>
               </S.OthersContent>
             </S.OthersPart>
@@ -45,11 +47,9 @@ const AfterThinking = ({
             <S.OthersPart>
               {OthersPart.map((other, index) => (
                 <S.OthersContent key={other.id} $noBorder={index === OthersPart.length - 1}>
-                  <Tag
-                    children={other.part}
-                    color={other.color as 'gray_thinking' | 'purple' | 'red'}
-                    size="small"
-                  />
+                  <Tag color={other.color as 'gray_thinking' | 'purple' | 'red'} size="small">
+                    {other.part}
+                  </Tag>
                   <S.OthersThinkingContent>{other.content}</S.OthersThinkingContent>
                 </S.OthersContent>
               ))}

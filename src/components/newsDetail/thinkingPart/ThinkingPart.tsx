@@ -54,7 +54,7 @@ const ThinkingPart = ({ topic }: ThinkingPartProps) => {
             positiveContent="백연결"
             neutralContent="백연결"
             negativeContent="백연결"
-            aiThinking="이렇게생각해요"
+            //aiThinking="이렇게생각해요"
           />
         )
       ) : (
