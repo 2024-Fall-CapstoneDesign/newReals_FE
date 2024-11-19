@@ -2,7 +2,7 @@ import * as S from './Button.Style';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  buttonStyle?: 'quiz' | 'modal' | 'profile';
+  buttonStyle?: 'modal' | 'profile' | 'basic';
 }
 
 /**

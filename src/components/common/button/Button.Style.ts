@@ -1,38 +1,45 @@
 import styled from 'styled-components';
 import { Colors, FontStyles } from '../../../styles';
 
-const backgroundColors = {
-  quiz: Colors.Main5,
-  modal: Colors.Main40,
-  profile: Colors.Grayscale10,
+const buttonType = {
+  modal: {
+    backgroundColor: Colors.Main40,
+    color: Colors.Main0,
+    hoverBackgroundColor: Colors.Main50,
+    padding: '0.75rem',
+  },
+  profile: {
+    backgroundColor: Colors.Grayscale10,
+    color: Colors.Grayscale70,
+    hoverBackgroundColor: Colors.Grayscale20,
+    padding: '0.75rem',
+  },
+  basic: {
+    backgroundColor: Colors.Main40,
+    color: Colors.Main0,
+    hoverBackgroundColor: Colors.Main50,
+    padding: '0.375rem 0.75rem',
+  },
 };
 
-const textColors = {
-  quiz: Colors.Main40,
-  modal: Colors.Main0,
-  profile: Colors.Grayscale70,
-};
-
-const hoverBackgroundColors = {
-  quiz: Colors.Main10,
-  modal: Colors.Main50,
-  profile: Colors.Grayscale20,
-};
-
-export const Button = styled.button<{ $buttonStyle?: 'quiz' | 'modal' | 'profile' }>`
+const commonStyles = `
   ${FontStyles.SM_Medium}
   width: 100%;
-  height: ${({ $buttonStyle }) =>
-    $buttonStyle === 'modal' || $buttonStyle === 'profile' ? '2.75rem' : '2.25rem'};
-  padding: ${({ $buttonStyle }) =>
-    $buttonStyle === 'modal' || $buttonStyle === 'profile' ? '0.75rem' : '0.5rem 0.625rem'};
-  background-color: ${({ $buttonStyle }) => backgroundColors[$buttonStyle || 'modal']};
-  color: ${({ $buttonStyle }) => textColors[$buttonStyle || 'modal']};
+  text-align: center;
   border-radius: 0.5rem;
   border: none;
   line-height: 150%;
+  cursor: pointer;
+`;
+
+export const Button = styled.button<{ $buttonStyle?: keyof typeof buttonType }>`
+  ${commonStyles}
+  background-color: ${({ $buttonStyle }) => buttonType[$buttonStyle || 'basic'].backgroundColor};
+  color: ${({ $buttonStyle }) => buttonType[$buttonStyle || 'basic'].color};
+  padding: ${({ $buttonStyle }) => buttonType[$buttonStyle || 'basic'].padding};
 
   &:hover {
-    background-color: ${({ $buttonStyle }) => hoverBackgroundColors[$buttonStyle || 'modal']};
+    background-color: ${({ $buttonStyle }) =>
+      buttonType[$buttonStyle || 'basic'].hoverBackgroundColor};
   }
 `;
