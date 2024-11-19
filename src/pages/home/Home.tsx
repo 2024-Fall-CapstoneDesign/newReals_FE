@@ -1,8 +1,9 @@
 import * as S from './Home.Style';
-import Cartoon from '../../components/home/cartoon/Cartoon';
+
 import HeadNews from '../../components/common/headNews/HeadNews';
 import { useEffect, useState } from 'react';
 import LatestNews from '../../components/home/latestNews/LatestNews';
+import Insight from '../../components/home/insight/Insight';
 
 const MOCKDATA = [
   {
@@ -88,14 +89,7 @@ const Home = () => {
         isPaused={isPaused}
       />
       <S.Container>
-        <Cartoon
-          imageUrl={[
-            'https://media.discordapp.net/attachments/1048586775553130587/1301506441797963786/wrtFileImageView.png?ex=67295714&is=67280594&hm=eb3d93da0ccc5f5850d480a4b7391248c9ffb3d24ccf3ed11aae756b026a0e15&=&format=webp&quality=lossless&width=656&height=437',
-            'https://media.discordapp.net/attachments/1048586775553130587/1301506441797963786/wrtFileImageView.png?ex=67295714&is=67280594&hm=eb3d93da0ccc5f5850d480a4b7391248c9ffb3d24ccf3ed11aae756b026a0e15&=&format=webp&quality=lossless&width=656&height=437',
-            'https://media.discordapp.net/attachments/1048586775553130587/1301506441797963786/wrtFileImageView.png?ex=67295714&is=67280594&hm=eb3d93da0ccc5f5850d480a4b7391248c9ffb3d24ccf3ed11aae756b026a0e15&=&format=webp&quality=lossless&width=656&height=437',
-            'https://media.discordapp.net/attachments/1048586775553130587/1301506441797963786/wrtFileImageView.png?ex=67295714&is=67280594&hm=eb3d93da0ccc5f5850d480a4b7391248c9ffb3d24ccf3ed11aae756b026a0e15&=&format=webp&quality=lossless&width=656&height=437',
-          ]}
-        />
+        <Insight />
         <LatestNews />
       </S.Container>
     </>
