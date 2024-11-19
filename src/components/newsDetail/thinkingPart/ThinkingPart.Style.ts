@@ -33,6 +33,7 @@ export const InputPart = styled.textarea`
   border: none;
   height: 100%;
   scrollbar-width: none;
+  -ms-overflow-style: none; /* IE에서 스크롤바 숨김 */
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Edge에서 스크롤바 숨기기 */
   }
