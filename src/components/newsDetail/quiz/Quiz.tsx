@@ -44,7 +44,7 @@ const Quiz = ({ quiz, isSolved, answer, comment }: Quiz) => {
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      setTimeLeft(`${hours}:${minutes}:${seconds}초`);
+      setTimeLeft(`${hours}시간 ${minutes}분 ${seconds}초`);
     };
 
     calculateTimeLeft(); // 처음 실행 시 남은 시간 계산
