@@ -4,7 +4,7 @@ import Intro_4 from '../../components/intro/intro_4/Intro_4';
 import Intro_5 from '../../components/intro/intro_5/Intro_5';
 import Intro_6 from '../../components/intro/intro_6/Intro_6';
 import Intro_7 from '../../components/intro/intro_7/Intro_7';
-import StartService from '../../components/intro/startService/StartService';
+import KakaoLogin from '../../components/intro/kakaoLogin/KakaoLogin';
 import Intro_2 from './../../components/intro/intro_2/Intro_2';
 
 const Intro = () => {
@@ -17,7 +17,7 @@ const Intro = () => {
       <Intro_5 />
       <Intro_6 />
       <Intro_7 />
-      <StartService />
+      <KakaoLogin />
     </div>
   );
 };
