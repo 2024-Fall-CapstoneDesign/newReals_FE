@@ -7,6 +7,7 @@ import AIPart from '../../components/newsDetail/aiPart/AIPart';
 import PageButton from '../../components/common/button/PageButton';
 import Quiz from '../../components/newsDetail/quiz/Quiz';
 import PoliticsImg1 from '../../assets/images/PoliticsImg1.png';
+import ThinkingPart from '../../components/newsDetail/thinkingPart/ThinkingPart';
 
 const MOCKDATA = {
   id: 1,
@@ -25,6 +26,7 @@ const MOCKDATA = {
     포럼: '안녕하세요저는김진아포럼은영어포도포도포도포럼포럼해요 이 문맥에서는 이게 이런 뜻이고 이런 말이에요',
   },
   url: 'https://www.breaknews.com/1060642',
+  topic: '"우리나라 무역 강화"에 대해 어떻게 생각하시나요?',
   quiz: '가계의 순자금운용이 줄어든 이유는 주택담보대출 등 금융 기관 차입이 감소했기 때문이다.',
   comment: '이게해설이에요',
   left: '북한 오물풍선',
@@ -33,6 +35,7 @@ const MOCKDATA = {
 
 const NewsDetail = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const handleModal = () => {
     setIsOpen((prev) => !prev);
   };
@@ -50,7 +53,7 @@ const NewsDetail = () => {
         <S.NewsPart>
           <S.NewsImg src={MOCKDATA.img} />
           <AIPart />
-          <EmojiPart />
+          {MOCKDATA.topic ? <ThinkingPart topic={MOCKDATA.topic} /> : <EmojiPart />}
           <button onClick={handleModal}>Show Answer Modal</button>
           {isOpen && <AnswerModal isCorrect={true} onClose={handleModal} />}
           <S.PageNavigate>

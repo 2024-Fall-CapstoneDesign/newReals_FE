@@ -15,10 +15,25 @@ export const Container = styled.div`
 
 export const Quiz = styled.span`
   ${FontStyles.MD2_Bold};
+  display: flex;
+  align-items: center;
+  align-self: stretch;
 `;
 
 export const Q = styled.span`
   color: ${Colors.Main50};
+`;
+
+export const Timer = styled.span`
+  color: ${Colors.Grayscale30};
+  text-align: center;
+  ${FontStyles.XS_Regular};
+  margin-left: auto;
+`;
+
+export const Time = styled.span`
+  color: ${Colors.Main50};
+  ${FontStyles.XS_Medium};
 `;
 
 export const Content = styled.section`
