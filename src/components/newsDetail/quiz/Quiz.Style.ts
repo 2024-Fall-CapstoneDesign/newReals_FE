@@ -54,3 +54,22 @@ export const ButtonContainer = styled.div`
   display: flex;
   gap: 1rem;
 `;
+
+export const Button = styled.button<{ $buttonStyle: 'left' | 'right' }>`
+  background-color: ${({ $buttonStyle }) =>
+    $buttonStyle === 'left' ? Colors.Main40 : Colors.Main5};
+  color: ${({ $buttonStyle }) => ($buttonStyle === 'left' ? Colors.Main0 : Colors.Main40)};
+  padding: 0.5rem 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ $buttonStyle }) =>
+      $buttonStyle === 'left' ? Colors.Main50 : Colors.Main10};
+  }
+`;

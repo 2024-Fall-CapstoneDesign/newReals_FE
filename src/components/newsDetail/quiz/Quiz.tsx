@@ -1,4 +1,3 @@
-import Button from '../../common/button/Button';
 import QuizAnswer from '../../common/quizAnswer/QuizAnswer';
 import * as S from './Quiz.Style';
 import OIcon from '../../../assets/icons/OIcon.svg?react';
@@ -69,7 +68,7 @@ const Quiz = ({ quiz, isSolved, answer, comment }: Quiz) => {
       <S.Quiz>
         <S.Q>Q.&nbsp;</S.Q> 오늘의 퀴즈
         <S.Timer>
-          이 퀴즈는 <S.Time>{timeLeft}</S.Time> 후에 사라져요!
+          <S.Time>{timeLeft}</S.Time> 후에 사라져요!
         </S.Timer>
       </S.Quiz>
       <S.Content>
@@ -78,12 +77,12 @@ const Quiz = ({ quiz, isSolved, answer, comment }: Quiz) => {
           <QuizAnswer color="purple" answer={answer} comment={comment} />
         ) : (
           <S.ButtonContainer>
-            <Button onClick={handleClickO}>
+            <S.Button onClick={handleClickO} $buttonStyle="left">
               <OIcon />
-            </Button>
-            <Button onClick={handleClickX} buttonStyle="quiz">
+            </S.Button>
+            <S.Button onClick={handleClickX} $buttonStyle="right">
               <XIcon />
-            </Button>
+            </S.Button>
           </S.ButtonContainer>
         )}
       </S.Content>
