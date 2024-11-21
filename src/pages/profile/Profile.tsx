@@ -7,6 +7,7 @@ import Scrap from '../../components/profile/scrap/Scrap';
 import { useState } from 'react';
 import EditProfile from '../../components/profile/editProfile/EditProfile';
 import KeywordModal from '../../components/profile/keywordModal/KeywordModal';
+import Insight from '../../components/profile/insight/Insight';
 
 const Profile = () => {
   const [openEditModal, setOpenEditModal] = useState(false);
@@ -40,6 +41,7 @@ const Profile = () => {
             <AnalysisCard nickname="김뉴스" />
             <Quiz />
           </S.RightHead>
+          <Insight />
           <Scrap />
         </S.RightContent>
       </S.Content>
