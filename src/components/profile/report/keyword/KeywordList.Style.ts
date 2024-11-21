@@ -5,6 +5,7 @@ export const Cotainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  width: 50%;
 `;
 
 export const Title = styled.span`

@@ -5,22 +5,19 @@ interface CountProps {
   count: number;
 }
 
-const CHIP_DATA: Record<string, { text: string; unit: string }> = {
-  quiz: { text: '퀴즈', unit: '개' },
-  insight: { text: '인사이트', unit: '회' },
-  scrap: { text: '스크랩', unit: '번' },
+const CHIP_DATA: Record<string, string> = {
+  quiz: '퀴즈',
+  insight: '인사이트',
+  scrap: '스크랩',
 };
 
 const Count = ({ chip, count }: CountProps) => {
-  const chipData = CHIP_DATA[chip];
+  const chipText = CHIP_DATA[chip];
 
   return (
     <S.Count>
-      <S.Chip>{chipData.text}</S.Chip>
-      <S.Text>
-        {count}
-        {chipData.unit}
-      </S.Text>
+      <S.Chip>{chipText}</S.Chip>
+      <S.Text>{count}회</S.Text>
     </S.Count>
   );
 };

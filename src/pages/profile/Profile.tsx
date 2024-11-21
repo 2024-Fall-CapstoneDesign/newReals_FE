@@ -6,6 +6,7 @@ import EditProfile from '../../components/profile/editProfile/EditProfile';
 import KeywordModal from '../../components/profile/keywordModal/KeywordModal';
 import Chip from '../../components/common/chip/Chip';
 import Activities from '../../components/profile/activities/Activities';
+import Report from '../../components/profile/report/Report';
 
 const chips = ['나의 활동', '나의 분석 레포트'];
 
@@ -49,7 +50,7 @@ const Profile = () => {
               </Chip>
             ))}
           </S.ChipContainer>
-          {selectedChip === '나의 활동' ? <Activities /> : <span>분석 레포트</span>}
+          {selectedChip === '나의 활동' ? <Activities /> : <Report />}
         </S.RightContent>
       </S.Content>
       {openEditModal && <EditProfile onClose={handleEditModal} />}
