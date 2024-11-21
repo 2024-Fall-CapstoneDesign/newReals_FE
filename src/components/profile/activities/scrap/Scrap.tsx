@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import Card from '../../common/card/Card';
-import SearchBar from '../../common/header/SearchBar';
-import PageNation from '../../common/pageNation/PageNation';
+import Card from '../../../common/card/Card';
+import SearchBar from '../../../common/header/SearchBar';
+import PageNation from '../../../common/pageNation/PageNation';
 import * as S from './Scrap.Style';
 
 const MOCK_CARDS = [

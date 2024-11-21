@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import * as S from './Item.Style';
-import RightArrowIcon from '../../../assets/icons/RightArrowIcon.svg?react';
-import Tag from '../../common/tag/Tag';
+import RightArrowIcon from '../../../../assets/icons/RightArrowIcon.svg?react';
+import Tag from '../../../common/tag/Tag';
 
 interface ItemProps {
   title: string;
