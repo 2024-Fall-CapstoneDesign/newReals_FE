@@ -4,27 +4,27 @@ import Item from './Item';
 const MOCK_DATA = [
   {
     category: '사회',
-    title: '우리나라 무역 강화” 에 대해 어떻게 생각하시나요?',
+    title: '우리나라 무역 강화',
     newsId: 1,
   },
   {
     category: '사회',
-    title: '우리나라 무역 강화” 에 대해 어떻게 생각하시나요?',
+    title: '우리나라 무역 강화',
     newsId: 2,
   },
   {
     category: '사회',
-    title: '우리나라 무역 강화” 에 대해 어떻게 생각하시나요?',
+    title: '우리나라 무역 강화',
     newsId: 3,
   },
   {
     category: '사회',
-    title: '우리나라 무역 강화” 에 대해 어떻게 생각하시나요?',
+    title: '우리나라 무역 강화',
     newsId: 4,
   },
   {
     category: '사회',
-    title: '우리나라 무역 강화” 에 대해 어떻게 생각하시나요?',
+    title: '우리나라 무역 강화',
     newsId: 5,
   },
 ];

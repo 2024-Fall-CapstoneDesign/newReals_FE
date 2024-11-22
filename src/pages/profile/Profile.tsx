@@ -1,16 +1,19 @@
 import * as S from './Profile.Style';
-import AnalysisCard from '../../components/profile/analysisCard/AnalysisCard';
 import ProfileCard from '../../components/profile/profileCard/ProfileCard';
-import Quiz from '../../components/profile/quiz/Quiz';
 import Calendar from '../../components/profile/calendar/Calendar';
-import Scrap from '../../components/profile/scrap/Scrap';
 import { useState } from 'react';
 import EditProfile from '../../components/profile/editProfile/EditProfile';
 import KeywordModal from '../../components/profile/keywordModal/KeywordModal';
+import Chip from '../../components/common/chip/Chip';
+import Activities from '../../components/profile/activities/Activities';
+import Report from '../../components/profile/report/Report';
+
+const chips = ['나의 활동', '나의 분석 레포트'];
 
 const Profile = () => {
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openKeywordModal, setOpenKeywordModal] = useState(false);
+  const [selectedChip, setSelectedChip] = useState('나의 활동');
 
   const handleEditModal = () => {
     setOpenEditModal((prev) => !prev);
@@ -36,11 +39,18 @@ const Profile = () => {
         </S.LeftContent>
 
         <S.RightContent>
-          <S.RightHead>
-            <AnalysisCard nickname="김뉴스" />
-            <Quiz />
-          </S.RightHead>
-          <Scrap />
+          <S.ChipContainer>
+            {chips.map((chip) => (
+              <Chip
+                key={chip}
+                isSelected={selectedChip === chip}
+                onClick={() => setSelectedChip(chip)}
+              >
+                {chip}
+              </Chip>
+            ))}
+          </S.ChipContainer>
+          {selectedChip === '나의 활동' ? <Activities /> : <Report />}
         </S.RightContent>
       </S.Content>
       {openEditModal && <EditProfile onClose={handleEditModal} />}
