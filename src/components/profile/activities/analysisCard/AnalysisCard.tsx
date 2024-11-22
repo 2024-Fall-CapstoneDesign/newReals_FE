@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Chip from '../../common/chip/Chip';
-import Chart from './chart/Chart';
+import Chip from '../../../common/chip/Chip';
+import Chart from '../analysisCard/chart/Chart';
 import * as S from './AnalysisCard.Style';
-import { CATEGORIES } from '../../../constants/Category';
-import Grade from './grade/Grade';
+import { CATEGORIES } from '../../../../constants/Category';
+import Grade from '../analysisCard/grade/Grade';
 
 const CATEGORY = Object.keys(CATEGORIES);
 

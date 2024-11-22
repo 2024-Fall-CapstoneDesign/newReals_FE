@@ -4,12 +4,12 @@ import { Colors, FontStyles } from '../../../styles';
 export const HeadNews = styled.div<{ $imageUrl: string }>`
   ${FontStyles.LG_Bold}
   width: 100%;
-  height: 26.25rem;
+  height: 24rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) -8.68%, rgba(0, 0, 0, 0.8) 91.11%),
     ${(props) => `url(${props.$imageUrl})`};
   background-size: cover;
   background-position: center;
-  padding: 9.125rem 8.5rem 3.125rem;
+  padding: 6.875rem 8.5rem 3.125rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;

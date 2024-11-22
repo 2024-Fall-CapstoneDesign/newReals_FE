@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors, FontStyles } from '../../../../styles';
+import { Colors, FontStyles } from '../../../../../styles';
 
 export const Container = styled.div`
   ${FontStyles.XS_Medium}

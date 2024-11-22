@@ -33,36 +33,10 @@ export const RightContent = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-`;
-
-export const RightHead = styled.div`
-  width: 100%;
-  display: flex;
   gap: 1.25rem;
 `;
 
-export const ScrapContent = styled.div`
+export const ChipContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-`;
-
-export const ScrapHead = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const Text = styled.span`
-  ${FontStyles.LG_Bold}
-  color : ${Colors.Grayscale90};
-`;
-
-export const CardList = styled.div`
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem 1.25rem;
+  gap: 1rem;
 `;

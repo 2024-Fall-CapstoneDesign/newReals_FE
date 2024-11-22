@@ -1,6 +1,6 @@
 import * as S from './Quiz.Style';
-import OStampIcon from '../../../assets/icons/OStampIcon.svg';
-import XStampIcon from '../../../assets/icons/XStampIcon.svg';
+import OStampIcon from '../../../../assets/icons/OStampIcon.svg';
+import XStampIcon from '../../../../assets/icons/XStampIcon.svg';
 import { useNavigate } from 'react-router-dom';
 
 const quizs = [
