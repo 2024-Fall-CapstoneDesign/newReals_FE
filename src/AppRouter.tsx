@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Intro from './pages/intro/Intro';
 import Home from './pages/home/Home';
 import Category from './pages/category/Category';
@@ -11,7 +11,7 @@ import RedirectPage from './components/intro/kakaoLogin/RedirectPage';
 
 const AppRouter = () => {
   return (
-    <Router>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Intro />} />
@@ -23,7 +23,7 @@ const AppRouter = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/register" element={<Register />} />
       </Routes>
-    </Router>
+    </>
   );
 };
 

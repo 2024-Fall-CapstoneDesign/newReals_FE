@@ -3,6 +3,8 @@ import SelectItem from './selectItem/SelectItem';
 import * as S from './SelectBox.Style';
 import RightIcon from '../../../assets/icons/RightArrowIcon.svg?react';
 import { useEffect, useState } from 'react';
+import { postKeywords } from '../../../api/Interest';
+import { useNavigate } from 'react-router-dom';
 
 // 이 페이지 API 연동하면서 더 최적화 할 수 있는 방안 찾기
 
@@ -19,11 +21,19 @@ interface SelectBoxProps {
  */
 const SelectBox = ({ isActives, setIsActives }: SelectBoxProps) => {
   const [isError, setIsError] = useState(false);
-
+  const navigate = useNavigate();
   const count = isActives.length;
 
   const handleRemoveKeyword = (keyword: string) => {
     setIsActives(isActives.filter((item) => item !== keyword));
+  };
+
+  const handleSubmit = async (keywords: string[]) => {
+    const response = await postKeywords({ keywords });
+    if (response.isSuccess) {
+      localStorage.setItem('is_interests_selected', 'true');
+      navigate('/home');
+    }
   };
 
   useEffect(() => {
@@ -62,11 +72,7 @@ const SelectBox = ({ isActives, setIsActives }: SelectBoxProps) => {
         )}
         <S.ButtonContainer>
           <S.Divider />
-          <S.Button
-            onClick={() => {
-              console.log(isActives);
-            }}
-          >
+          <S.Button onClick={() => handleSubmit(isActives)}>
             내 맞춤 기사 보러가기
             <RightIcon />
           </S.Button>
