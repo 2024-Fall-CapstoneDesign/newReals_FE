@@ -9,6 +9,7 @@ import SelectBox from '../../components/register/selectBox/SelectBox';
 const Register = () => {
   const [category, setCategory] = useState('사회');
   const [isActives, setIsActives] = useState<string[]>([]);
+  const nickname = localStorage.getItem('nickname') || '';
 
   const handleCategory = (category: string) => {
     setCategory(category);
@@ -24,7 +25,7 @@ const Register = () => {
 
   return (
     <S.Content>
-      <Text nickname="이서" /> {/* 닉네임 받아오는 것으로 바꿔야함 */}
+      <Text nickname={nickname} />
       <TabBar type="CATEGORY" selectedItem={category} onClick={handleCategory} />
       <S.Categories>
         {CATEGORIES[category] &&
