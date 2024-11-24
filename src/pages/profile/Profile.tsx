@@ -38,7 +38,7 @@ const Profile = () => {
       }
     };
     fetchUser();
-  }, []);
+  }, [openEditModal]);
 
   return (
     <S.Container>
@@ -71,7 +71,9 @@ const Profile = () => {
           {selectedChip === '나의 활동' ? <Activities /> : <Report />}
         </S.RightContent>
       </S.Content>
-      {openEditModal && <EditProfile onClose={handleEditModal} />}
+      {openEditModal && (
+        <EditProfile name={user.name} image={user.profilePath} onClose={handleEditModal} />
+      )}
       {openKeywordModal && <KeywordModal onClose={handleKeywordModal} />}
     </S.Container>
   );
