@@ -7,28 +7,30 @@ import ProfileImage from '../profileImage/ProfileImage';
 import CoinExplain from './coinExplain/CoinExplain';
 
 interface ProfileCardProps {
-  image: string;
+  name: string;
+  profilePath: string;
   onClickEditProfile: () => void;
   onClickEditKeyWord: () => void;
   keywords: string[];
-  coin: number;
+  point: number;
 }
 
 const ProfileCard = ({
-  image,
+  name,
+  profilePath,
   onClickEditProfile,
   onClickEditKeyWord,
   keywords,
-  coin,
+  point,
 }: ProfileCardProps) => {
   return (
     <S.container>
       <S.Profile>
-        <ProfileImage image={image} />
+        <ProfileImage image={profilePath} />
         <S.IconContainer>
           <S.Icon src={EditIcon} alt="프로필 편집" onClick={onClickEditProfile} />
         </S.IconContainer>
-        김뉴스
+        {name}
       </S.Profile>
       <S.KeywordContainer>
         <S.KeywordHeader>
@@ -50,7 +52,7 @@ const ProfileCard = ({
         <S.CoinText>
           <S.Icon src={CoinIcon} alt="코인" />
           <p>내 코인 </p>
-          <S.CoinNumber>{coin}코인</S.CoinNumber>
+          <S.CoinNumber>{point}코인</S.CoinNumber>
         </S.CoinText>
         <S.InfoContainer>
           <S.Info src={InfoIcon} alt="코인 정보" />
