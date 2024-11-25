@@ -19,12 +19,14 @@ const RedirectPage = () => {
         const data = await login(code);
 
         if (data) {
-          localStorage.setItem('access_token', data.access_token);
-          localStorage.setItem('refresh_token', data.refresh_token);
-          localStorage.setItem('nickname', data.name);
           if (data.redirect_url === '/register') {
-            localStorage.setItem('is_interests_selected', 'false');
+            localStorage.setItem('tempToken', data.tempToken);
+            localStorage.setItem('nickname', data.name);
+          } else {
+            localStorage.setItem('access_token', data.accessToken);
+            localStorage.setItem('refresh_token', data.refreshToken);
           }
+
           navigate(data.redirect_url);
         }
       } catch (error) {
