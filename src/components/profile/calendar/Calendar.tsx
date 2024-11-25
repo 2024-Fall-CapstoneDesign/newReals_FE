@@ -1,7 +1,7 @@
 import { format, getDate, getDay, getMonth, isBefore, isSameDay } from 'date-fns';
 import * as S from './Calendar.Style';
-
-const AttendanceData = [true, false, true, false, true, false, false, true, false, true, false];
+import { useEffect, useState } from 'react';
+import { getAttendance } from '../../../api/Profile';
 
 const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
 
@@ -10,6 +10,7 @@ const Calendar = () => {
   const currentMonth = getMonth(today);
   const firstDayOfMonth = new Date(today.getFullYear(), currentMonth, 1);
   const startDayOfWeek = getDay(firstDayOfMonth);
+  const [attendanceList, setAttendanceList] = useState([]);
 
   // 이번 달의 날짜 배열 생성
   const generateDaysInMonth = () => {
@@ -32,7 +33,7 @@ const Calendar = () => {
     if (isBefore(today, date)) {
       className += 'afterDay';
     } else {
-      const isAttended = AttendanceData[day - 1];
+      const isAttended = attendanceList[day - 1];
       className += isAttended ? 'attended' : 'notAttended';
     }
 
@@ -40,6 +41,16 @@ const Calendar = () => {
   };
 
   const daysInMonth = generateDaysInMonth();
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const data = await getAttendance();
+      if (data) {
+        setAttendanceList(data);
+      }
+    };
+    fetchUser();
+  }, []);
 
   return (
     <S.Container>
