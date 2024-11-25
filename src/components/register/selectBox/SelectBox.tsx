@@ -29,11 +29,11 @@ const SelectBox = ({ isActives, setIsActives }: SelectBoxProps) => {
   };
 
   const handleSubmit = async (keywords: string[]) => {
-    const response = await postKeywords({ keywords });
-    if (response.isSuccess) {
-      localStorage.setItem('is_interests_selected', 'true');
-      navigate('/home');
-    }
+    /*const response = await postKeywords({ keywords });
+    if (response.isSuccess) {*/
+    localStorage.setItem('is_interests_selected', 'true');
+    navigate('/home');
+    //}
   };
 
   useEffect(() => {
