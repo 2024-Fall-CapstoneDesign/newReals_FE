@@ -13,4 +13,6 @@ export const IntroMent = styled.div<{ isLeft: boolean }>`
   gap: 6rem;
 `;
 
-export const ImgPart = styled.img``;
+export const ImgPart = styled.img`
+  margin-top: auto;
+`;

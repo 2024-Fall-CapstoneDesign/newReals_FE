@@ -1,7 +1,7 @@
 import * as S from './KakaoLogin.Style';
 import kakaoButton from '../../../assets/icons/kakaoButton.svg';
 import React from 'react';
-import IntroLoginImg from '../../../assets/images/IntroLoginImg.svg';
+import IntroLoginImg from '../../../assets/icons/IntroLoginIcon.svg';
 
 const KakaoLogin: React.FC = () => {
   const kakaoRestKey = import.meta.env.VITE_KAKAO_REST_KEY;

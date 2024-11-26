@@ -1,13 +1,13 @@
+import * as S from './Intro.Style';
 import CommonLayout from '../../components/intro/commonLayout/CommonLayout';
 import Intro_1 from '../../components/intro/intro_1/Intro_1';
-import KakaoLogin from '../../components/intro/kakaoLogin/KakaoLogin';
 import Intro_2 from './../../components/intro/intro_2/Intro_2';
-import * as S from './Intro.Style';
-import IntroImg3 from '../../assets/images/IntroImg3.svg';
-import IntroImg5 from '../../assets/images/IntroImg5.svg';
-import IntroImg7 from '../../assets/images/IntroImg7.svg';
-import IntroImg4 from '../../assets/images/IntroImg4.svg';
-import IntroImg6 from '../../assets/images/IntroImg6.svg';
+import IntroImg3 from '../../assets/images/IntroImg3.png';
+import IntroImg4 from '../../assets/images/IntroImg4.png';
+import IntroImg5 from '../../assets/images/IntroImg5.png';
+import IntroImg6 from '../../assets/images/IntroImg6.png';
+import IntroImg7 from '../../assets/images/IntroImg7.png';
+import KakaoLogin from '../../components/intro/kakaoLogin/KakaoLogin';
 
 const commonLayouts = [
   {
