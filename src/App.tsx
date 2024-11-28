@@ -12,7 +12,7 @@ const App = () => {
 
     if (accessToken && location.pathname === '/') {
       navigate('/home');
-    } else {
+    } else if (!accessToken) {
       navigate('/');
     }
   }, []);

@@ -3,13 +3,13 @@ import Card from '../card/Card';
 import * as S from './CardList.Style';
 
 interface ListProps {
-  id: number;
+  basenewsId: number;
   imageUrl?: string;
-  isSelected: boolean;
+  isScrapped: boolean;
   category: string;
   keyword: string;
   title: string;
-  description: string;
+  summary: string;
   date: string;
 }
 
@@ -28,24 +28,24 @@ const CardList = ({ list }: CardListProps) => {
     console.log('북마크 기능 구현 필요');
   };
 
-  const handleCardClick = (id: number) => {
-    navigate(`/newsDetail/${id}`);
+  const handleCardClick = (id: number, keyword: string) => {
+    navigate(`/newsDetail/${id}`, { state: keyword });
   };
 
   return (
     <S.CardContainer>
       {list.map((card) => (
         <Card
-          key={card.id}
+          key={card.basenewsId}
           imageUrl={card.imageUrl}
-          isSelected={card.isSelected}
+          isSelected={card.isScrapped}
           category={card.category}
           keyword={card.keyword}
           title={card.title}
-          description={card.description}
+          description={card.summary}
           date={card.date}
           onClickBookmark={handleBookmark}
-          onClickCard={() => handleCardClick(card.id)}
+          onClickCard={() => handleCardClick(card.basenewsId, card.keyword)}
         />
       ))}
     </S.CardContainer>
