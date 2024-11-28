@@ -28,8 +28,8 @@ const CardList = ({ list }: CardListProps) => {
     console.log('북마크 기능 구현 필요');
   };
 
-  const handleCardClick = (id: number) => {
-    navigate(`/newsDetail/${id}`);
+  const handleCardClick = (id: number, keyword: string) => {
+    navigate(`/newsDetail/${id}`, { state: keyword });
   };
 
   return (
@@ -45,7 +45,7 @@ const CardList = ({ list }: CardListProps) => {
           description={card.summary}
           date={card.date}
           onClickBookmark={handleBookmark}
-          onClickCard={() => handleCardClick(card.basenewsId)}
+          onClickCard={() => handleCardClick(card.basenewsId, card.keyword)}
         />
       ))}
     </S.CardContainer>
