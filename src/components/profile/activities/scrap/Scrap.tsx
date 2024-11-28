@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import Card from '../../../common/card/Card';
-import SearchBar from '../../../common/header/SearchBar';
 import PageNation from '../../../common/pageNation/PageNation';
 import * as S from './Scrap.Style';
 import { useEffect, useState } from 'react';
@@ -48,36 +47,30 @@ const Scrap = ({ nickname }: ScrapProps) => {
 
   return (
     <S.ScrapContent>
-      <S.ScrapHead>
-        <S.Text>{nickname}님이 스크랩한 뉴스</S.Text>
-        <SearchBar
-          placeholder="내가 스크랩한 뉴스"
-          onClick={() => {
-            console.log('검색 구현해야함');
-          }}
+      <S.Text>{nickname}님이 스크랩한 뉴스</S.Text>
+      <S.Content>
+        <S.CardList>
+          {scrapList?.map((card) => (
+            <Card
+              key={card.basenewsId}
+              imageUrl={card.imageUrl}
+              isSelected={card.isScrapped}
+              category={card.category}
+              keyword={card.keyword}
+              title={card.title}
+              description={card.summary}
+              date={card.date}
+              onClickBookmark={() => handleUnScrap(card.basenewsId)}
+              onClickCard={() => handleCardClick(card.basenewsId)}
+            />
+          ))}
+        </S.CardList>
+        <PageNation
+          totalPages={totalPage}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
         />
-      </S.ScrapHead>
-      <S.CardList>
-        {scrapList?.map((card) => (
-          <Card
-            key={card.basenewsId}
-            imageUrl={card.imageUrl}
-            isSelected={card.isScrapped}
-            category={card.category}
-            keyword={card.keyword}
-            title={card.title}
-            description={card.summary}
-            date={card.date}
-            onClickBookmark={() => handleUnScrap(card.basenewsId)}
-            onClickCard={() => handleCardClick(card.basenewsId)}
-          />
-        ))}
-      </S.CardList>
-      <PageNation
-        totalPages={totalPage}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
+      </S.Content>
     </S.ScrapContent>
   );
 };

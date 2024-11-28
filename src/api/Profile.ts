@@ -47,6 +47,44 @@ export const getAttendance = async () => {
 };
 
 /**
+ * 스크랩 뉴스 리스트 조회
+ * @param page - 페이지네이션
+ * @returns
+ */
+export const getScrap = async (page: number) => {
+  try {
+    const response = await api.get('/accounts/profile/scrap', {
+      params: { page },
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (response.data.success) {
+      return response.data.data;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+/**
+ * 스크랩 뉴스 스크랩 해제
+ * @param newsId - 스크랩 취소할 뉴스의 아이디
+ */
+export const deleteScrap = async (newsId: number) => {
+  try {
+    await api.delete('/accounts/profile/unscrap', {
+      params: { newsId },
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+/**
  * 프로필 정보 수정
  * @param name - 변경할 이름
  * @param file - 변경할 프로필 이미지 파일
@@ -71,7 +109,7 @@ export const patchProfile = async (name?: string, file?: File) => {
       },
     });
     if (response.data.success) {
-      return response.data; // 이 부분 바꿔야 함..ㅜㅜ
+      return response.data.data.name;
     }
   } catch (error) {
     console.error(error);
