@@ -5,16 +5,7 @@ import { useEffect, useState } from 'react';
 import LatestNews from '../../components/home/latestNews/LatestNews';
 import Insight from '../../components/home/insight/Insight';
 import { getDailyNews } from '../../api/Main';
-
-interface DailyNewsProps {
-  category: string;
-  dailynewsId: number;
-  imagePath: string | null;
-  keyword: string;
-  quizQuestion: string;
-  subCategory: string;
-  title: string;
-}
+import { DailyNewsProps } from '../../types/newsType';
 
 const Home = () => {
   const [dailyNews, setDailyNews] = useState<DailyNewsProps[]>([]);
