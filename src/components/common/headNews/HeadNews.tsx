@@ -14,6 +14,7 @@ interface HeadNewsProps {
   keyword: string;
   title: string;
   quiz: string;
+  imagePath: string | null;
   index?: number;
   onPrevious?: () => void;
   onNext?: () => void;
@@ -30,6 +31,7 @@ interface HeadNewsProps {
  * @param title - 뉴스 제목
  * @param quiz - 퀴즈 내용
  * @param index - 뉴스 항목의 인덱스
+ * @param imagePath - 뉴스의 이미지
  * @param onPrevious - 이전 뉴스로 이동하는 핸들러 함수
  * @param onNext - 다음 뉴스로 이동하는 핸들러 함수
  * @param onPaused - 뉴스 재생을 일시 정지하는 핸들러 함수
@@ -43,17 +45,18 @@ const HeadNews = ({
   keyword,
   title,
   quiz,
+  imagePath,
   index,
   onPrevious,
   onNext,
   onPaused,
   isPaused,
 }: HeadNewsProps) => {
-  const imageUrl = getRandomImage({ category: category });
+  const imageUrl = getRandomImage({ category: '정치' }); // 이 부분 바뀌어야함
   const navigate = useNavigate();
 
   return (
-    <S.HeadNews $imageUrl={imageUrl || ''}>
+    <S.HeadNews $imageUrl={imagePath ? imagePath : imageUrl}>
       <S.Container>
         <S.TextContainer>
           <S.Head>
