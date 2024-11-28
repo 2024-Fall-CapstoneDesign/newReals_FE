@@ -7,27 +7,7 @@ import PageNation from '../../components/common/pageNation/PageNation';
 import * as S from './Category.Style';
 import { getCategoryNews, getSubCategoryNews } from '../../api/Category';
 import { handleScrap } from '../../utils/scrapUtils';
-
-interface DailyNewsProps {
-  category: string;
-  dailynewsId: number;
-  imagePath: string | null;
-  keyword: string;
-  quizQuestion: string;
-  subCategory: string;
-  title: string;
-}
-
-interface ListProps {
-  basenewsId: number;
-  imageUrl?: string;
-  isScrapped: boolean;
-  category: string;
-  keyword: string;
-  title: string;
-  summary: string;
-  date: string;
-}
+import { DailyNewsProps, ListProps } from '../../types/newsType';
 
 const Category = () => {
   const [dailyNews, setDailyNews] = useState<DailyNewsProps | null>(null);
@@ -47,6 +27,11 @@ const Category = () => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
+
+  useEffect(() => {
+    setSelectSubCategory('');
+    setCurrentPage(1);
+  }, [category]);
 
   useEffect(() => {
     const fetchData = async () => {

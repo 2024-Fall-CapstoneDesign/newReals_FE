@@ -1,15 +1,5 @@
 import { postScrap } from '../api/Scrap';
-
-interface ListProps {
-  basenewsId: number;
-  imageUrl?: string;
-  isScrapped: boolean;
-  category: string;
-  keyword: string;
-  title: string;
-  summary: string;
-  date: string;
-}
+import { ListProps } from '../types/newsType';
 
 export const handleScrap = async (
   id: number,

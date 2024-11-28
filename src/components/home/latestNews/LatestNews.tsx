@@ -5,17 +5,7 @@ import PageNation from '../../common/pageNation/PageNation';
 import CardList from '../../common/cardList/CardList';
 import { getKeywordNews } from '../../../api/Main';
 import { handleScrap } from '../../../utils/scrapUtils';
-
-interface ListProps {
-  basenewsId: number;
-  imageUrl?: string;
-  isScrapped: boolean;
-  category: string;
-  keyword: string;
-  title: string;
-  summary: string;
-  date: string;
-}
+import { ListProps } from '../../../types/newsType';
 
 const LatestNews = () => {
   const [keywordsList, setKeywordsList] = useState(['']);

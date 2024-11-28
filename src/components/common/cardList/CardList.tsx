@@ -1,17 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Card from '../card/Card';
 import * as S from './CardList.Style';
-
-interface ListProps {
-  basenewsId: number;
-  imageUrl?: string;
-  isScrapped: boolean;
-  category: string;
-  keyword: string;
-  title: string;
-  summary: string;
-  date: string;
-}
+import { ListProps } from '../../../types/newsType';
 
 interface CardListProps {
   list: ListProps[];

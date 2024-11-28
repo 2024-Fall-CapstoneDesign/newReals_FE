@@ -77,3 +77,22 @@ export const patchProfile = async (name?: string, file?: File) => {
     console.error(error);
   }
 };
+
+/**
+ * 퀴즈 현황 조회
+ * @returns
+ */
+export const getQuiz = async () => {
+  try {
+    const response = await api.get('/accounts/profile/quiz', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (response.data.success) {
+      return response.data.data;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
