@@ -4,10 +4,22 @@ import * as S from './LatestNews.Style';
 import PageNation from '../../common/pageNation/PageNation';
 import CardList from '../../common/cardList/CardList';
 import { getKeywordNews } from '../../../api/Main';
+import { handleScrap } from '../../../utils/scrapUtils';
+
+interface ListProps {
+  basenewsId: number;
+  imageUrl?: string;
+  isScrapped: boolean;
+  category: string;
+  keyword: string;
+  title: string;
+  summary: string;
+  date: string;
+}
 
 const LatestNews = () => {
   const [keywordsList, setKeywordsList] = useState(['']);
-  const [baseNewsList, setBaseNewsList] = useState([]);
+  const [baseNewsList, setBaseNewsList] = useState<ListProps[]>([]);
   const [currentKeyword, setCurrentKeyword] = useState<number | null>(null);
   const [totalPage, setTotalPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -57,7 +69,11 @@ const LatestNews = () => {
           </S.Keywords>
         </S.DescrtionContainer>
       </S.TextContainer>
-      <CardList list={baseNewsList} type="home" />
+      <CardList
+        list={baseNewsList}
+        type="home"
+        onScrap={(id) => handleScrap(id, setBaseNewsList)}
+      />
       <PageNation
         totalPages={totalPage}
         currentPage={currentPage}

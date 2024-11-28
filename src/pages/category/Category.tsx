@@ -6,6 +6,7 @@ import CardList from '../../components/common/cardList/CardList';
 import PageNation from '../../components/common/pageNation/PageNation';
 import * as S from './Category.Style';
 import { getCategoryNews, getSubCategoryNews } from '../../api/Category';
+import { handleScrap } from '../../utils/scrapUtils';
 
 interface DailyNewsProps {
   category: string;
@@ -17,10 +18,21 @@ interface DailyNewsProps {
   title: string;
 }
 
+interface ListProps {
+  basenewsId: number;
+  imageUrl?: string;
+  isScrapped: boolean;
+  category: string;
+  keyword: string;
+  title: string;
+  summary: string;
+  date: string;
+}
+
 const Category = () => {
   const [dailyNews, setDailyNews] = useState<DailyNewsProps | null>(null);
   const [selectSubCategory, setSelectSubCategory] = useState('');
-  const [categoryNews, setCategoryNews] = useState([]);
+  const [categoryNews, setCategoryNews] = useState<ListProps[]>([]);
   const [totalPage, setTotalPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const { pathname } = useLocation();
@@ -82,6 +94,7 @@ const Category = () => {
         <CardList
           list={categoryNews}
           type={selectSubCategory !== '' ? 'subCategory' : 'category'}
+          onScrap={(id) => handleScrap(id, setCategoryNews)}
         />
         <PageNation
           totalPages={totalPage}
