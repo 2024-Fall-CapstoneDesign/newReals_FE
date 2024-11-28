@@ -24,6 +24,13 @@ export const getCategoryNews = async (category: string, page: number) => {
   }
 };
 
+/**
+ * 소 카테고리 페이지 조회
+ * @param category - 카테고리["society" | "economy" | "politics"]
+ * @param subCategory - 각 카테고리의 소카테고리
+ * @param page - 페이지네이션
+ * @returns
+ */
 export const getSubCategoryNews = async (category: string, subCategory: string, page: number) => {
   try {
     const response = await api.get('/category/sub', {
