@@ -21,11 +21,12 @@ const KeywordModal = ({ onClose }: KeywordModalProps) => {
   };
 
   const handleKeywordToggle = (keyword: string) => {
-    setIsActives((prevIsActives) =>
-      prevIsActives.includes(keyword)
+    setIsActives((prevIsActives) => {
+      const updated = prevIsActives.includes(keyword)
         ? prevIsActives.filter((item) => item !== keyword)
-        : [...prevIsActives, keyword],
-    );
+        : [...prevIsActives, keyword];
+      return updated;
+    });
   };
 
   const handleSubmit = async () => {

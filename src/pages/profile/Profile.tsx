@@ -38,7 +38,7 @@ const Profile = () => {
       }
     };
     fetchUser();
-  }, [openEditModal]);
+  }, [openEditModal, openKeywordModal]);
 
   return (
     <S.Container>
