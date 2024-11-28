@@ -4,16 +4,26 @@ import SearchBar from '../../../common/header/SearchBar';
 import PageNation from '../../../common/pageNation/PageNation';
 import * as S from './Scrap.Style';
 import { useEffect, useState } from 'react';
-import { getScrap } from '../../../../api/Profile';
+import { deleteScrap, getScrap } from '../../../../api/Profile';
 import { ListProps } from '../../../../types/newsType';
 
-const Scrap = () => {
+interface ScrapProps {
+  nickname: string;
+}
+
+const Scrap = ({ nickname }: ScrapProps) => {
   const [scrapList, setScrapList] = useState<ListProps[]>();
   const [totalPage, setTotalPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
-  const handleBookmark = () => {
-    console.log('북마크 기능 구현 필요');
+
+  const handleUnScrap = async (newsId: number) => {
+    try {
+      await deleteScrap(newsId);
+      setScrapList((prevList) => prevList?.filter((item) => item.basenewsId !== newsId));
+    } catch (error) {
+      console.error('스크랩 해제 실패:', error);
+    }
   };
 
   const handleCardClick = (id: number) => {
@@ -39,7 +49,7 @@ const Scrap = () => {
   return (
     <S.ScrapContent>
       <S.ScrapHead>
-        <S.Text>김뉴스님이 스크랩한 뉴스</S.Text>
+        <S.Text>{nickname}님이 스크랩한 뉴스</S.Text>
         <SearchBar
           placeholder="내가 스크랩한 뉴스"
           onClick={() => {
@@ -58,7 +68,7 @@ const Scrap = () => {
             title={card.title}
             description={card.summary}
             date={card.date}
-            onClickBookmark={handleBookmark}
+            onClickBookmark={() => handleUnScrap(card.basenewsId)}
             onClickCard={() => handleCardClick(card.basenewsId)}
           />
         ))}
