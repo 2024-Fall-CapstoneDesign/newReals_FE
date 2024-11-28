@@ -22,7 +22,7 @@ const CardList = ({ list, type, onScrap }: CardListProps) => {
     const mapping = {
       home: { keyword: card.keyword },
       category: { category: card.category },
-      subCategory: { subCategory: card.category },
+      subCategory: { subCategory: card.subCategory },
     };
 
     return mapping[type];

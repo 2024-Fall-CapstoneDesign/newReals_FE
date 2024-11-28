@@ -7,6 +7,7 @@ export interface ListProps {
   title: string;
   summary: string;
   date: string;
+  subCategory: string;
 }
 
 export interface DailyNewsProps {
