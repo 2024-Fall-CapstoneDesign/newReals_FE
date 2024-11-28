@@ -16,7 +16,7 @@ export const SecondIntro = styled.div`
 export const Logo = styled.span`
   color: ${Colors.Black};
   text-align: center;
-  font-family: Syncopate;
+  font-family: 'Syncopate';
   font-size: 1.875rem;
   line-height: 140%;
 `;

@@ -20,7 +20,7 @@ export const Purple = styled.span`
 
 export const Slogan = styled.p`
   color: ${Colors.Grayscale90};
-  font-family: Syncopate;
+  font-family: 'Syncopate';
   font-size: 36px;
   line-height: 120%;
 `;
