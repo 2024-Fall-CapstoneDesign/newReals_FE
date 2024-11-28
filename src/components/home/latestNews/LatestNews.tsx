@@ -57,7 +57,7 @@ const LatestNews = () => {
           </S.Keywords>
         </S.DescrtionContainer>
       </S.TextContainer>
-      <CardList list={baseNewsList} />
+      <CardList list={baseNewsList} type="home" />
       <PageNation
         totalPages={totalPage}
         currentPage={currentPage}
