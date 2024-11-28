@@ -115,3 +115,22 @@ export const patchProfile = async (name?: string, file?: File) => {
     console.error(error);
   }
 };
+
+/**
+ * 관심사 수정
+ * @param keywords - 수정할 관심사 키워드 리스트
+ * @returns
+ */
+export const putKeywords = async (keywords: string[]) => {
+  try {
+    const response = await api.put('/accounts/register/edit', keywords, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    return response.data.success;
+  } catch (error) {
+    console.error(error);
+  }
+};
