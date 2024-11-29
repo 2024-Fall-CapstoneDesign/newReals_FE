@@ -25,7 +25,6 @@ export const getDetailNews = async (id: number, locationProp: any) => {
         },
       });
     }
-    console.log('응답 데이터:', res.data.data);
     return res.data.data;
   } catch (error) {
     console.error(error);
@@ -44,7 +43,6 @@ export const getDetailQuiz = async (id: number) => {
         Authorization: `Bearer ${accessToken}`,
       },
     });
-    console.log('응답 데이터:', res.data.data);
     return res.data.data;
   } catch (error) {
     console.error(error);
@@ -64,7 +62,6 @@ export const getDetailInsight = async (id: number) => {
         Accept: 'application/json',
       },
     });
-    console.log('응답 데이터:', res.data.data);
     return res.data.data;
   } catch (error) {
     console.error(error);
