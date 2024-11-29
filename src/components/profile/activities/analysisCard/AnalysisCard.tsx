@@ -6,14 +6,12 @@ import { CATEGORIES } from '../../../../constants/Category';
 import Grade from '../analysisCard/grade/Grade';
 import { getInterest } from '../../../../api/Profile';
 
-// @TODO 카테고리 백에서 바껴야지 관심도 분석할 수 있음.. ! ㅜㅜ
-
 const CATEGORY = Object.keys(CATEGORIES);
 
 interface AnalysisDataProps {
   category: string;
   subCategory: string;
-  percent: number;
+  percentage: number;
 }
 
 interface InterestDataProps {
@@ -67,7 +65,7 @@ const AnalysisCard = ({ nickname }: AnalysisCardProps) => {
         <Chart
           category={category}
           values={filteredData.map((item) => ({
-            value: item.percent,
+            value: item.percentage,
             subCategory: item.subCategory,
           }))}
         />
@@ -90,7 +88,7 @@ const AnalysisCard = ({ nickname }: AnalysisCardProps) => {
                 grade={index + 1}
                 category={item.category}
                 subCategory={item.subCategory}
-                percent={item.percent}
+                percent={item.percentage}
               />
             ))}
           </S.GradeList>

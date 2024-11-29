@@ -9,6 +9,13 @@ import { getCategoryNews, getSubCategoryNews } from '../../api/Category';
 import { handleScrap } from '../../utils/scrapUtils';
 import { DailyNewsProps, ListProps } from '../../types/newsType';
 
+const categoryMap: Record<'society' | 'politics' | 'economy' | 'category', string> = {
+  society: '사회',
+  politics: '정치',
+  economy: '경제',
+  category: '기타',
+};
+
 const Category = () => {
   const [dailyNews, setDailyNews] = useState<DailyNewsProps | null>(null);
   const [selectSubCategory, setSelectSubCategory] = useState('');
@@ -32,7 +39,7 @@ const Category = () => {
     setSelectSubCategory('');
     setCurrentPage(1);
     const fetchCategoryNews = async () => {
-      const data = await getCategoryNews(category, 1);
+      const data = await getCategoryNews(categoryMap[category], 1);
       if (data) {
         setDailyNews(data.dailynews);
         setCategoryNews(data.basenewsList);
@@ -46,7 +53,7 @@ const Category = () => {
   useEffect(() => {
     if (!selectSubCategory) {
       const fetchCategoryNews = async () => {
-        const data = await getCategoryNews(category, currentPage);
+        const data = await getCategoryNews(categoryMap[category], currentPage);
         if (data) {
           setCategoryNews(data.basenewsList);
           setTotalPage(data.totalPage);
@@ -54,13 +61,17 @@ const Category = () => {
       };
       fetchCategoryNews();
     }
-  }, [currentPage, category, selectSubCategory]);
+  }, [currentPage, selectSubCategory]);
 
   // 소카테고리 변경 시
   useEffect(() => {
     if (selectSubCategory) {
       const fetchSubCategoryNews = async () => {
-        const data = await getSubCategoryNews(category, selectSubCategory, currentPage);
+        const data = await getSubCategoryNews(
+          categoryMap[category],
+          selectSubCategory,
+          currentPage,
+        );
         if (data) {
           setCategoryNews(data.basenewsList);
           setTotalPage(data.totalPage);
