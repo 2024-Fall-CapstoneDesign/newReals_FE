@@ -31,28 +31,44 @@ const Category = () => {
   useEffect(() => {
     setSelectSubCategory('');
     setCurrentPage(1);
+    const fetchCategoryNews = async () => {
+      const data = await getCategoryNews(category, 1);
+      if (data) {
+        setDailyNews(data.dailynews);
+        setCategoryNews(data.basenewsList);
+        setTotalPage(data.totalPage);
+      }
+    };
+    fetchCategoryNews();
   }, [category]);
 
+  // 페이지 변경 시
   useEffect(() => {
-    const fetchData = async () => {
-      if (selectSubCategory === '') {
+    if (!selectSubCategory) {
+      const fetchCategoryNews = async () => {
         const data = await getCategoryNews(category, currentPage);
         if (data) {
-          setDailyNews(data.dailynews);
           setCategoryNews(data.basenewsList);
           setTotalPage(data.totalPage);
         }
-      } else {
+      };
+      fetchCategoryNews();
+    }
+  }, [currentPage, category, selectSubCategory]);
+
+  // 소카테고리 변경 시
+  useEffect(() => {
+    if (selectSubCategory) {
+      const fetchSubCategoryNews = async () => {
         const data = await getSubCategoryNews(category, selectSubCategory, currentPage);
         if (data) {
           setCategoryNews(data.basenewsList);
           setTotalPage(data.totalPage);
         }
-      }
-    };
-
-    fetchData();
-  }, [category, currentPage, selectSubCategory]);
+      };
+      fetchSubCategoryNews();
+    }
+  }, [selectSubCategory, currentPage]);
 
   return (
     <div>
