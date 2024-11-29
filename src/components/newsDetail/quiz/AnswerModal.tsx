@@ -4,7 +4,7 @@ import CongratulationEmoji from '../../../assets/icons/CongratulationEmoji.svg';
 import XIcon from '../../../assets/icons/XIcon.svg';
 import QuizAnswer from '../../common/quizAnswer/QuizAnswer';
 import Button from '../../common/button/Button';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import PointAlert from '../../common/chip/PointAlert';
 import Modal from '../../common/modal/Modal';
 
@@ -25,6 +25,9 @@ interface ModalProps {
 
 const AnswerModal = ({ isCorrect, answer, comment, onClose }: ModalProps) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const showButton = isCorrect && location.pathname !== '/profile';
   return (
     <Modal onClose={onClose}>
       <S.ModalPart>
@@ -40,14 +43,16 @@ const AnswerModal = ({ isCorrect, answer, comment, onClose }: ModalProps) => {
         </S.EmojiPart>
         <S.AnswerPart>
           <QuizAnswer color="gray" answer={answer} comment={comment} />
-          <Button
-            buttonStyle="modal"
-            onClick={() => {
-              navigate('/profile');
-            }}
-          >
-            내 포인트 보러가기
-          </Button>
+          {showButton && (
+            <Button
+              buttonStyle="modal"
+              onClick={() => {
+                navigate('/profile');
+              }}
+            >
+              내 포인트 보러가기
+            </Button>
+          )}
         </S.AnswerPart>
       </S.ModalPart>
     </Modal>
