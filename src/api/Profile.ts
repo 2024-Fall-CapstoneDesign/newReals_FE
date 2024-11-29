@@ -134,3 +134,41 @@ export const putKeywords = async (keywords: string[]) => {
     console.error(error);
   }
 };
+
+/**
+ * 나의 활동 - 관심사 분석 조회
+ * @returns
+ */
+export const getInterest = async () => {
+  try {
+    const response = await api.get('/accounts/profile/interest', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (response.data.success) {
+      return response.data.data.interest;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+/**
+ * 퀴즈 현황 조회
+ * @returns
+ */
+export const getQuiz = async () => {
+  try {
+    const response = await api.get('/accounts/profile/quiz', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (response.data.success) {
+      return response.data.data;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};

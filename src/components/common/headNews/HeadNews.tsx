@@ -57,7 +57,11 @@ const HeadNews = ({
 
   return (
     <S.HeadNews $imageUrl={imagePath ? imagePath : imageUrl}>
-      <S.Container>
+      <S.Container
+        onClick={() => {
+          navigate(`/newsDetail/${id}`);
+        }}
+      >
         <S.TextContainer>
           <S.Head>
             <p>오늘의 뉴스</p>
@@ -72,11 +76,7 @@ const HeadNews = ({
           </S.Head>
           <S.Title>{title}</S.Title>
         </S.TextContainer>
-        <S.Quiz
-          onClick={() => {
-            navigate(`/newsDetail/${id}`);
-          }}
-        >
+        <S.Quiz>
           <Tag color="purple" size="large">
             O/X 퀴즈
           </Tag>
