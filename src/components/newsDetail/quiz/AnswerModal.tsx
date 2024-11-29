@@ -10,17 +10,20 @@ import Modal from '../../common/modal/Modal';
 
 interface ModalProps {
   isCorrect: boolean;
+  answer: boolean;
+  comment: string;
   onClose: () => void;
 }
 
 /**
  *
  * @param isCorrect - 정답 맞았는지 여부
+ * @param comment - 해설
  * @param onClose - 닫는 함수
  * @returns
  */
 
-const AnswerModal = ({ isCorrect, onClose }: ModalProps) => {
+const AnswerModal = ({ isCorrect, answer, comment, onClose }: ModalProps) => {
   const navigate = useNavigate();
   return (
     <Modal onClose={onClose}>
@@ -36,7 +39,7 @@ const AnswerModal = ({ isCorrect, onClose }: ModalProps) => {
           )}
         </S.EmojiPart>
         <S.AnswerPart>
-          <QuizAnswer color="gray" answer={true} comment="해설" />
+          <QuizAnswer color="gray" answer={answer} comment={comment} />
           <Button
             buttonStyle="modal"
             onClick={() => {

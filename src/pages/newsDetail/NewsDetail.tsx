@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import AnswerModal from '../../components/newsDetail/quiz/AnswerModal';
+import { useEffect, useState } from 'react';
 import EmojiPart from '../../components/newsDetail/emojipart/EmojiPart';
 import ArticleHeader from '../../components/newsDetail/articleHeader/ArticleHeader';
 import * as S from './NewsDetail.Style';
@@ -8,6 +7,8 @@ import PageButton from '../../components/common/button/PageButton';
 import Quiz from '../../components/newsDetail/quiz/Quiz';
 import PoliticsImg1 from '../../assets/images/PoliticsImg1.png';
 import ThinkingPart from '../../components/newsDetail/thinkingPart/ThinkingPart';
+import api from '../../api/instance';
+import { useLocation, useParams } from 'react-router-dom';
 
 const MOCKDATA = {
   id: 1,
@@ -33,40 +34,168 @@ const MOCKDATA = {
   right: '의료 대란 논의',
 };
 
-const NewsDetail = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface NewsDataProps {
+  category: string;
+  subCategory: string;
+  keyword: string;
+  title: string;
+  summary: string;
+  description: string;
+  imageUrl: string;
+  newsUrl: string;
+  uploadDate: string;
+  isScrapped: boolean;
+  good: number;
+  bad: number;
+  interesting: number;
+  totalLikes: number;
+  viewCount: number;
+  termMap: Record<string, string>;
+}
 
-  const handleModal = () => {
-    setIsOpen((prev) => !prev);
+interface QuizDataProps {
+  problem: string;
+  answer: boolean;
+  comment: string;
+  solved: boolean;
+}
+
+interface InsightDataProps {
+  topic: string;
+  userComment: string;
+  aiComment: string;
+  pros: string;
+  cons: string;
+  neutral: string;
+}
+
+const accessToken = localStorage.getItem('access_token');
+
+const NewsDetail = () => {
+  const { id } = useParams();
+  const location = useLocation();
+  const { state: keyword } = location;
+  const [newsData, setNewsData] = useState<NewsDataProps | null>(null);
+  const [quizData, setQuizData] = useState<QuizDataProps | null>(null);
+  const [insightData, setInsightData] = useState<InsightDataProps | null>(null);
+
+  const getNews = async (id: number) => {
+    try {
+      let res;
+      if (keyword) {
+        res = await api.get(`/news/${id}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          params: keyword,
+        });
+      } else {
+        res = await api.get(`/news/${id}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+      }
+      console.log('응답 데이터:', res.data.data);
+      setNewsData(res.data.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  const getQuiz = async (id: number) => {
+    try {
+      const res = await api.get(`/news/quiz/${id}`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      console.log('응답 데이터:', res.data.data);
+      setQuizData(res.data.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const getInsight = async (id: number) => {
+    try {
+      const res = await api.get(`/news/insight/${id}`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          Accept: 'application/json',
+        },
+      });
+      console.log('응답 데이터:', res.data.data);
+      setInsightData(res.data.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getNews(Number(id));
+    getQuiz(Number(id));
+    getInsight(Number(id));
+  }, [id]); // 빈 의존성 배열: 컴포넌트 마운트 시 한 번만 실행
+
   return (
     <S.NewsDetail>
-      <ArticleHeader
-        category={MOCKDATA.category}
-        subCategory={MOCKDATA.subCategory}
-        keyword={MOCKDATA.keyword}
-        title={MOCKDATA.title}
-        date={MOCKDATA.date}
-        count={MOCKDATA.count}
-      />
-      <S.Content>
-        <S.NewsPart>
-          <S.NewsImg src={MOCKDATA.img} />
-          <AIPart />
-          {MOCKDATA.topic ? <ThinkingPart topic={MOCKDATA.topic} /> : <EmojiPart />}
-          <button onClick={handleModal}>Show Answer Modal</button>
-          {isOpen && <AnswerModal isCorrect={true} onClose={handleModal} />}
-          <S.PageNavigate>
-            <PageButton children={MOCKDATA.left} buttonStyle="left" />
-            <PageButton children={MOCKDATA.right} buttonStyle="right" />
-          </S.PageNavigate>
-        </S.NewsPart>
-        {MOCKDATA.quiz && (
-          <S.QuizPart>
-            <Quiz quiz={MOCKDATA.quiz} isSolved={false} answer={true} comment={MOCKDATA.comment} />
-          </S.QuizPart>
-        )}
-      </S.Content>
+      {newsData && (
+        <>
+          <ArticleHeader
+            category={newsData.category}
+            subCategory={newsData.subCategory}
+            keyword={newsData.keyword}
+            title={newsData.title}
+            date={newsData.uploadDate}
+            count={newsData.totalLikes}
+            isScrapped={newsData.isScrapped}
+          />
+          <S.Content>
+            <S.NewsPart>
+              {newsData.imageUrl && <S.NewsImg src={newsData.imageUrl} />}
+              <AIPart
+                summary={newsData.summary}
+                description={newsData.description}
+                termMap={newsData.termMap}
+                newsUrl={newsData.newsUrl}
+              />
+              {insightData ? (
+                <ThinkingPart
+                  topic={insightData.topic}
+                  userComment={insightData.userComment}
+                  aiComment={insightData.aiComment}
+                  pros={insightData.pros}
+                  cons={insightData.cons}
+                  neutral={insightData.neutral}
+                  onCommentUpdated={() => getInsight(Number(id))}
+                />
+              ) : (
+                <EmojiPart
+                  good={newsData.good}
+                  bad={newsData.bad}
+                  interesting={newsData.interesting}
+                />
+              )}
+              <S.PageNavigate>
+                <PageButton children={MOCKDATA.left} buttonStyle="left" />
+                <PageButton children={MOCKDATA.right} buttonStyle="right" />
+              </S.PageNavigate>
+            </S.NewsPart>
+            {quizData && (
+              <S.QuizPart>
+                <Quiz
+                  quiz={quizData.problem}
+                  isSolved={quizData.solved}
+                  answer={quizData.answer}
+                  comment={quizData.comment}
+                  onCommentUpdated={() => getQuiz(Number(id))}
+                />
+              </S.QuizPart>
+            )}
+          </S.Content>
+        </>
+      )}
     </S.NewsDetail>
   );
 };

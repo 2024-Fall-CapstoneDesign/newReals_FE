@@ -11,6 +11,7 @@ interface ArticleHeadProps {
   title: string;
   date: string;
   count: number;
+  isScrapped: boolean;
 }
 
 const ArticleHeader = ({
@@ -20,8 +21,9 @@ const ArticleHeader = ({
   title,
   date,
   count,
+  isScrapped,
 }: ArticleHeadProps) => {
-  const [isSelected, setIsSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState(isScrapped);
   const handleSelected = () => {
     setIsSelected((prev) => !prev);
   };
