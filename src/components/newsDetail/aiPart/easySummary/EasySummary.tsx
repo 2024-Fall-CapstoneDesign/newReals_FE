@@ -17,6 +17,7 @@ interface EasySumProps {
  */
 
 const EasySummary = ({ content, dictionary, url }: EasySumProps) => {
+  console.log(dictionary);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedTerm, setSelectedTerm] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState<{ top: number; left: number }>({
