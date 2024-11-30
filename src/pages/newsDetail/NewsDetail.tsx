@@ -102,19 +102,22 @@ const NewsDetail = () => {
     if (updatedQuiz) setQuizData(updatedQuiz);
   };
 
-  const getStateData = () => {
+  const getStateData = (): { category?: string; keyword?: string; subCategory?: string } | null => {
     if (!newsData || !newsData.wherePageFrom) {
       console.error('newsData 또는 wherePageFrom이 유효하지 않습니다.');
       return null;
     }
-
-    const mapping: Record<string, any> = {
+    type WherePageFrom = 'category' | 'keyword' | 'subCategory';
+    const mapping: Record<
+      WherePageFrom,
+      { category?: string; keyword?: string; subCategory?: string }
+    > = {
       category: { category: newsData.category },
       keyword: { keyword: newsData.keyword },
       subCategory: { subCategory: newsData.subCategory },
     };
 
-    const stateData = mapping[newsData.wherePageFrom];
+    const stateData = mapping[newsData.wherePageFrom as WherePageFrom];
 
     if (!stateData) {
       console.warn(`wherePageFrom 값 "${newsData.wherePageFrom}"에 대한 매핑이 없습니다.`);
