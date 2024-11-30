@@ -10,22 +10,21 @@ const accessToken = localStorage.getItem('access_token');
  */
 export const getDetailNews = async (id: number, locationProp: any) => {
   try {
-    let res;
-    if (locationProp) {
-      res = await api.get(`/news/${id}`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-        params: locationProp,
-      });
-    } else {
-      res = await api.get(`/news/${id}`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+    const res = locationProp
+      ? await api.get(`/news/${id}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          params: locationProp,
+        })
+      : await api.get(`/news/${id}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+    if (res.data.success) {
+      return res.data.data;
     }
-    return res.data.data;
   } catch (error) {
     console.error(error);
   }
@@ -43,7 +42,9 @@ export const getDetailQuiz = async (id: number) => {
         Authorization: `Bearer ${accessToken}`,
       },
     });
-    return res.data.data;
+    if (res.data.success) {
+      return res.data.data;
+    }
   } catch (error) {
     console.error(error);
   }
@@ -62,7 +63,9 @@ export const getDetailInsight = async (id: number) => {
         Accept: 'application/json',
       },
     });
-    return res.data.data;
+    if (res.data.success) {
+      return res.data.data;
+    }
   } catch (error) {
     console.error(error);
   }
@@ -86,8 +89,7 @@ export const sendInsight = async (id: number, comment: string) => {
         },
       },
     );
-    console.log('응답:', res.data.message);
-    return true;
+    return res.data.success;
   } catch (error) {
     console.error(error);
     return false;
@@ -112,7 +114,6 @@ export const sendQuizAnswer = async (id: number, userAnswer: boolean) => {
         params: { userAnswer }, // 쿼리 매개변수로 전달
       },
     );
-    console.log('응답:', res.data.data);
     return true;
   } catch (error) {
     console.error(error);
