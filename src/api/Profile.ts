@@ -193,3 +193,22 @@ export const getInsight = async (page: number) => {
     console.error(error);
   }
 };
+
+/**
+ * 분석 레포트 조회
+ * @returns
+ */
+export const getReport = async () => {
+  try {
+    const response = await api.get('/accounts/report', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (response.data.success) {
+      return response.data.data;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
