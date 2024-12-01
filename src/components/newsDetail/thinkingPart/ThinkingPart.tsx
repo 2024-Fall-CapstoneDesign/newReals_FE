@@ -2,8 +2,8 @@ import { useRef, useState } from 'react';
 import * as S from './ThinkingPart.Style';
 import AfterThinking from './AfterThinking';
 import { useParams } from 'react-router-dom';
-import api from '../../../api/instance';
 import Loading from '../../common/Loading/Loding';
+import { sendInsight } from '../../../api/NewsDetail';
 
 interface ThinkingPartProps {
   topic: string;
@@ -14,8 +14,6 @@ interface ThinkingPartProps {
   neutral: string | null;
   onCommentUpdated: () => void;
 }
-
-const accessToken = localStorage.getItem('access_token');
 
 const ThinkingPart = ({
   topic,
@@ -50,26 +48,6 @@ const ThinkingPart = ({
     }
     handleClickSendButton(inputValue);
     setInputValue('');
-  };
-
-  const sendInsight = async (id: number, comment: string) => {
-    try {
-      const res = await api.post(
-        `/news/insight/${id}`,
-        { comment },
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            Accept: 'application/json',
-          },
-        },
-      );
-      console.log('응답:', res.data.message);
-      return true;
-    } catch (error) {
-      console.error(error);
-      return false;
-    }
   };
 
   const handleClickSendButton = async (input: string) => {

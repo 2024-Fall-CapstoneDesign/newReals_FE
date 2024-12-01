@@ -3,8 +3,10 @@ import Bookmark from '../../common/bookmark/Bookmark';
 import Tag from '../../common/tag/Tag';
 import EmojiCount from '../emojiCount/EmojiCount';
 import * as S from './ArticleHeader.Style';
+import { postScrap } from '../../../api/Scrap';
 
 interface ArticleHeadProps {
+  id: number;
   category: string;
   subCategory: string;
   keyword: string;
@@ -15,6 +17,7 @@ interface ArticleHeadProps {
 }
 
 const ArticleHeader = ({
+  id,
   category,
   subCategory,
   keyword,
@@ -24,8 +27,16 @@ const ArticleHeader = ({
   isScrapped,
 }: ArticleHeadProps) => {
   const [isSelected, setIsSelected] = useState(isScrapped);
-  const handleSelected = () => {
-    setIsSelected((prev) => !prev);
+
+  const handleSelected = async () => {
+    try {
+      const success = await postScrap(id); // 스크랩 등록/해제 API 호출
+      if (success !== null) {
+        setIsSelected(success); // 성공적으로 변경된 상태 반영
+      }
+    } catch (error) {
+      console.error('스크랩 실패:', error);
+    }
   };
 
   return (
