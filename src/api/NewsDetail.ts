@@ -8,20 +8,18 @@ const accessToken = localStorage.getItem('access_token');
  * @param locationProp - 어디서 선택한 뉴스인지에 따라 keyword, category, subCategory
  * @returns
  */
-export const getDetailNews = async (id: number, locationProp: any) => {
+export const getDetailNews = async (
+  id: number,
+  locationProp: { category?: string; keyword?: string; subCategory?: string } | null,
+) => {
   try {
-    const res = locationProp
-      ? await api.get(`/news/${id}`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-          params: locationProp,
-        })
-      : await api.get(`/news/${id}`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
+    const res = await api.get(`/news/${id}`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+      ...(locationProp && { params: locationProp }),
+    });
+
     if (res.data.success) {
       return res.data.data;
     }
