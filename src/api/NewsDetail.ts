@@ -21,6 +21,7 @@ export const getDetailNews = async (
     });
 
     if (res.data.success) {
+      console.log(res.data.data);
       return res.data.data;
     }
   } catch (error) {
@@ -112,7 +113,33 @@ export const sendQuizAnswer = async (id: number, userAnswer: boolean) => {
         params: { userAnswer }, // 쿼리 매개변수로 전달
       },
     );
-    return true;
+    return res.data.success;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+
+/**
+ * 공감버튼 클릭
+ * @param id - 뉴스 id
+ * @param reactionType - 누른 공감버튼 (0,1,2)
+ * @returns
+ */
+export const sendLikes = async (id: number, reactionType: number) => {
+  try {
+    const res = await api.post(
+      `/news/likes/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+        params: { reactionType },
+      },
+    );
+    console.log(res.data.message);
+    return res.data.success;
   } catch (error) {
     console.error(error);
     return false;

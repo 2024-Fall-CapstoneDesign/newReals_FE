@@ -29,6 +29,7 @@ interface NewsDataProps {
   viewCount: number;
   termMap: Record<string, string>;
   wherePageFrom: string;
+  reactionType: number;
 }
 
 interface SideNewsProps {
@@ -168,6 +169,8 @@ const NewsDetail = () => {
                   />
                 ) : (
                   <EmojiPart
+                    id={newsData.id}
+                    action={newsData.reactionType}
                     good={newsData.good}
                     bad={newsData.bad}
                     interesting={newsData.interesting}
