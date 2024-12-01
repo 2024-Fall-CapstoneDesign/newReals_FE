@@ -15,11 +15,25 @@ const SearchBar = () => {
   };
 
   const handleClick = () => {
-    navigate(`/search?query=${encodeURIComponent(input)}`);
+    navigate(`/search?query=${encodeURIComponent(input)}`, { state: { input } });
+    setInput('');
   };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && input.trim()) {
+      navigate(`/search?query=${encodeURIComponent(input)}`, { state: { input } });
+      setInput('');
+    }
+  };
+
   return (
     <S.InputPart>
-      <S.Input placeholder="뉴스 검색" value={input} onChange={onChangeInput} />
+      <S.Input
+        placeholder="뉴스 검색"
+        value={input}
+        onChange={onChangeInput}
+        onKeyDown={handleKeyDown}
+      />
       <S.SearchImg src={SearchIcon} alt="검색" onClick={handleClick} />
     </S.InputPart>
   );

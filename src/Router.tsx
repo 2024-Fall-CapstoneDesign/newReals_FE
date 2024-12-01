@@ -8,7 +8,7 @@ import Profile from './pages/profile/Profile';
 import Header from './components/common/header/Header';
 import Register from './pages/register/Register';
 import RedirectPage from './components/intro/kakaoLogin/RedirectPage';
-import Search from './components/common/search/Search';
+import Search from './pages/search/Search';
 
 const AppRouter = () => {
   return (
