@@ -4,8 +4,8 @@ import OIcon from '../../../assets/icons/OIcon.svg?react';
 import XIcon from '../../../assets/icons/XIcon.svg?react';
 import { useEffect, useState } from 'react';
 import AnswerModal from './AnswerModal';
-import api from '../../../api/instance';
 import { useParams } from 'react-router-dom';
+import { sendQuizAnswer } from '../../../api/NewsDetail';
 
 interface Quiz {
   quiz: string;
@@ -26,8 +26,6 @@ interface Quiz {
  * @param comment - 퀴즈의 해설
  * @returns
  */
-
-const accessToken = localStorage.getItem('access_token');
 
 const Quiz = ({ quiz, isSolved, answer, comment, onCommentUpdated }: Quiz) => {
   const [timeLeft, setTimeLeft] = useState('');
@@ -74,30 +72,11 @@ const Quiz = ({ quiz, isSolved, answer, comment, onCommentUpdated }: Quiz) => {
       return !prev;
     });
   };
+
   const handleAnswerClick = async (userAnswer: boolean) => {
     handleModal();
     answer === userAnswer ? setIsCorrect(true) : setIsCorrect(false);
     sendQuizAnswer(Number(id), userAnswer);
-  };
-
-  const sendQuizAnswer = async (id: number, userAnswer: boolean) => {
-    try {
-      const res = await api.post(
-        `/news/quiz/${id}`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-          params: { userAnswer }, // 쿼리 매개변수로 전달
-        },
-      );
-      console.log('응답:', res.data.data);
-      return true;
-    } catch (error) {
-      console.error(error);
-      return false;
-    }
   };
 
   return (
