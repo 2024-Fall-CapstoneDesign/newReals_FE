@@ -29,11 +29,13 @@ const SelectBox = ({ isActives, setIsActives }: SelectBoxProps) => {
   };
 
   const handleSubmit = async (keywords: string[]) => {
-    /*const response = await postKeywords({ keywords });
-    if (response.isSuccess) {*/
-    localStorage.setItem('is_interests_selected', 'true');
-    navigate('/home');
-    //}
+    const response = await postKeywords({ keywords });
+    if (response) {
+      localStorage.setItem('access_token', response.access_token);
+      localStorage.setItem('refresh_token', response.refresh_token);
+      localStorage.removeItem('tempToken');
+      navigate('/home');
+    }
   };
 
   useEffect(() => {

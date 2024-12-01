@@ -5,13 +5,18 @@ import AngryEmoji from '../../../assets/icons/AngryEmoji.svg';
 import IconPart from './IconPart';
 import { useState } from 'react';
 
-const ICONS = [
-  { id: 1, imoji: GoodEmoji, content: '좋아요', count: 52 },
-  { id: 2, imoji: HeartEmoji, content: '공감해요', count: 54 },
-  { id: 3, imoji: AngryEmoji, content: '화나요', count: 0 },
-];
+interface EmojiProps {
+  good: number;
+  bad: number;
+  interesting: number;
+}
 
-const EmojiPart = () => {
+const EmojiPart = ({ good, bad, interesting }: EmojiProps) => {
+  const ICONS = [
+    { id: 1, imoji: GoodEmoji, content: '좋아요', count: good },
+    { id: 2, imoji: HeartEmoji, content: '공감해요', count: bad },
+    { id: 3, imoji: AngryEmoji, content: '화나요', count: interesting },
+  ];
   const [selectedIcon, setSelectedIcon] = useState<number | null>(null);
   const [likeCounts, setLikeCounts] = useState<Record<number, number>>(
     ICONS.reduce((acc, icon) => ({ ...acc, [icon.id]: icon.count ?? 0 }), {}),
