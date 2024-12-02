@@ -3,10 +3,6 @@ import SearchIcon from '../../../assets/icons/SearchIcon.svg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-/*interface SearchBar extends React.InputHTMLAttributes<HTMLInputElement> {
-  onClick: () => void;
-}*/
-
 const SearchBar = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState<string>('');

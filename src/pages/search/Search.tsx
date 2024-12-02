@@ -24,7 +24,7 @@ const Search = () => {
   };
 
   const handleCloseButton = () => {
-    navigate(-1); // 이전 페이지로 이동
+    navigate('/home');
   };
 
   useEffect(() => {
@@ -32,23 +32,23 @@ const Search = () => {
       setIsLoading(true);
       if (searchWord) {
         try {
-          const results = await getSearchResults(searchWord, currentPage); // 검색 결과 호출
-          setSearchList(results.basenewsList); // 결과를 상태로 저장
+          const results = await getSearchResults(searchWord, currentPage);
+          setSearchList(results.basenewsList);
           setTotalPage(results.totalPage);
           setTotalElement(results.totalElement);
           console.log('검색 결과:', results);
         } catch (error) {
           console.error('검색 호출 오류:', error);
         } finally {
-          setIsLoading(false); // 로딩 상태 종료
+          setIsLoading(false);
         }
       } else {
-        setSearchList([]); // 검색어가 없으면 빈 결과로 초기화
+        setSearchList([]);
       }
     };
 
-    fetchSearchResults(); // 비동기 함수 호출
-  }, [searchWord, currentPage]); // 검색어와 페이지 변경 시 호출
+    fetchSearchResults();
+  }, [searchWord, currentPage]);
 
   return (
     <S.Container>
@@ -65,7 +65,9 @@ const Search = () => {
         </S.Close>
       </S.HeadPart>
       {isLoading && <Loading message="검색결과를 불러오는 중입니다" />}
-      {searchList && (
+      {!isLoading && totalElement === 0 ? (
+        <S.EmptyMessage>검색 결과가 없습니다.</S.EmptyMessage>
+      ) : (
         <CardList list={searchList} type="home" onScrap={(id) => handleScrap(id, setSearchList)} />
       )}
       <PageNation
