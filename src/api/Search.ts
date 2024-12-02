@@ -4,16 +4,15 @@ const accessToken = localStorage.getItem('access_token');
 
 /**
  * 검색 결과 조회
- * @param id - 뉴스 id
- * @param locationProp - 어디서 선택한 뉴스인지에 따라 keyword, category, subCategory
+ * @param searchWord - 검색 내용
+ * @param page - 검색 페이지
  * @returns
  */
-export const getSearchResults = async (searchWord: string, page: string) => {
+export const getSearchResults = async (searchWord: string, page: number) => {
   try {
     const res = await api.get(`/search`, {
       headers: {
-        Authorization: `Bearer ${accessToken}`,
-        'Content-Type': 'application/json',
+        Authorization: ` Bearer ${accessToken}`,
         Accept: 'application/json',
       },
       params: { searchWord, page },

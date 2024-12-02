@@ -172,3 +172,43 @@ export const getQuiz = async () => {
     console.error(error);
   }
 };
+
+/**
+ * 나의 활동 - 나의 인사이트 리스트 조회
+ * @param page - 무한스크롤 페이지
+ * @returns
+ */
+export const getInsight = async (page: number) => {
+  try {
+    const response = await api.get('/accounts/profile/insight', {
+      params: { page },
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (response.data.success) {
+      return response.data.data;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+/**
+ * 분석 레포트 조회
+ * @returns
+ */
+export const getReport = async () => {
+  try {
+    const response = await api.get('/accounts/report', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (response.data.success) {
+      return response.data.data;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};

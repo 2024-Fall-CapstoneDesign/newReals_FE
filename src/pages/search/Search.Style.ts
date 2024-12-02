@@ -42,3 +42,10 @@ export const CloseImg = styled.img`
   width: 1.25rem;
   height: 1.25rem;
 `;
+
+export const EmptyMessage = styled.div`
+  margin: 3rem 0;
+  color: ${Colors.Grayscale50};
+  text-align: center;
+  font-size: 1rem;
+`;
