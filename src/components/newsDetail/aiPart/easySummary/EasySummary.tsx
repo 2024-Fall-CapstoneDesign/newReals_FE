@@ -30,37 +30,29 @@ const EasySummary = ({ content, dictionary, url }: EasySumProps) => {
   const highlightedContent = useMemo(() => {
     if (!dictionary) return content;
 
-    let result = [];
-    const terms = Object.keys(dictionary);
+    // 정규식을 사용해 텍스트를 용어 단위로 나누기
+    const terms = Object.keys(dictionary).sort((a, b) => b.length - a.length); // 긴 용어 우선 처리
+    const termRegex = new RegExp(`(${terms.join('|')})`, 'g');
 
-    let remainingContent = content;
-
-    terms.forEach((term) => {
-      const parts = remainingContent.split(term);
-
-      // 용어가 발견된 경우
-      if (parts.length > 1) {
-        result.push(parts[0]); // 용어 앞부분
-        result.push(
+    const splitContent = content.split(termRegex); // 용어를 기준으로 본문 분리
+    return splitContent.map((part, index) => {
+      if (dictionary[part]) {
+        // 용어에 매칭된 경우
+        return (
           <S.Highlight
-            key={term}
-            onClick={() => {
-              handleWordClick(term);
-            }}
+            key={`${part}-${index}`}
+            onClick={() => handleWordClick(part)}
             ref={(el) => {
-              termRefs.current[term] = el; // 각 용어의 ref 저장
+              termRefs.current[part] = el; // 각 용어의 ref 저장
             }}
           >
-            {term}
-          </S.Highlight>,
+            {part}
+          </S.Highlight>
         );
-        remainingContent = parts.slice(1).join(term); // 용어 뒷부분
       }
+      // 일반 텍스트
+      return part;
     });
-    // 남은 부분을 추가
-    result.push(remainingContent);
-
-    return result;
   }, [content, dictionary]);
 
   const handleWordClick = (term: string) => {
@@ -68,10 +60,10 @@ const EasySummary = ({ content, dictionary, url }: EasySumProps) => {
     if (rect) {
       setTooltipPosition({
         top: rect.bottom + window.scrollY, // 용어 바로 밑에 위치
-        left: rect.left + rect.width / 2 + window.scrollX, // 용어 왼쪽에 맞추기
+        left: rect.left + rect.width / 2 + window.scrollX, // 용어 중앙에 맞추기
       });
     }
-    setIsOpen((prev) => !prev);
+    setIsOpen((prev) => (selectedTerm === term ? !prev : true)); // 같은 단어 클릭 시 토글, 다른 단어 클릭 시 열기
     setSelectedTerm(term);
   };
 
