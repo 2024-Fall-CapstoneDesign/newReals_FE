@@ -70,6 +70,26 @@ export const getDetailInsight = async (id: number) => {
 };
 
 /**
+ * 공감 조회
+ * @param id - 뉴스 id
+ * @returns
+ */
+export const getDetailLikes = async (id: number) => {
+  try {
+    const res = await api.get(`/news/likes/${id}`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (res.data.success) {
+      return res.data.data;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+/**
  * 인사이트 등록
  * @param id - 뉴스 id
  * @param comment - 유저 인사이트 입력값
@@ -112,7 +132,32 @@ export const sendQuizAnswer = async (id: number, userAnswer: boolean) => {
         params: { userAnswer }, // 쿼리 매개변수로 전달
       },
     );
-    return true;
+    return res.data.success;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+
+/**
+ * 공감버튼 클릭
+ * @param id - 뉴스 id
+ * @param reactionType - 누른 공감버튼 (0,1,2)
+ * @returns
+ */
+export const sendLikes = async (id: number, reactionType: number) => {
+  try {
+    const res = await api.post(
+      `/news/likes/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+        params: { reactionType },
+      },
+    );
+    return res.data.success;
   } catch (error) {
     console.error(error);
     return false;

@@ -68,7 +68,7 @@ const ThinkingPart = ({
     <S.Whole>
       <S.Topic>{topic}</S.Topic>
       {isLoading ? (
-        <Loading />
+        <Loading message="다른 사람들의 의견을 정리하고 있어요" />
       ) : (
         <>
           {userComment ? (
