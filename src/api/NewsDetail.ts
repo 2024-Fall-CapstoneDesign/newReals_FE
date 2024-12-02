@@ -21,7 +21,6 @@ export const getDetailNews = async (
     });
 
     if (res.data.success) {
-      console.log(res.data.data);
       return res.data.data;
     }
   } catch (error) {
@@ -60,6 +59,26 @@ export const getDetailInsight = async (id: number) => {
       headers: {
         Authorization: `Bearer ${accessToken}`,
         Accept: 'application/json',
+      },
+    });
+    if (res.data.success) {
+      return res.data.data;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+/**
+ * 공감 조회
+ * @param id - 뉴스 id
+ * @returns
+ */
+export const getDetailLikes = async (id: number) => {
+  try {
+    const res = await api.get(`/news/likes/${id}`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
       },
     });
     if (res.data.success) {
@@ -138,7 +157,6 @@ export const sendLikes = async (id: number, reactionType: number) => {
         params: { reactionType },
       },
     );
-    console.log(res.data.message);
     return res.data.success;
   } catch (error) {
     console.error(error);

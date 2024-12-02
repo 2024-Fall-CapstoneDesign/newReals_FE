@@ -17,7 +17,6 @@ interface EasySumProps {
  */
 
 const EasySummary = ({ content, dictionary, url }: EasySumProps) => {
-  console.log(dictionary);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedTerm, setSelectedTerm] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState<{ top: number; left: number }>({
@@ -26,34 +25,35 @@ const EasySummary = ({ content, dictionary, url }: EasySumProps) => {
   });
 
   const termRefs = useRef<{ [key: string]: HTMLSpanElement | null }>({});
+  const processedTerms = useRef(new Set<string>()); // 이미 처리된 용어를 추적
 
   const highlightedContent = useMemo(() => {
     if (!dictionary) return content;
 
-    // 정규식을 사용해 텍스트를 용어 단위로 나누기
     const terms = Object.keys(dictionary).sort((a, b) => b.length - a.length); // 긴 용어 우선 처리
     const termRegex = new RegExp(`(${terms.join('|')})`, 'g');
+    processedTerms.current.clear(); // 새롭게 계산할 때마다 초기화
 
-    const splitContent = content.split(termRegex); // 용어를 기준으로 본문 분리
+    const splitContent = content.split(termRegex);
     return splitContent.map((part, index) => {
-      if (dictionary[part]) {
-        // 용어에 매칭된 경우
+      if (dictionary[part] && !processedTerms.current.has(part)) {
+        // 아직 처리되지 않은 용어만 하이라이트
+        processedTerms.current.add(part); // 처리된 용어로 추가
         return (
           <S.Highlight
             key={`${part}-${index}`}
             onClick={() => handleWordClick(part)}
             ref={(el) => {
-              termRefs.current[part] = el; // 각 용어의 ref 저장
+              termRefs.current[part] = el; // 용어의 ref 저장
             }}
           >
             {part}
           </S.Highlight>
         );
       }
-      // 일반 텍스트
-      return part;
+      return part; // 일반 텍스트 또는 중복된 용어
     });
-  }, [content, dictionary]);
+  }, [content, dictionary, selectedTerm, isOpen]);
 
   const handleWordClick = (term: string) => {
     const rect = termRefs.current[term]?.getBoundingClientRect();
@@ -63,8 +63,12 @@ const EasySummary = ({ content, dictionary, url }: EasySumProps) => {
         left: rect.left + rect.width / 2 + window.scrollX, // 용어 중앙에 맞추기
       });
     }
-    setIsOpen((prev) => (selectedTerm === term ? !prev : true)); // 같은 단어 클릭 시 토글, 다른 단어 클릭 시 열기
-    setSelectedTerm(term);
+    if (selectedTerm === term) {
+      setIsOpen((prev) => !prev); // 같은 단어면 토글
+    } else {
+      setSelectedTerm(term); // 다른 단어 선택
+      setIsOpen(true); // 열기
+    }
   };
 
   return (
