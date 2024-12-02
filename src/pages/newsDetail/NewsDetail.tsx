@@ -7,7 +7,12 @@ import PageButton from '../../components/common/button/PageButton';
 import Quiz from '../../components/newsDetail/quiz/Quiz';
 import ThinkingPart from '../../components/newsDetail/thinkingPart/ThinkingPart';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { getDetailInsight, getDetailNews, getDetailQuiz } from '../../api/NewsDetail';
+import {
+  getDetailInsight,
+  getDetailLikes,
+  getDetailNews,
+  getDetailQuiz,
+} from '../../api/NewsDetail';
 import Loading from '../../components/common/Loading/Loding';
 
 interface NewsDataProps {
@@ -29,6 +34,7 @@ interface NewsDataProps {
   viewCount: number;
   termMap: Record<string, string>;
   wherePageFrom: string;
+  reactionType: number;
 }
 
 interface SideNewsProps {
@@ -52,6 +58,13 @@ interface InsightDataProps {
   neutral: string;
 }
 
+interface LikesDataProps {
+  reactionType: number;
+  good: number;
+  bad: number;
+  interesting: number;
+}
+
 const NewsDetail = () => {
   const { id } = useParams();
   const location = useLocation();
@@ -62,17 +75,19 @@ const NewsDetail = () => {
   const [nextNews, setNextNews] = useState<SideNewsProps | null>(null);
   const [quizData, setQuizData] = useState<QuizDataProps | null>(null);
   const [insightData, setInsightData] = useState<InsightDataProps | null>(null);
+  const [likesData, setLikesData] = useState<LikesDataProps | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const [news, quiz, insight] = await Promise.all([
+        const [news, quiz, insight, likes] = await Promise.all([
           // 함수들을 병렬적으로 동시에 실행
           getDetailNews(Number(id), locationProp),
           getDetailQuiz(Number(id)),
           getDetailInsight(Number(id)),
+          getDetailLikes(Number(id)),
         ]);
 
         if (news) {
@@ -82,6 +97,7 @@ const NewsDetail = () => {
         }
         if (quiz) setQuizData(quiz);
         if (insight) setInsightData(insight);
+        if (likes) setLikesData(likes);
       } catch (error) {
         console.error('Failed to fetch data:', error);
       } finally {
@@ -166,13 +182,15 @@ const NewsDetail = () => {
                     neutral={insightData.neutral}
                     onCommentUpdated={handleInsightUpdate}
                   />
-                ) : (
+                ) : likesData ? (
                   <EmojiPart
-                    good={newsData.good}
-                    bad={newsData.bad}
-                    interesting={newsData.interesting}
+                    id={newsData.id}
+                    action={likesData.reactionType}
+                    good={likesData.good}
+                    bad={likesData.bad}
+                    interesting={likesData.interesting}
                   />
-                )}
+                ) : null}
                 <S.PageNavigate>
                   <div>
                     {prevNews && (
