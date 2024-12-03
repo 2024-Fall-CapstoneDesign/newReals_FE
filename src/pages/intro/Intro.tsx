@@ -1,7 +1,7 @@
 import * as S from './Intro.Style';
 import CommonLayout from '../../components/intro/layout/CommonLayout';
 import Intro_1 from '../../components/intro/intro1/Intro_1';
-import Intro_2 from './../../components/intro/intro2/Intro_2';
+import Intro_2 from '../../components/intro/intro2/Intro_2';
 import IntroImg3 from '../../assets/images/IntroImg3.png';
 import IntroImg4 from '../../assets/images/IntroImg4.png';
 import IntroImg5 from '../../assets/images/IntroImg5.png';
@@ -54,7 +54,7 @@ const commonLayouts = [
 
 const Intro = () => {
   return (
-    <S.Container>
+    <S.IntroPage>
       <Intro_1 />
       <Intro_2 />
       {commonLayouts.map((layout, index) => (
@@ -68,7 +68,7 @@ const Intro = () => {
         />
       ))}
       <KakaoLogin />
-    </S.Container>
+    </S.IntroPage>
   );
 };
 
