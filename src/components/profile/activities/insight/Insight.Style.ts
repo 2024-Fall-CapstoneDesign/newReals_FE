@@ -31,7 +31,6 @@ export const Insight = styled.div`
 `;
 
 export const NoContent = styled.div`
-  ${FontStyles.MD2_Medium}
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,12 +39,17 @@ export const NoContent = styled.div`
   background-color: ${Colors.Grayscale5};
   border-radius: 1rem;
   width: 100%;
-  color: ${Colors.Grayscale60};
 `;
 
 export const Icon = styled.img`
   width: 2.25rem;
   height: 2.25rem;
+`;
+
+export const NoText = styled.p`
+  ${FontStyles.MD2_Medium}
+  color: ${Colors.Grayscale60};
+  text-align: center;
 `;
 
 export const Button = styled.button`

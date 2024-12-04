@@ -78,9 +78,9 @@ const Insight = () => {
       ) : (
         <S.NoContent>
           <S.Icon src={NoInsightIcon} />
-          <p>
+          <S.NoText>
             이번 달은 생각 정리를 작성하지 않았어요. <br /> 오늘의 생각 정리를 살펴보러 가볼까요?
-          </p>
+          </S.NoText>
           <S.Button
             onClick={() => {
               navigate('/home');
