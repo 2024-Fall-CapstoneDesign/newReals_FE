@@ -2,6 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import * as S from './Insight.Style';
 import Item from './Item';
 import { getInsight } from '../../../../api/Profile';
+import NoInsightIcon from '../../../../assets/icons/NoInsightIcon.svg';
+import { useNavigate } from 'react-router-dom';
 
 interface InsightProps {
   topic: string;
@@ -15,6 +17,7 @@ const Insight = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const observerRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate();
 
   const fetchData = useCallback(async () => {
     if (isLoading || !hasMore) return;
@@ -60,12 +63,33 @@ const Insight = () => {
   return (
     <S.Container>
       <S.Text>나의 인사이트</S.Text>
-      <S.Insight>
-        {insightList.map((item) => (
-          <Item key={item.newsId} title={item.topic} comment={item.userComment} id={item.newsId} />
-        ))}
-        <div ref={observerRef} style={{ height: '1px' }} />
-      </S.Insight>
+      {insightList.length > 0 ? (
+        <S.Insight>
+          {insightList.map((item) => (
+            <Item
+              key={item.newsId}
+              title={item.topic}
+              comment={item.userComment}
+              id={item.newsId}
+            />
+          ))}
+          <div ref={observerRef} style={{ height: '1px' }} />
+        </S.Insight>
+      ) : (
+        <S.NoContent>
+          <S.Icon src={NoInsightIcon} />
+          <S.NoText>
+            이번 달은 생각 정리를 작성하지 않았어요. <br /> 오늘의 생각 정리를 살펴보러 가볼까요?
+          </S.NoText>
+          <S.Button
+            onClick={() => {
+              navigate('/home');
+            }}
+          >
+            오늘의 생각 정리 보러가기
+          </S.Button>
+        </S.NoContent>
+      )}
     </S.Container>
   );
 };
