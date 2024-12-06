@@ -44,7 +44,7 @@ export const NoContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 15rem 2.25rem;
+  padding: 13rem 2.25rem;
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
