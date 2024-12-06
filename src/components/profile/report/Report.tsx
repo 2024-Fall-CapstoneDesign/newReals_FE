@@ -56,7 +56,7 @@ const Report = ({ name }: ReportProps) => {
         <S.Description>
           {data
             ? `${month}월 동안 ${name}님의 활동을 분석하여 레포트를 생성했어요.`
-            : `${month}월 동안 ${name}님의 활동이 충분하지 않아 레포트를 생성할 수 없었어요.`}
+            : `${month}월 활동 데이터가 조금 부족했어요. 이번 달에는 newREALs와 함께 더 많은 활동을 해볼까요?`}
         </S.Description>
       </S.TextContainer>
       {data ? (
