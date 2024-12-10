@@ -16,6 +16,7 @@ const Insight = () => {
   const [nextPage, setNextPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const [isFetched, setIsFetched] = useState(false);
   const observerRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
 
@@ -25,6 +26,7 @@ const Insight = () => {
 
     try {
       const insight = await getInsight(nextPage);
+      setIsFetched(true);
       if (insight && insight.insightList.length > 0) {
         setInsightList((prev) => [...prev, ...insight.insightList]);
         setNextPage((prev) => prev + 1);
@@ -63,19 +65,7 @@ const Insight = () => {
   return (
     <S.Container>
       <S.Text>나의 인사이트</S.Text>
-      {insightList.length > 0 ? (
-        <S.Insight>
-          {insightList.map((item) => (
-            <Item
-              key={item.newsId}
-              title={item.topic}
-              comment={item.userComment}
-              id={item.newsId}
-            />
-          ))}
-          <div ref={observerRef} style={{ height: '1px' }} />
-        </S.Insight>
-      ) : (
+      {isFetched && insightList.length === 0 ? (
         <S.NoContent>
           <S.Icon src={NoInsightIcon} />
           <S.NoText>
@@ -89,6 +79,18 @@ const Insight = () => {
             오늘의 생각 정리 보러가기
           </S.Button>
         </S.NoContent>
+      ) : (
+        <S.Insight>
+          {insightList.map((item) => (
+            <Item
+              key={item.newsId}
+              title={item.topic}
+              comment={item.userComment}
+              id={item.newsId}
+            />
+          ))}
+          <div ref={observerRef} style={{ height: '1px' }} />
+        </S.Insight>
       )}
     </S.Container>
   );
