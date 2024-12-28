@@ -9,7 +9,7 @@ const ICON_ITEM = [
   { name: 'mail', icon: MailIcon, url: 'https://www.naver.com' },
 ]; // 추후 링크들 수정 필요!
 
-const MEMBER_DATA = ['김진아', '나현진', '안연아', '윤예은', '이서현'];
+const MEMBER_DATA = ['김진아', '나현진', '안연아', '윤예은', '이서현', '설정원'];
 
 const Footer = () => {
   return (
@@ -32,7 +32,6 @@ const Footer = () => {
             {MEMBER_DATA.map((member, index) => (
               <S.NameContainer key={index}>
                 <p>{member}</p>
-                {index < MEMBER_DATA.length - 1 && <S.Divider />}
               </S.NameContainer>
             ))}
           </S.NameContainer>
