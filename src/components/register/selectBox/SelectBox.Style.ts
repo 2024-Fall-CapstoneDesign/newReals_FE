@@ -20,6 +20,10 @@ export const SelectBox = styled.div`
 export const Message = styled.div`
   display: flex;
   gap: 0.75rem;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 export const Title = styled.span`
