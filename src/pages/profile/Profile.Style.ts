@@ -9,15 +9,11 @@ export const Container = styled.div`
   width: 100%;
   padding-top: 3.75rem;
   padding-bottom: 5rem;
-<<<<<<< HEAD
-  @media (max-width: 767px) {
-    border-top: 1px solid ${Colors.Grayscale10};
-=======
 
   @media (max-width: 767px) {
     align-items: flex-start;
     padding: 2rem 1rem 3.75rem;
->>>>>>> bee70847c7113d00e6bfec99c54b8a53a8d13893
+    border-top: 1px solid ${Colors.Grayscale10};
   }
 `;
 
