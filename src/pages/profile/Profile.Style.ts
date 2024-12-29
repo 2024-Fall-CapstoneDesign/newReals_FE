@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Colors, FontStyles } from '../../styles';
 
 export const Container = styled.div`
-  border-top: 1px solid ${Colors.Grayscale10};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +13,7 @@ export const Container = styled.div`
   @media (max-width: 767px) {
     align-items: flex-start;
     padding: 2rem 1rem 3.75rem;
+    border-top: 1px solid ${Colors.Grayscale10};
   }
 `;
 
