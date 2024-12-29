@@ -57,5 +57,11 @@ export const Keywords = styled.div`
 
   @media (max-width: 767px) {
     gap: 0.75rem;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE에서 스크롤바 숨김 */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge에서 스크롤바 숨기기 */
+    }
   }
 `;
