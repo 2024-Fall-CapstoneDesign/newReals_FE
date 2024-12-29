@@ -66,7 +66,6 @@ const Header = () => {
             </S.Service>
             {pathname === '/' ? (
               <S.LoginPart onClick={handleLoginClick}>
-                <S.LoginImg src={PeopleIcon} alt="LoginIcon" />
                 <S.Login>로그인 / 회원가입</S.Login>
               </S.LoginPart>
             ) : (
@@ -93,7 +92,7 @@ const Header = () => {
               </S.MobileMenu>
             )}
           </S.Head>
-          {pathname !== '/profile' && pathname !== '/market' && (
+          {pathname !== '/' && pathname !== '/profile' && pathname !== '/market' && (
             <S.SearchBarContainer>
               <SearchBar />
             </S.SearchBarContainer>
