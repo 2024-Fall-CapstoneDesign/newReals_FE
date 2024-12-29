@@ -107,6 +107,9 @@ export const Login = styled.div`
   color: ${Colors.Grayscale90};
   margin-left: 0.75rem;
   text-align: center;
+  @media (max-width: 767px) {
+    ${FontStyles.SM_SemiBold};
+  }
 `;
 
 export const SidePart = styled.div`
