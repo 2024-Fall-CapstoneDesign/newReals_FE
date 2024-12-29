@@ -12,11 +12,12 @@ export const SecondIntro = styled.div`
   gap: 1rem;
   align-self: stretch;
   @media (max-width: 767px) {
-    ${FontStyles.MD1_SemiBold};
+    ${FontStyles.MD2_SemiBold};
     justify-content: center;
     align-items: center;
     height: 16.25rem;
     width: 100%;
+    padding: 3rem 1.875rem;
   }
 `;
 
@@ -30,11 +31,13 @@ export const Logo = styled.span`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-right: 0.25rem;
 `;
 
 export const Ment = styled.p`
   display: flex;
   white-space: nowrap;
+  align-items: center;
 `;
 
 export const Tag = styled.div`
