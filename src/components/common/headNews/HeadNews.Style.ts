@@ -17,7 +17,7 @@ export const HeadNews = styled.div<{ $imageUrl: string | null }>`
 
   @media (max-width: 767px) {
     height: 32.5rem;
-    padding: 10rem 1.5rem 3.75rem;
+    padding: 10rem 1.5rem 0rem;
     gap: 2rem;
   }
 `;
