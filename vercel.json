@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/login/oauth",
+      "destination": "/login/oauth"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
