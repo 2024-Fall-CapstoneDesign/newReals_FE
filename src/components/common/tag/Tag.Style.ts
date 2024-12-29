@@ -33,4 +33,5 @@ export const Tag = styled.div<{
   color: ${({ $color }) => colorStyles[$color || 'purple'].text};
   font-size: ${({ $size }) => ($size === 'small' ? FontStyles.XS_Medium : FontStyles.SM_Medium)};
   white-space: nowrap;
+  height: fit-content;
 `;
