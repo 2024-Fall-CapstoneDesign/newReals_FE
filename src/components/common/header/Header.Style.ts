@@ -31,21 +31,6 @@ export const Head = styled.header`
 export const Service = styled.span`
   display: flex;
   align-items: center;
-  cursor: pointer;
-`;
-
-export const ServiceName = styled.span`
-  color: ${Colors.Grayscale90};
-  font-family: 'Couture';
-  font-size: 1.15rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-`;
-
-export const Service = styled.span`
-  display: flex;
-  align-items: center;
 `;
 
 export const ServiceName = styled.span`
