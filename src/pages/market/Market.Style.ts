@@ -4,9 +4,11 @@ import { Colors, FontStyles } from '../../styles';
 export const MarketPage = styled.div`
   display: flex;
   flex-direction: column;
-  border-top: 1px solid ${Colors.Grayscale10};
   padding: 3.75rem 6.25rem;
   gap: 3rem;
+  @media (max-width: 767px) {
+    border-top: 1px solid ${Colors.Grayscale10};
+  }
 `;
 
 export const Text = styled.div`
