@@ -26,6 +26,7 @@ export const Head = styled.header`
     height: 4rem;
     position: relative;
     border-bottom: none;
+  }
 `;
 
 export const Service = styled.span`

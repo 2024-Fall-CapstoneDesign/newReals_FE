@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Colors, FontStyles } from '../../styles';
 
 export const Container = styled.div`
-  border-top: 1px solid ${Colors.Grayscale10};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +9,9 @@ export const Container = styled.div`
   width: 100%;
   padding-top: 3.75rem;
   padding-bottom: 5rem;
+  @media (max-width: 767px) {
+    border-top: 1px solid ${Colors.Grayscale10};
+  }
 `;
 
 export const Title = styled.span`
