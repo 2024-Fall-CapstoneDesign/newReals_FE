@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Colors } from '../../styles';
 
 export const NewsDetail = styled.div`
   display: flex;
@@ -17,6 +18,7 @@ export const NewsDetail = styled.div`
     padding: 2rem 1rem;
     justify-content: center;
     gap: 2rem;
+    border-top: 1px solid ${Colors.Grayscale10};
   }
 `;
 
