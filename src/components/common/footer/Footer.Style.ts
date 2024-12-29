@@ -49,7 +49,7 @@ export const About = styled.div`
 
 export const IconContainer = styled.div`
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
 `;
 
 export const Icon = styled.img`
