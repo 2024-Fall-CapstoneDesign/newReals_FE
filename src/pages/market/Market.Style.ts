@@ -4,7 +4,8 @@ import { Colors, FontStyles } from '../../styles';
 export const MarketPage = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 3.75rem 6.25rem;
+  border-top: 1px solid ${Colors.Grayscale10};
+  padding: 3.75rem 6.25rem;
   gap: 3rem;
 `;
 
