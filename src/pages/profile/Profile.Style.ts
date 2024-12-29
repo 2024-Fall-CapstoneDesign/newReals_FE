@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Colors, FontStyles } from '../../styles';
 
 export const Container = styled.div`
+  border-top: 1px solid ${Colors.Grayscale10};
   display: flex;
   flex-direction: column;
   align-items: center;
