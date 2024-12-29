@@ -12,9 +12,23 @@ export const Head = styled.header`
   border-bottom: 1px solid ${Colors.Grayscale10};
 `;
 
+export const Service = styled.span`
+  display: flex;
+  align-items: center;
+`;
+
+export const ServiceName = styled.span`
+  color: ${Colors.Grayscale90};
+  font-family: 'Couture';
+  font-size: 1.15rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+
 export const ServiceImg = styled.img`
-  width: 7.8125rem;
-  height: 2rem;
+  width: 2.5625rem;
+  height: 1.75rem;
   cursor: pointer;
 `;
 

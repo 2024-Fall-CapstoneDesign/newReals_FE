@@ -30,11 +30,14 @@ const Header = () => {
 
   return (
     <S.Head>
-      <S.ServiceImg
-        onClick={() => (pathname === '/' ? navigate('/') : navigate('/home'))}
-        src={Logo}
-        alt="Logo"
-      />
+      <S.Service>
+        <S.ServiceImg
+          onClick={() => (pathname === '/' ? navigate('/') : navigate('/home'))}
+          src={Logo}
+          alt="Logo"
+        />
+        <S.ServiceName>NEWREALS</S.ServiceName>
+      </S.Service>
       {pathname === '/' ? (
         <S.LoginPart onClick={handleLoginClick}>
           <S.LoginImg src={PeopleIcon} alt="LoginIcon" />
