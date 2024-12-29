@@ -48,17 +48,18 @@ export const ServiceImg = styled.img`
   height: 1.75rem;
 `;
 
-export const SearchImg = styled.img``;
-
-export const MobileEtc = styled.img``;
+export const MobileEtc = styled.img`
+  width: 1.5rem;
+  height: 1.5rem;
+`;
 
 export const MobileMenu = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: ${Colors.Main0};
+  box-shadow: 0 0.25rem 0.375rem ${Colors.Black};
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
@@ -73,7 +74,7 @@ export const MobileMenuItem = styled.div`
   ${FontStyles.MD2_Medium};
   line-height: 140%;
   &:hover {
-    background-color: #f7f7f7;
+    background-color: ${Colors.Grayscale5};
   }
 `;
 
